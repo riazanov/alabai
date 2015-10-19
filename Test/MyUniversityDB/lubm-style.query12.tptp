@@ -1,0 +1,20 @@
+
+
+
+include('my_university_semantic_map.fof.tptp').
+
+include('lubm.ontology.cnf.tptp').
+
+
+% "SAFC" is the code of "our" university. 
+
+input_clause(query12,conjecture,
+  [
+    --p_Chair(X),
+    --p_name(X,N1),
+    --p_Department(Y),
+    --p_name(Y,N2),
+    --p_worksFor(X,Y),
+    --p_subOrganizationOf(Y,universityEntity("SAFC")),
+    ++answer(N1,N2)
+  ]).

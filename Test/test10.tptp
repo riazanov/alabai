@@ -1,0 +1,19 @@
+
+cnf(axiom1,axiom,
+
+   p(X) | ~db_abs_p(X)
+).
+
+cnf(axiom2,axiom,
+   q(X) | ~db_abs_q(X)
+).
+
+
+cnf(axiom3,axiom,
+   r(X) | ~p(X) | ~q(X)
+).
+
+
+cnf(goal,negated_conjecture,
+     ~r(X) | answer(X)
+).

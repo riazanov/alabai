@@ -1,0 +1,1167 @@
+<?xml version="1.0"?>
+
+<alabaiConfig xmlns="alabai_config">
+
+
+  <maximalSelectionUnitActiveness>1</maximalSelectionUnitActiveness>
+
+ <!--
+
+  <maximalSelectionUnitActiveness>256</maximalSelectionUnitActiveness>
+
+  <maximalSelectionUnitActiveness>32</maximalSelectionUnitActiveness>
+
+
+  <maximalSelectionUnitActiveness>2</maximalSelectionUnitActiveness>
+-->
+
+  <maximalSelectionUnitPenalty>5000</maximalSelectionUnitPenalty>
+
+  <!-- Calculus: -->
+
+  
+  <reductionOrdering>NonrecursiveKBO</reductionOrdering>
+
+
+  <literalSelection>
+
+    <forAxioms> 
+      <posHyper>
+
+	<filterForNegative>
+	  <allMaximalWRT>
+	    <byShallowWeight maxDepth="1"/>
+	  </allMaximalWRT>
+	</filterForNegative>
+
+	<filterForPositive> <allMaximal/> </filterForPositive>
+
+      </posHyper>
+    </forAxioms>
+
+
+
+
+    <forHypotheses>
+      <posHyper>
+
+	<filterForNegative> 
+	  <allMaximalWRT>
+	    <admissible/>
+	  </allMaximalWRT>
+	</filterForNegative>
+
+	<filterForPositive> <total/> </filterForPositive>
+      </posHyper>
+    </forHypotheses>
+
+    <forNegatedConjectures>
+      <posHyper>
+
+	<filterForNegative> 
+	  <allMaximalWRT>
+	    <byShallowWeight maxDepth="1"/>
+	  </allMaximalWRT>
+	</filterForNegative>
+
+	<filterForPositive> <total/> </filterForPositive>
+      </posHyper>
+
+    </forNegatedConjectures>
+
+  </literalSelection>
+
+
+  <!-- Deduction rules: -->
+
+  <resolution checkUnifierDirections="false"/>
+
+  <paramodulation on="false" checkUnifierDirections="false"/>
+
+
+  <!-- Forward simplification: -->
+
+  <forwardSubsumption on="true" equalityPretest="false">
+     <featureFunctionVector>
+        <numberOfLiterals/> 
+        <numberOfSymbolsFromCategories mod="64"/>
+     </featureFunctionVector>
+  </forwardSubsumption>
+
+
+  <forwardSubsumptionResolution on="true"/>
+
+  
+  <forwardDemodulation on="true">
+     <featureFunctionVector>
+        <numberOfSymbols/>
+        <numberOfSymbolsFromCategories mod="32"/>
+     </featureFunctionVector>
+  </forwardDemodulation>
+
+
+  <simplifyingEqualityResolution on="true"/>
+
+  <propositionalTautologyTest>true</propositionalTautologyTest>
+
+  <equationalTautologyTest>true</equationalTautologyTest>
+
+
+
+
+
+  <!--  Backward simplification: -->
+
+  <backwardSubsumption on="true">
+     <featureFunctionVector>
+        <numberOfLiterals/> 
+        <numberOfSymbolsFromCategories mod="64"/>
+     </featureFunctionVector>
+  </backwardSubsumption>
+
+  <backwardDemodulation on="true">
+     <featureFunctionVector>
+        <numberOfSymbols/>
+        <numberOfSymbolsFromCategories mod="32"/>
+     </featureFunctionVector>
+  </backwardDemodulation>
+
+
+
+
+  <!-- Inference selection: -->
+
+
+  <clauseSelectionDelay>0</clauseSelectionDelay>
+
+
+  <unifiabilityEstimation
+     maxDepth="2"
+     deepeningCoeff="0.5"
+     duplicateVarUnifiability="0.7"
+     constUnifiability="0.1"
+     propConstUnifiability="0.01"
+     funcUnifiability="0.7"
+     predUnifiability="0.8"/>
+
+
+
+
+  <selectionUnitPenalty for="axioms" baseValue="10">
+
+    <resolutionB generalCoeff="5.0">
+
+      <litUnifiabilityCoeff>
+	<map x="0.01" y="1.0"/>
+	<map x="0.44" y="1.1"/>
+	<map x="0.55" y="1.5"/>
+	<map x="0.64" y="2.0"/>
+	<map x="0.64" y="2.0"/>
+	<map x="0.68" y="3.0"/>
+	<map x="0.8" y="5.0"/>
+      </litUnifiabilityCoeff>
+      
+      <residualLitCoeff>
+	<map x="0" y="1.0"/>
+	<map x="1" y="1.5"/>
+	<map x="2" y="2.0"/>
+	<map x="3" y="3.0"/>
+      </residualLitCoeff>
+
+      <residualSizeCoeff>
+	<map x="0" y="1.0"/>
+	<map x="10" y="1.1"/>
+	<map x="20" y="1.5"/>
+	<map x="30" y="2.0"/>
+      </residualSizeCoeff>
+
+      <litSizeCoeff>
+	<map x="0" y="1.0"/>
+	<map x="4" y="1.1"/>
+	<map x="10" y="1.5"/>
+	<map x="20" y="2.0"/>
+      </litSizeCoeff>
+
+      <litDepthCoeff>
+	<map x="0" y="1.0"/>
+	<map x="1" y="1.1"/>
+	<map x="2" y="1.3"/>
+	<map x="3" y="1.6"/>
+	<map x="4" y="1.6"/>
+	<map x="10" y="2.0"/>
+	<map x="20" y="3.0"/>
+	<map x="100" y="5.0"/>
+      </litDepthCoeff>
+
+    </resolutionB>
+    
+    <resolutionG generalCoeff="3.0">
+
+      <litUnifiabilityCoeff>
+	<map x="0.01" y="1.0"/>
+	<map x="0.44" y="1.1"/>
+	<map x="0.55" y="1.5"/>
+	<map x="0.64" y="2.0"/>
+	<map x="0.64" y="2.0"/>
+	<map x="0.68" y="3.0"/>
+	<map x="0.8" y="5.0"/>
+      </litUnifiabilityCoeff>
+      
+      <residualLitCoeff>
+	<map x="0" y="1.0"/>
+	<map x="1" y="1.5"/>
+	<map x="2" y="2.0"/>
+	<map x="3" y="3.0"/>
+      </residualLitCoeff>
+
+      <residualSizeCoeff>
+	<map x="0" y="1.0"/>
+	<map x="10" y="1.1"/>
+	<map x="20" y="1.5"/>
+	<map x="30" y="2.0"/>
+      </residualSizeCoeff>
+
+      <litSizeCoeff>
+	<map x="0" y="1.0"/>
+	<map x="4" y="1.1"/>
+	<map x="10" y="1.5"/>
+	<map x="20" y="2.0"/>
+      </litSizeCoeff>
+
+      <litDepthCoeff>
+	<map x="0" y="1.0"/>
+	<map x="1" y="1.1"/>
+	<map x="2" y="1.3"/>
+	<map x="3" y="1.6"/>
+	<map x="4" y="1.6"/>
+	<map x="10" y="2.0"/>
+	<map x="20" y="3.0"/>
+	<map x="100" y="5.0"/>
+      </litDepthCoeff>
+
+    </resolutionG>
+    
+    
+    <resolutionI generalCoeff="3.0">
+
+      <litUnifiabilityCoeff>
+	<map x="0.01" y="1.0"/>
+	<map x="0.44" y="1.1"/>
+	<map x="0.55" y="1.5"/>
+	<map x="0.64" y="2.0"/>
+	<map x="0.64" y="2.0"/>
+	<map x="0.68" y="3.0"/>
+	<map x="0.8" y="5.0"/>
+      </litUnifiabilityCoeff>
+      
+      <residualLitCoeff>
+	<map x="0" y="1.0"/>
+	<map x="1" y="1.5"/>
+	<map x="2" y="2.0"/>
+	<map x="3" y="3.0"/>
+      </residualLitCoeff>
+
+      <residualSizeCoeff>
+	<map x="0" y="1.0"/>
+	<map x="10" y="1.1"/>
+	<map x="20" y="1.5"/>
+	<map x="30" y="2.0"/>
+      </residualSizeCoeff>
+
+      <litSizeCoeff>
+	<map x="0" y="1.0"/>
+	<map x="4" y="1.1"/>
+	<map x="10" y="1.5"/>
+	<map x="20" y="2.0"/>
+      </litSizeCoeff>
+
+      <litDepthCoeff>
+	<map x="0" y="1.0"/>
+	<map x="1" y="1.1"/>
+	<map x="2" y="1.3"/>
+	<map x="3" y="1.6"/>
+	<map x="4" y="1.6"/>
+	<map x="10" y="2.0"/>
+	<map x="20" y="3.0"/>
+	<map x="100" y="5.0"/>
+      </litDepthCoeff>
+
+    </resolutionI>
+    
+
+
+
+    <eqLHSForParamodB generalCoeff="5.0">
+
+      <lhsUnifiabilityCoeff>
+	<map x="0" y="1.0"/>
+	<map x="0.01" y="1.1"/>
+	<map x="0.1" y="2.0"/>
+	<map x="1" y="5.0"/>
+      </lhsUnifiabilityCoeff>
+      
+      <residualLitCoeff>
+	<map x="0" y="1.0"/>
+	<map x="1" y="1.5"/>
+	<map x="2" y="2.0"/>
+	<map x="3" y="3.0"/>
+      </residualLitCoeff>
+
+      <residualSizeCoeff>
+	<map x="0" y="1.0"/>
+	<map x="10" y="1.1"/>
+	<map x="20" y="1.5"/>
+	<map x="30" y="2.0"/>
+      </residualSizeCoeff>
+
+    </eqLHSForParamodB>
+    
+    <eqLHSForParamodG generalCoeff="5.0">
+
+      <lhsUnifiabilityCoeff>
+	<map x="0" y="1.0"/>
+	<map x="0.01" y="1.1"/>
+	<map x="0.1" y="2.0"/>
+	<map x="1" y="5.0"/>
+      </lhsUnifiabilityCoeff>
+      
+      <residualLitCoeff>
+	<map x="0" y="1.0"/>
+	<map x="1" y="1.5"/>
+	<map x="2" y="2.0"/>
+	<map x="3" y="3.0"/>
+      </residualLitCoeff>
+
+      <residualSizeCoeff>
+	<map x="0" y="1.0"/>
+	<map x="10" y="1.1"/>
+	<map x="20" y="1.5"/>
+	<map x="30" y="2.0"/>
+      </residualSizeCoeff>
+
+    </eqLHSForParamodG>
+    
+    
+    <eqLHSForParamodI generalCoeff="5.0">
+
+      <lhsUnifiabilityCoeff>
+	<map x="0" y="1.0"/>
+	<map x="0.01" y="1.1"/>
+	<map x="0.1" y="2.0"/>
+	<map x="1" y="5.0"/>
+      </lhsUnifiabilityCoeff>
+      
+      <residualLitCoeff>
+	<map x="0" y="1.0"/>
+	<map x="1" y="1.5"/>
+	<map x="2" y="2.0"/>
+	<map x="3" y="3.0"/>
+      </residualLitCoeff>
+
+      <residualSizeCoeff>
+	<map x="0" y="1.0"/>
+	<map x="10" y="1.1"/>
+	<map x="20" y="1.5"/>
+	<map x="30" y="2.0"/>
+      </residualSizeCoeff>
+
+    </eqLHSForParamodI>
+    
+
+
+
+
+    <redexForParamod generalCoeff="10.0" negativeEqCoeff="0.3">
+      
+      <redexUnifiabilityCoeff>
+	<map x="0" y="1.0"/>
+	<map x="0.01" y="1.1"/>
+	<map x="0.1" y="2.0"/>
+	<map x="1" y="5.0"/>
+      </redexUnifiabilityCoeff>
+      
+
+      <residualLitCoeff>
+	<map x="0" y="1.0"/>
+	<map x="1" y="1.5"/>
+	<map x="2" y="2.0"/>
+	<map x="3" y="3.0"/>
+      </residualLitCoeff>
+
+      <residualSizeCoeff>
+	<map x="0" y="1.0"/>
+	<map x="10" y="2.0"/>
+	<map x="20" y="3.0"/>
+	<map x="30" y="4.0"/>
+      </residualSizeCoeff>
+      
+      
+      <redexDepthCoeff>
+	<map x="1" y="0.2"/>
+	<map x="2" y="0.3"/>
+	<map x="3" y="0.4"/>
+	<map x="10" y="1"/>
+      </redexDepthCoeff>
+
+    </redexForParamod>
+      
+
+
+
+
+    <equalityFactoring generalCoeff="3.0">
+
+      <litNumCoeff>
+	<map x="2" y="1.0"/>
+	<map x="3" y="1.5"/>
+	<map x="4" y="2.0"/>
+      </litNumCoeff>
+
+      <clauseSizeCoeff>
+	<map x="10" y="1.0"/>
+	<map x="20" y="1.5"/>
+	<map x="30" y="2.0"/>
+      </clauseSizeCoeff>
+
+    </equalityFactoring>
+      
+
+
+
+    <equalityResolution generalCoeff="1.0">
+
+      <litNumCoeff>
+	<map x="2" y="1.0"/>
+	<map x="3" y="1.5"/>
+	<map x="4" y="2.0"/>
+      </litNumCoeff>
+
+      <clauseSizeCoeff>
+	<map x="10" y="1.0"/>
+	<map x="20" y="1.5"/>
+	<map x="30" y="2.0"/>
+      </clauseSizeCoeff>
+
+    </equalityResolution>
+      
+
+
+
+  </selectionUnitPenalty>
+  
+  
+  <selectionUnitPenalty for="hypotheses" baseValue="10">
+
+    <resolutionB generalCoeff="2.0">
+
+      <litUnifiabilityCoeff>
+	<map x="0.01" y="1.0"/>
+	<map x="0.44" y="1.1"/>
+	<map x="0.55" y="1.5"/>
+	<map x="0.64" y="2.0"/>
+	<map x="0.64" y="2.0"/>
+	<map x="0.68" y="3.0"/>
+	<map x="0.8" y="5.0"/>
+      </litUnifiabilityCoeff>
+      
+      <residualLitCoeff>
+	<map x="0" y="1.0"/>
+	<map x="1" y="1.5"/>
+	<map x="2" y="2.0"/>
+	<map x="3" y="3.0"/>
+      </residualLitCoeff>
+
+      <residualSizeCoeff>
+	<map x="0" y="1.0"/>
+	<map x="10" y="1.1"/>
+	<map x="20" y="1.5"/>
+	<map x="30" y="2.0"/>
+      </residualSizeCoeff>
+      <litSizeCoeff>
+	<map x="0" y="1.0"/>
+	<map x="4" y="1.1"/>
+	<map x="10" y="1.5"/>
+	<map x="20" y="2.0"/>
+      </litSizeCoeff>
+
+      <litDepthCoeff>
+	<map x="0" y="1.0"/>
+	<map x="1" y="1.1"/>
+	<map x="2" y="1.3"/>
+	<map x="3" y="1.6"/>
+	<map x="4" y="1.6"/>
+	<map x="10" y="2.0"/>
+	<map x="20" y="3.0"/>
+	<map x="100" y="5.0"/>
+      </litDepthCoeff>
+
+
+    </resolutionB>
+
+    <resolutionG generalCoeff="2.0">
+
+      <litUnifiabilityCoeff>
+	<map x="0.01" y="1.0"/>
+	<map x="0.44" y="1.1"/>
+	<map x="0.55" y="1.5"/>
+	<map x="0.64" y="2.0"/>
+	<map x="0.64" y="2.0"/>
+	<map x="0.68" y="3.0"/>
+	<map x="0.8" y="5.0"/>
+      </litUnifiabilityCoeff>
+      
+      <residualLitCoeff>
+	<map x="0" y="1.0"/>
+	<map x="1" y="1.5"/>
+	<map x="2" y="2.0"/>
+	<map x="3" y="3.0"/>
+      </residualLitCoeff>
+
+      <residualSizeCoeff>
+	<map x="0" y="1.0"/>
+	<map x="10" y="1.1"/>
+	<map x="20" y="1.5"/>
+	<map x="30" y="2.0"/>
+      </residualSizeCoeff>
+
+      <litSizeCoeff>
+	<map x="0" y="1.0"/>
+	<map x="4" y="1.1"/>
+	<map x="10" y="1.5"/>
+	<map x="20" y="2.0"/>
+      </litSizeCoeff>
+
+      <litDepthCoeff>
+	<map x="0" y="1.0"/>
+	<map x="1" y="1.1"/>
+	<map x="2" y="1.3"/>
+	<map x="3" y="1.6"/>
+	<map x="4" y="1.6"/>
+	<map x="10" y="2.0"/>
+	<map x="20" y="3.0"/>
+	<map x="100" y="5.0"/>
+      </litDepthCoeff>
+
+    </resolutionG>
+    
+
+
+    <resolutionI generalCoeff="2.0">
+
+      <litUnifiabilityCoeff>
+	<map x="0.01" y="1.0"/>
+	<map x="0.44" y="1.1"/>
+	<map x="0.55" y="1.5"/>
+	<map x="0.64" y="2.0"/>
+	<map x="0.64" y="2.0"/>
+	<map x="0.68" y="3.0"/>
+	<map x="0.8" y="5.0"/>
+      </litUnifiabilityCoeff>
+      
+      <residualLitCoeff>
+	<map x="0" y="1.0"/>
+	<map x="1" y="1.5"/>
+	<map x="2" y="2.0"/>
+	<map x="3" y="3.0"/>
+      </residualLitCoeff>
+
+      <residualSizeCoeff>
+	<map x="0" y="1.0"/>
+	<map x="10" y="1.1"/>
+	<map x="20" y="1.5"/>
+	<map x="30" y="2.0"/>
+      </residualSizeCoeff>
+
+      <litSizeCoeff>
+	<map x="0" y="1.0"/>
+	<map x="4" y="1.1"/>
+	<map x="10" y="1.5"/>
+	<map x="20" y="2.0"/>
+      </litSizeCoeff>
+
+      <litDepthCoeff>
+	<map x="0" y="1.0"/>
+	<map x="1" y="1.1"/>
+	<map x="2" y="1.3"/>
+	<map x="3" y="1.6"/>
+	<map x="4" y="1.6"/>
+	<map x="10" y="2.0"/>
+	<map x="20" y="3.0"/>
+	<map x="100" y="5.0"/>
+      </litDepthCoeff>
+
+    </resolutionI>
+    
+
+    <eqLHSForParamodB generalCoeff="3.0">
+
+      <lhsUnifiabilityCoeff>
+	<map x="0" y="1.0"/>
+	<map x="0.01" y="1.1"/>
+	<map x="0.1" y="2.0"/>
+	<map x="1" y="5.0"/>
+      </lhsUnifiabilityCoeff>
+      
+      <residualLitCoeff>
+	<map x="0" y="1.0"/>
+	<map x="1" y="1.5"/>
+	<map x="2" y="2.0"/>
+	<map x="3" y="3.0"/>
+      </residualLitCoeff>
+
+      <residualSizeCoeff>
+	<map x="0" y="1.0"/>
+	<map x="10" y="1.1"/>
+	<map x="20" y="1.5"/>
+	<map x="30" y="2.0"/>
+      </residualSizeCoeff>
+
+    </eqLHSForParamodB>
+    
+    <eqLHSForParamodG generalCoeff="3.0">
+
+      <lhsUnifiabilityCoeff>
+	<map x="0" y="1.0"/>
+	<map x="0.01" y="1.1"/>
+	<map x="0.1" y="2.0"/>
+	<map x="1" y="5.0"/>
+      </lhsUnifiabilityCoeff>
+      
+      <residualLitCoeff>
+	<map x="0" y="1.0"/>
+	<map x="1" y="1.5"/>
+	<map x="2" y="2.0"/>
+	<map x="3" y="3.0"/>
+      </residualLitCoeff>
+
+      <residualSizeCoeff>
+	<map x="0" y="1.0"/>
+	<map x="10" y="1.1"/>
+	<map x="20" y="1.5"/>
+	<map x="30" y="2.0"/>
+      </residualSizeCoeff>
+
+    </eqLHSForParamodG>
+    
+    
+    <eqLHSForParamodI generalCoeff="3.0">
+
+      <lhsUnifiabilityCoeff>
+	<map x="0" y="1.0"/>
+	<map x="0.01" y="1.1"/>
+	<map x="0.1" y="2.0"/>
+	<map x="1" y="5.0"/>
+      </lhsUnifiabilityCoeff>
+      
+      <residualLitCoeff>
+	<map x="0" y="1.0"/>
+	<map x="1" y="1.5"/>
+	<map x="2" y="2.0"/>
+	<map x="3" y="3.0"/>
+      </residualLitCoeff>
+
+      <residualSizeCoeff>
+	<map x="0" y="1.0"/>
+	<map x="10" y="1.1"/>
+	<map x="20" y="1.5"/>
+	<map x="30" y="2.0"/>
+      </residualSizeCoeff>
+
+    </eqLHSForParamodI>
+    
+
+
+
+    <redexForParamod generalCoeff="5.0" negativeEqCoeff="0.3">
+      
+      <redexUnifiabilityCoeff>
+	<map x="0" y="1.0"/>
+	<map x="0.01" y="1.1"/>
+	<map x="0.1" y="2.0"/>
+	<map x="1" y="5.0"/>
+      </redexUnifiabilityCoeff>
+
+      <residualLitCoeff>
+	<map x="0" y="1.0"/>
+	<map x="1" y="1.5"/>
+	<map x="2" y="2.0"/>
+	<map x="3" y="3.0"/>
+      </residualLitCoeff>
+
+
+      <residualSizeCoeff>
+	<map x="0" y="1.0"/>
+	<map x="10" y="2.0"/>
+	<map x="20" y="3.0"/>
+	<map x="30" y="4.0"/>
+      </residualSizeCoeff>
+
+      <redexDepthCoeff>
+	<map x="1" y="0.2"/>
+	<map x="2" y="0.3"/>
+	<map x="3" y="0.4"/>
+	<map x="10" y="1"/>
+      </redexDepthCoeff>
+
+
+    </redexForParamod>
+      
+
+    <equalityFactoring generalCoeff="3.0">
+
+      <litNumCoeff>
+	<map x="2" y="1.0"/>
+	<map x="3" y="1.5"/>
+	<map x="4" y="2.0"/>
+      </litNumCoeff>
+
+      <clauseSizeCoeff>
+	<map x="10" y="1.0"/>
+	<map x="20" y="1.5"/>
+	<map x="30" y="2.0"/>
+      </clauseSizeCoeff>
+
+    </equalityFactoring>
+      
+
+
+    <equalityResolution generalCoeff="1.0">
+
+      <litNumCoeff>
+	<map x="2" y="1.0"/>
+	<map x="3" y="1.5"/>
+	<map x="4" y="2.0"/>
+      </litNumCoeff>
+
+      <clauseSizeCoeff>
+	<map x="10" y="1.0"/>
+	<map x="20" y="1.5"/>
+	<map x="30" y="2.0"/>
+      </clauseSizeCoeff>
+
+    </equalityResolution>
+      
+
+
+
+  </selectionUnitPenalty>
+  
+  
+  
+  <selectionUnitPenalty for="negatedConjectures" baseValue="10">
+
+    <resolutionB generalCoeff="1.0">
+
+      <litUnifiabilityCoeff>
+	<map x="0.01" y="1.0"/>
+	<map x="0.44" y="1.1"/>
+	<map x="0.55" y="1.5"/>
+	<map x="0.64" y="2.0"/>
+	<map x="0.64" y="2.0"/>
+	<map x="0.68" y="3.0"/>
+	<map x="0.8" y="5.0"/>
+      </litUnifiabilityCoeff>
+      
+      <residualLitCoeff>
+	<map x="0" y="1.0"/>
+	<map x="1" y="1.5"/>
+	<map x="2" y="2.0"/>
+	<map x="3" y="3.0"/>
+      </residualLitCoeff>
+
+      <residualSizeCoeff>
+	<map x="0" y="1.0"/>
+	<map x="10" y="1.1"/>
+	<map x="20" y="1.5"/>
+	<map x="30" y="2.0"/>
+      </residualSizeCoeff>
+
+      <litSizeCoeff>
+	<map x="0" y="1.0"/>
+	<map x="4" y="1.1"/>
+	<map x="10" y="1.5"/>
+	<map x="20" y="2.0"/>
+      </litSizeCoeff>
+
+      <litDepthCoeff>
+	<map x="0" y="1.0"/>
+	<map x="1" y="1.1"/>
+	<map x="2" y="1.3"/>
+	<map x="3" y="1.6"/>
+	<map x="4" y="1.6"/>
+	<map x="10" y="2.0"/>
+	<map x="20" y="3.0"/>
+	<map x="100" y="5.0"/>
+      </litDepthCoeff>
+
+    </resolutionB>
+
+    <resolutionG generalCoeff="1.0">
+
+      <litUnifiabilityCoeff>
+	<map x="0.01" y="1.0"/>
+	<map x="0.44" y="1.1"/>
+	<map x="0.55" y="1.5"/>
+	<map x="0.64" y="2.0"/>
+	<map x="0.64" y="2.0"/>
+	<map x="0.68" y="3.0"/>
+	<map x="0.8" y="5.0"/>
+      </litUnifiabilityCoeff>
+      
+      <residualLitCoeff>
+	<map x="0" y="1.0"/>
+	<map x="1" y="1.5"/>
+	<map x="2" y="2.0"/>
+	<map x="3" y="3.0"/>
+      </residualLitCoeff>
+
+      <residualSizeCoeff>
+	<map x="0" y="1.0"/>
+	<map x="10" y="1.1"/>
+	<map x="20" y="1.5"/>
+	<map x="30" y="2.0"/>
+      </residualSizeCoeff>
+
+      <litSizeCoeff>
+	<map x="0" y="1.0"/>
+	<map x="4" y="1.1"/>
+	<map x="10" y="1.5"/>
+	<map x="20" y="2.0"/>
+      </litSizeCoeff>
+
+      <litDepthCoeff>
+	<map x="0" y="1.0"/>
+	<map x="1" y="1.1"/>
+	<map x="2" y="1.3"/>
+	<map x="3" y="1.6"/>
+	<map x="4" y="1.6"/>
+	<map x="10" y="2.0"/>
+	<map x="20" y="3.0"/>
+	<map x="100" y="5.0"/>
+      </litDepthCoeff>
+
+    </resolutionG>
+    
+
+    <resolutionI generalCoeff="1.0">
+
+      <litUnifiabilityCoeff>
+	<map x="0.01" y="1.0"/>
+	<map x="0.44" y="1.1"/>
+	<map x="0.55" y="1.5"/>
+	<map x="0.64" y="2.0"/>
+	<map x="0.64" y="2.0"/>
+	<map x="0.68" y="3.0"/>
+	<map x="0.8" y="5.0"/>
+      </litUnifiabilityCoeff>
+      
+      <residualLitCoeff>
+	<map x="0" y="1.0"/>
+	<map x="1" y="1.5"/>
+	<map x="2" y="2.0"/>
+	<map x="3" y="3.0"/>
+      </residualLitCoeff>
+
+      <residualSizeCoeff>
+	<map x="0" y="1.0"/>
+	<map x="10" y="1.1"/>
+	<map x="20" y="1.5"/>
+	<map x="30" y="2.0"/>
+      </residualSizeCoeff>
+
+      <litSizeCoeff>
+	<map x="0" y="1.0"/>
+	<map x="4" y="1.1"/>
+	<map x="10" y="1.5"/>
+	<map x="20" y="2.0"/>
+      </litSizeCoeff>
+
+      <litDepthCoeff>
+	<map x="0" y="1.0"/>
+	<map x="1" y="1.1"/>
+	<map x="2" y="1.3"/>
+	<map x="3" y="1.6"/>
+	<map x="4" y="1.6"/>
+	<map x="10" y="2.0"/>
+	<map x="20" y="3.0"/>
+	<map x="100" y="5.0"/>
+      </litDepthCoeff>
+
+    </resolutionI>
+    
+
+
+    <eqLHSForParamodB generalCoeff="3.0">
+
+      <lhsUnifiabilityCoeff>
+	<map x="0" y="1.0"/>
+	<map x="0.01" y="1.1"/>
+	<map x="0.1" y="2.0"/>
+	<map x="1" y="5.0"/>
+      </lhsUnifiabilityCoeff>
+      
+      <residualLitCoeff>
+	<map x="0" y="1.0"/>
+	<map x="1" y="1.5"/>
+	<map x="2" y="2.0"/>
+	<map x="3" y="3.0"/>
+      </residualLitCoeff>
+
+      <residualSizeCoeff>
+	<map x="0" y="1.0"/>
+	<map x="10" y="1.1"/>
+	<map x="20" y="1.5"/>
+	<map x="30" y="2.0"/>
+      </residualSizeCoeff>
+
+    </eqLHSForParamodB>
+    
+    <eqLHSForParamodG generalCoeff="3.0">
+
+      <lhsUnifiabilityCoeff>
+	<map x="0" y="1.0"/>
+	<map x="0.01" y="1.1"/>
+	<map x="0.1" y="2.0"/>
+	<map x="1" y="5.0"/>
+      </lhsUnifiabilityCoeff>
+      
+      <residualLitCoeff>
+	<map x="0" y="1.0"/>
+	<map x="1" y="1.5"/>
+	<map x="2" y="2.0"/>
+	<map x="3" y="3.0"/>
+      </residualLitCoeff>
+
+      <residualSizeCoeff>
+	<map x="0" y="1.0"/>
+	<map x="10" y="1.1"/>
+	<map x="20" y="1.5"/>
+	<map x="30" y="2.0"/>
+      </residualSizeCoeff>
+
+    </eqLHSForParamodG>
+    
+    
+    <eqLHSForParamodI generalCoeff="3.0">
+
+      <lhsUnifiabilityCoeff>
+	<map x="0" y="1.0"/>
+	<map x="0.01" y="1.1"/>
+	<map x="0.1" y="2.0"/>
+	<map x="1" y="5.0"/>
+      </lhsUnifiabilityCoeff>
+      
+      <residualLitCoeff>
+	<map x="0" y="1.0"/>
+	<map x="1" y="1.5"/>
+	<map x="2" y="2.0"/>
+	<map x="3" y="3.0"/>
+      </residualLitCoeff>
+
+      <residualSizeCoeff>
+	<map x="0" y="1.0"/>
+	<map x="10" y="1.1"/>
+	<map x="20" y="1.5"/>
+	<map x="30" y="2.0"/>
+      </residualSizeCoeff>
+
+    </eqLHSForParamodI>
+    
+
+
+
+
+    <redexForParamod generalCoeff="3.0" negativeEqCoeff="0.3">
+      
+      <redexUnifiabilityCoeff>
+	<map x="0" y="1.0"/>
+	<map x="0.01" y="1.1"/>
+	<map x="0.1" y="2.0"/>
+	<map x="1" y="5.0"/>
+      </redexUnifiabilityCoeff>
+
+      <residualLitCoeff>
+	<map x="0" y="1.0"/>
+	<map x="1" y="1.5"/>
+	<map x="2" y="2.0"/>
+	<map x="3" y="3.0"/>
+      </residualLitCoeff>
+
+
+      <residualSizeCoeff>
+	<map x="0" y="1.0"/>
+	<map x="10" y="2.0"/>
+	<map x="20" y="3.0"/>
+	<map x="30" y="4.0"/>
+      </residualSizeCoeff>
+
+
+      <redexDepthCoeff>
+	<map x="1" y="0.2"/>
+	<map x="2" y="0.3"/>
+	<map x="3" y="0.4"/>
+	<map x="10" y="1"/>
+      </redexDepthCoeff>
+
+    </redexForParamod>
+      
+
+    <equalityFactoring generalCoeff="3.0">
+
+      <litNumCoeff>
+	<map x="2" y="1.0"/>
+	<map x="3" y="1.5"/>
+	<map x="4" y="2.0"/>
+      </litNumCoeff>
+
+      <clauseSizeCoeff>
+	<map x="10" y="1.0"/>
+	<map x="20" y="1.5"/>
+	<map x="30" y="2.0"/>
+      </clauseSizeCoeff>
+
+    </equalityFactoring>
+      
+
+    <equalityResolution generalCoeff="0.1">
+
+      <litNumCoeff>
+	<map x="2" y="1.0"/>
+	<map x="3" y="1.5"/>
+	<map x="4" y="2.0"/>
+      </litNumCoeff>
+
+      <clauseSizeCoeff>
+	<map x="10" y="1.0"/>
+	<map x="20" y="1.5"/>
+	<map x="30" y="2.0"/>
+      </clauseSizeCoeff>
+
+    </equalityResolution>
+      
+
+
+  </selectionUnitPenalty>
+  
+  
+  <!-- Incremental query rewriting support: -->
+  
+  <queryRewriting>
+
+    <allowFunctionsInConstraints>false</allowFunctionsInConstraints>
+
+    <inconsistenciesAsAnswers>false</inconsistenciesAsAnswers>
+
+    <limitedTransitivePredicateChainingInConstraints on="true">
+    
+      <predicateChainLimit name="db_abs_isubOrganizationOf" arity="2" limit="2"/>
+
+    </limitedTransitivePredicateChainingInConstraints>
+
+
+  </queryRewriting>
+
+
+
+
+
+
+  <!-- Output: -->
+
+  <printInput>false</printInput>
+
+  <printNew>false</printNew>
+  
+  <printKept>false</printKept>
+
+  <printDiscarded>false</printDiscarded>
+  
+  <printAssembled>false</printAssembled>
+
+  <printSelectedClauses>false</printSelectedClauses>
+
+  <printActivatedClauses>false</printActivatedClauses>
+
+  <markUnselectedLiterals>true</markUnselectedLiterals>
+  
+  <printPromoted>false</printPromoted>
+
+
+  <!--
+  <selUnitPromotionWatchList> 345 645 235 67 342 </selUnitPromotionWatchList>
+  -->
+
+  <printSelectionUnits>false</printSelectionUnits>
+  
+  <printUnifiability>false</printUnifiability>
+
+  <printPenaltyComputation>false</printPenaltyComputation>
+  
+  
+
+  <!-- Special predicates: -->
+
+
+  <mainEqualitySymbol positive="=" negative="!=" infix="true"/>
+  
+  <otherEqualitySymbols>equal</otherEqualitySymbols>
+
+  <answerPredicate name="answer" arity="1"/>
+  <answerPredicate name="answer" arity="2"/>
+  <answerPredicate name="answer" arity="3"/>
+  <answerPredicate name="answer" arity="4"/>
+  <answerPredicate name="answer" arity="5"/>
+  <answerPredicate name="answer" arity="6"/>
+  <answerPredicate name="answer" arity="7"/>
+  <answerPredicate name="answer" arity="8"/>
+  <answerPredicate name="answer" arity="9"/>
+  <answerPredicate name="answer" arity="10"/>
+  
+
+  <constraintPredicate name="db_abs_itakesCourse" arity="2"/>
+  <constraintPredicate name="db_abs_ipublicationAuthor" arity="2"/>
+  <constraintPredicate name="db_abs_iname" arity="2"/>
+  <constraintPredicate name="db_abs_imemberOf" arity="2"/>
+  <constraintPredicate name="db_abs_iemailAddress" arity="2"/>
+  <constraintPredicate name="db_abs_itelephone" arity="2"/>
+  <constraintPredicate name="db_abs_iUniversity" arity="1"/>
+  <constraintPredicate name="db_abs_iadvisor" arity="2"/>
+  <constraintPredicate name="db_abs_iUndergraduateStudent" arity="1"/>
+  <constraintPredicate name="db_abs_iteacherOf" arity="2"/>
+  <constraintPredicate name="db_abs_iundergraduateDegreeFrom" arity="2"/>
+  <constraintPredicate name="db_abs_iResearchAssistant" arity="1"/>
+  <constraintPredicate name="db_abs_iteachingAssistantOf" arity="2"/>
+  <constraintPredicate name="db_abs_iTeachingAssistant" arity="1"/>
+  <constraintPredicate name="db_abs_iGraduateCourse" arity="1"/>
+  <constraintPredicate name="db_abs_iCourse" arity="1"/>
+  <constraintPredicate name="db_abs_iPublication" arity="1"/>
+  <constraintPredicate name="db_abs_isubOrganizationOf" arity="2"/>
+  <constraintPredicate name="db_abs_iResearchGroup" arity="1"/>
+  <constraintPredicate name="db_abs_iGraduateStudent" arity="1"/>
+  <constraintPredicate name="db_abs_imastersDegreeFrom" arity="2"/>
+  <constraintPredicate name="db_abs_idoctoralDegreeFrom" arity="2"/>
+  <constraintPredicate name="db_abs_iworksFor" arity="2"/>
+  <constraintPredicate name="db_abs_iLecturer" arity="1"/>
+  <constraintPredicate name="db_abs_iheadOf" arity="2"/>
+  <constraintPredicate name="db_abs_iDepartment" arity="1"/>
+  <constraintPredicate name="db_abs_iresearchInterest" arity="2"/>
+  <constraintPredicate name="db_abs_iAssistantProfessor" arity="1"/>
+  <constraintPredicate name="db_abs_iAssociateProfessor" arity="1"/>
+  <constraintPredicate name="db_abs_iFullProfessor" arity="1"/>
+  
+
+
+
+
+  <!-- Miscelanea: -->
+
+  <!-- 
+       If this is true, forward processing is not applied directly 
+       to input formulas. Instead, the input formulas are saved, 
+       and only their copies become subject to forward processing.
+       This enables finer proof checking, but introduces some overhead.
+       Default: false.
+    -->
+  <preserveInput>true</preserveInput>
+
+</alabaiConfig>

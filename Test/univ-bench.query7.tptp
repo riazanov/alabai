@@ -1,0 +1,16 @@
+
+
+include('univ-bench.ontology.cnf.tptp').
+
+include('univ-bench.db-abstraction.tptp').
+
+
+
+input_clause(query7,conjecture,
+  [
+    --iStudent(X),
+    --iCourse(Y),
+    --iteacherOf('http://www.Department0.University0.edu/AssociateProfessor0',Y),
+    --itakesCourse(X,Y),
+    ++answer(X,Y)
+  ]).

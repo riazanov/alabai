@@ -1,0 +1,10 @@
+
+cnf(0,axiom,
+    ( p
+    | q ),
+    file(dummy_file_name,some_unmodified_input)).
+
+cnf(1,plain,
+    ( p
+    | q ),
+    inference(cp,[status(thm)],[0])).

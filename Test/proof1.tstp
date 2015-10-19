@@ -1,0 +1,560 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Alabai JE (no version yet)
+% Started:      2010-06-06 12:30:02 EDT
+% Host:         heavy/127.0.1.1
+% Work. dir.:   /home/riazanoa/AlabaiJE
+% Arguments:    -t 10 -I /home/riazanoa/TPTP-v4.0.1/ -c config.xml -p sample_plug_ins.SamplePlugIn1 --print-input false --max-num-of-terminal-clauses 1 --print-proofs true --proof-format tptp /home/riazanoa/TPTP-v4.0.1/Problems/GEO/GEO158+1.p 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Loading plug-in sample_plug_ins.SamplePlugIn1
+% Reading configuration from file config.xml
+% Reading main input file: /home/riazanoa/TPTP-v4.0.1/Problems/GEO/GEO158+1.p
+% Include directory: /home/riazanoa/TPTP-v4.0.1/
+%    Including from: /home/riazanoa/TPTP-v4.0.1//Axioms/GEO004+0.ax
+% End of main input file /home/riazanoa/TPTP-v4.0.1/Problems/GEO/GEO158+1.p
+% Contradiction: #[3999]  ; Ax { 3610 198 |Res}
+% PROOF: 
+fof(0,axiom,(
+    ! [X1_0,X1_1] : 
+      ( part_of(X1_1,X1_0)
+    <=> ! [X1_2] : 
+          ( incident_c(X1_2,X1_1)
+         => incident_c(X1_2,X1_0) ) ) ),
+    file(dummy_file_name,some_unmodified_input)).
+
+fof(1,plain,(
+    ! [X1_0,X1_1] : 
+      ( part_of(X1_1,X1_0)
+    <=> ! [X1_2] : 
+          ( incident_c(X1_2,X1_1)
+         => incident_c(X1_2,X1_0) ) ) ),
+    inference('Cp',[status(thm)],[0])).
+
+fof(2,axiom,(
+    ! [X1_0,X1_1,X1_2] : 
+      ( X1_0 = sum(X1_1,X1_2)
+    <=> ! [X1_3] : 
+          ( incident_c(X1_3,X1_0)
+        <=> ( incident_c(X1_3,X1_1)
+            | incident_c(X1_3,X1_2) ) ) ) ),
+    file(dummy_file_name,some_unmodified_input)).
+
+fof(3,plain,(
+    ! [X1_0,X1_1,X1_2] : 
+      ( X1_0 = sum(X1_1,X1_2)
+    <=> ! [X1_3] : 
+          ( incident_c(X1_3,X1_0)
+        <=> ( incident_c(X1_3,X1_1)
+            | incident_c(X1_3,X1_2) ) ) ) ),
+    inference('Cp',[status(thm)],[2])).
+
+fof(4,axiom,(
+    ! [X1_0,X1_1] : 
+      ( end_point(X1_0,X1_1)
+    <=> ( incident_c(X1_0,X1_1)
+        & ! [X1_2,X1_3] : 
+            ( ( part_of(X1_2,X1_1)
+              & part_of(X1_3,X1_1)
+              & incident_c(X1_0,X1_2)
+              & incident_c(X1_0,X1_3) )
+           => ( part_of(X1_2,X1_3)
+              | part_of(X1_3,X1_2) ) ) ) ) ),
+    file(dummy_file_name,some_unmodified_input)).
+
+fof(5,plain,(
+    ! [X1_0,X1_1] : 
+      ( end_point(X1_0,X1_1)
+    <=> ( incident_c(X1_0,X1_1)
+        & ! [X1_2,X1_3] : 
+            ( ( part_of(X1_2,X1_1)
+              & part_of(X1_3,X1_1)
+              & incident_c(X1_0,X1_2)
+              & incident_c(X1_0,X1_3) )
+           => ( part_of(X1_2,X1_3)
+              | part_of(X1_3,X1_2) ) ) ) ) ),
+    inference('Cp',[status(thm)],[4])).
+
+fof(6,axiom,(
+    ! [X1_0,X1_1] : 
+      ( inner_point(X1_0,X1_1)
+    <=> ( incident_c(X1_0,X1_1)
+        & ~ end_point(X1_0,X1_1) ) ) ),
+    file(dummy_file_name,some_unmodified_input)).
+
+fof(7,plain,(
+    ! [X1_0,X1_1] : 
+      ( inner_point(X1_0,X1_1)
+    <=> ( incident_c(X1_0,X1_1)
+        & ~ end_point(X1_0,X1_1) ) ) ),
+    inference('Cp',[status(thm)],[6])).
+
+fof(18,axiom,(
+    ! [X1_0] : 
+    ? [X1_1] : inner_point(X1_1,X1_0) ),
+    file(dummy_file_name,some_unmodified_input)).
+
+fof(19,plain,(
+    ! [X1_0] : 
+    ? [X1_1] : inner_point(X1_1,X1_0) ),
+    inference('Cp',[status(thm)],[18])).
+
+fof(30,axiom,(
+    ! [X1_0,X1_1] : 
+      ( ! [X1_2] : 
+          ( incident_c(X1_2,X1_0)
+        <=> incident_c(X1_2,X1_1) )
+     => X1_0 = X1_1 ) ),
+    file(dummy_file_name,some_unmodified_input)).
+
+fof(31,plain,(
+    ! [X1_0,X1_1] : 
+      ( ! [X1_2] : 
+          ( incident_c(X1_2,X1_0)
+        <=> incident_c(X1_2,X1_1) )
+     => X1_0 = X1_1 ) ),
+    inference('Cp',[status(thm)],[30])).
+
+fof(32,plain,(
+    ! [X0_0] : 
+      ( part_of(X0_0,X0_1)
+    <=> ! [X0_2] : 
+          ( incident_c(X0_2,X0_0)
+         => incident_c(X0_2,X0_1) ) ) ),
+    inference('FAllElim',[status(thm)],[1])).
+
+fof(33,plain,(
+    ! [X0_0,X0_1] : 
+      ( X0_2 = sum(X0_0,X0_1)
+    <=> ! [X0_3] : 
+          ( incident_c(X0_3,X0_2)
+        <=> ( incident_c(X0_3,X0_0)
+            | incident_c(X0_3,X0_1) ) ) ) ),
+    inference('FAllElim',[status(thm)],[3])).
+
+fof(34,plain,(
+    ! [X0_0] : 
+      ( end_point(X0_1,X0_0)
+    <=> ( incident_c(X0_1,X0_0)
+        & ! [X0_2,X0_3] : 
+            ( ( part_of(X0_2,X0_0)
+              & part_of(X0_3,X0_0)
+              & incident_c(X0_1,X0_2)
+              & incident_c(X0_1,X0_3) )
+           => ( part_of(X0_2,X0_3)
+              | part_of(X0_3,X0_2) ) ) ) ) ),
+    inference('FAllElim',[status(thm)],[5])).
+
+fof(35,plain,(
+    ! [X0_0] : 
+      ( inner_point(X0_1,X0_0)
+    <=> ( incident_c(X0_1,X0_0)
+        & ~ end_point(X0_1,X0_0) ) ) ),
+    inference('FAllElim',[status(thm)],[7])).
+
+fof(41,plain,(
+    ? [X0_0] : inner_point(X0_0,X0_1) ),
+    inference('FAllElim',[status(thm)],[19])).
+
+fof(47,plain,(
+    ! [X0_0] : 
+      ( ! [X0_1] : 
+          ( incident_c(X0_1,X0_2)
+        <=> incident_c(X0_1,X0_0) )
+     => X0_2 = X0_0 ) ),
+    inference('FAllElim',[status(thm)],[31])).
+
+fof(48,plain,
+    ( part_of(X0_0,X0_1)
+  <=> ! [X0_2] : 
+        ( incident_c(X0_2,X0_0)
+       => incident_c(X0_2,X0_1) ) ),
+    inference('FAllElim',[status(thm)],[32])).
+
+fof(49,plain,(
+    ! [X0_0] : 
+      ( X0_1 = sum(X0_2,X0_0)
+    <=> ! [X0_3] : 
+          ( incident_c(X0_3,X0_1)
+        <=> ( incident_c(X0_3,X0_2)
+            | incident_c(X0_3,X0_0) ) ) ) ),
+    inference('FAllElim',[status(thm)],[33])).
+
+fof(50,plain,
+    ( end_point(X0_0,X0_1)
+  <=> ( incident_c(X0_0,X0_1)
+      & ! [X0_2,X0_3] : 
+          ( ( part_of(X0_2,X0_1)
+            & part_of(X0_3,X0_1)
+            & incident_c(X0_0,X0_2)
+            & incident_c(X0_0,X0_3) )
+         => ( part_of(X0_2,X0_3)
+            | part_of(X0_3,X0_2) ) ) ) ),
+    inference('FAllElim',[status(thm)],[34])).
+
+fof(51,plain,
+    ( inner_point(X0_0,X0_1)
+  <=> ( incident_c(X0_0,X0_1)
+      & ~ end_point(X0_0,X0_1) ) ),
+    inference('FAllElim',[status(thm)],[35])).
+
+cnf(59,plain,
+    ( inner_point(alabai_skf0(X0_0),X0_0) ),
+    inference('ExElim',[status(esa)],[41])).
+
+fof(65,plain,
+    ( ! [X0_0] : 
+        ( incident_c(X0_0,X0_1)
+      <=> incident_c(X0_0,X0_2) )
+   => X0_1 = X0_2 ),
+    inference('FAllElim',[status(thm)],[47])).
+
+fof(67,plain,
+    ( part_of(X0_0,X0_1)
+    | ~ ! [X0_2] : 
+          ( incident_c(X0_2,X0_0)
+         => incident_c(X0_2,X0_1) ) ),
+    inference('EqElim',[status(thm)],[48])).
+
+fof(68,plain,
+    ( X0_0 = sum(X0_1,X0_2)
+  <=> ! [X0_3] : 
+        ( incident_c(X0_3,X0_0)
+      <=> ( incident_c(X0_3,X0_1)
+          | incident_c(X0_3,X0_2) ) ) ),
+    inference('FAllElim',[status(thm)],[49])).
+
+fof(70,plain,
+    ( end_point(X0_0,X0_1)
+    | ~ ( incident_c(X0_0,X0_1)
+        & ! [X0_2,X0_3] : 
+            ( ( part_of(X0_2,X0_1)
+              & part_of(X0_3,X0_1)
+              & incident_c(X0_0,X0_2)
+              & incident_c(X0_0,X0_3) )
+           => ( part_of(X0_2,X0_3)
+              | part_of(X0_3,X0_2) ) ) ) ),
+    inference('EqElim',[status(thm)],[50])).
+
+fof(71,plain,
+    ( ~ inner_point(X0_0,X0_1)
+    | ( incident_c(X0_0,X0_1)
+      & ~ end_point(X0_0,X0_1) ) ),
+    inference('EqElim',[status(thm)],[51])).
+
+fof(89,plain,
+    ( ~ ! [X0_0] : 
+          ( incident_c(X0_0,X0_1)
+        <=> incident_c(X0_0,X0_2) )
+    | X0_1 = X0_2 ),
+    inference('ImplElim',[status(thm)],[65])).
+
+fof(91,plain,
+    ( part_of(X0_0,X0_1)
+    | ? [X0_2] : ~ ( incident_c(X0_2,X0_0)
+       => incident_c(X0_2,X0_1) ) ),
+    inference('NegFAll',[status(thm)],[67])).
+
+fof(92,plain,
+    ( X0_0 != sum(X0_1,X0_2)
+    | ! [X0_3] : 
+        ( incident_c(X0_3,X0_0)
+      <=> ( incident_c(X0_3,X0_1)
+          | incident_c(X0_3,X0_2) ) ) ),
+    inference('EqElim',[status(thm)],[68])).
+
+fof(96,plain,
+    ( end_point(X0_0,X0_1)
+    | ~ incident_c(X0_0,X0_1)
+    | ~ ! [X0_2,X0_3] : 
+          ( ( part_of(X0_2,X0_1)
+            & part_of(X0_3,X0_1)
+            & incident_c(X0_0,X0_2)
+            & incident_c(X0_0,X0_3) )
+         => ( part_of(X0_2,X0_3)
+            | part_of(X0_3,X0_2) ) ) ),
+    inference('NegConj',[status(thm)],[70])).
+
+cnf(97,plain,
+    ( ~ inner_point(X0_0,X0_1)
+    | incident_c(X0_0,X0_1) ),
+    inference('ConjElim',[status(thm)],[71])).
+
+cnf(98,plain,
+    ( ~ inner_point(X0_0,X0_1)
+    | ~ end_point(X0_0,X0_1) ),
+    inference('ConjElim',[status(thm)],[71])).
+
+fof(115,plain,
+    ( X0_0 = X0_1
+    | ? [X0_2] : ~ ( incident_c(X0_2,X0_0)
+      <=> incident_c(X0_2,X0_1) ) ),
+    inference('NegFAll',[status(thm)],[89])).
+
+fof(117,plain,
+    ( part_of(X0_0,X0_1)
+    | ~ ( incident_c(alabai_skf5(X0_0,X0_1),X0_0)
+       => incident_c(alabai_skf5(X0_0,X0_1),X0_1) ) ),
+    inference('ExElim',[status(esa)],[91])).
+
+fof(118,plain,
+    ( X0_0 != sum(X0_1,X0_2)
+    | ( incident_c(X0_3,X0_0)
+    <=> ( incident_c(X0_3,X0_1)
+        | incident_c(X0_3,X0_2) ) ) ),
+    inference('FAllElim',[status(thm)],[92])).
+
+fof(124,plain,
+    ( end_point(X0_0,X0_1)
+    | ~ incident_c(X0_0,X0_1)
+    | ? [X0_2] : ~ ! [X0_3] : 
+          ( ( part_of(X0_2,X0_1)
+            & part_of(X0_3,X0_1)
+            & incident_c(X0_0,X0_2)
+            & incident_c(X0_0,X0_3) )
+         => ( part_of(X0_2,X0_3)
+            | part_of(X0_3,X0_2) ) ) ),
+    inference('NegFAll',[status(thm)],[96])).
+
+fof(153,plain,
+    ( X0_0 = X0_1
+    | ~ ( incident_c(alabai_skf8(X0_0,X0_1),X0_0)
+      <=> incident_c(alabai_skf8(X0_0,X0_1),X0_1) ) ),
+    inference('ExElim',[status(esa)],[115])).
+
+fof(157,plain,
+    ( part_of(X0_0,X0_1)
+    | ( incident_c(alabai_skf5(X0_0,X0_1),X0_0)
+      & ~ incident_c(alabai_skf5(X0_0,X0_1),X0_1) ) ),
+    inference('NegImpl',[status(thm)],[117])).
+
+fof(159,plain,
+    ( X0_0 != sum(X0_1,X0_2)
+    | incident_c(X0_3,X0_0)
+    | ~ ( incident_c(X0_3,X0_1)
+        | incident_c(X0_3,X0_2) ) ),
+    inference('EqElim',[status(thm)],[118])).
+
+fof(162,plain,
+    ( end_point(X0_0,X0_1)
+    | ~ incident_c(X0_0,X0_1)
+    | ~ ! [X0_2] : 
+          ( ( part_of(alabai_skf10(X0_0,X0_1),X0_1)
+            & part_of(X0_2,X0_1)
+            & incident_c(X0_0,alabai_skf10(X0_0,X0_1))
+            & incident_c(X0_0,X0_2) )
+         => ( part_of(alabai_skf10(X0_0,X0_1),X0_2)
+            | part_of(X0_2,alabai_skf10(X0_0,X0_1)) ) ) ),
+    inference('ExElim',[status(esa)],[124])).
+
+fof(186,plain,
+    ( X0_0 = X0_1
+    | ( ~ incident_c(alabai_skf8(X0_0,X0_1),X0_0)
+      & incident_c(alabai_skf8(X0_0,X0_1),X0_1) ) ),
+    inference('NegEq',[status(thm)],[153])).
+
+cnf(187,plain,
+    ( part_of(X0_0,X0_1)
+    | incident_c(alabai_skf5(X0_0,X0_1),X0_0) ),
+    inference('ConjElim',[status(thm)],[157])).
+
+cnf(188,plain,
+    ( part_of(X0_0,X0_1)
+    | ~ incident_c(alabai_skf5(X0_0,X0_1),X0_1) ),
+    inference('ConjElim',[status(thm)],[157])).
+
+fof(190,plain,
+    ( X0_0 != sum(X0_1,X0_2)
+    | incident_c(X0_3,X0_0)
+    | ( ~ incident_c(X0_3,X0_1)
+      & ~ incident_c(X0_3,X0_2) ) ),
+    inference('NegDisj',[status(thm)],[159])).
+
+fof(194,plain,
+    ( end_point(X0_0,X0_1)
+    | ~ incident_c(X0_0,X0_1)
+    | ? [X0_2] : ~ ( ( part_of(alabai_skf10(X0_0,X0_1),X0_1)
+          & part_of(X0_2,X0_1)
+          & incident_c(X0_0,alabai_skf10(X0_0,X0_1))
+          & incident_c(X0_0,X0_2) )
+       => ( part_of(alabai_skf10(X0_0,X0_1),X0_2)
+          | part_of(X0_2,alabai_skf10(X0_0,X0_1)) ) ) ),
+    inference('NegFAll',[status(thm)],[162])).
+
+cnf(198,plain,
+    ( ~ end_point(alabai_skf0(X0_0),X0_0) ),
+    inference('Res',[status(thm)],[59,98])).
+
+cnf(216,plain,
+    ( X0_0 = X0_1
+    | ~ incident_c(alabai_skf8(X0_0,X0_1),X0_0) ),
+    inference('ConjElim',[status(thm)],[186])).
+
+cnf(217,plain,
+    ( X0_0 = X0_1
+    | incident_c(alabai_skf8(X0_0,X0_1),X0_1) ),
+    inference('ConjElim',[status(thm)],[186])).
+
+cnf(230,plain,
+    ( X0_0 != sum(X0_1,X0_2)
+    | incident_c(X0_3,X0_0)
+    | ~ incident_c(X0_3,X0_1) ),
+    inference('ConjElim',[status(thm)],[190])).
+
+cnf(231,plain,
+    ( X0_0 != sum(X0_1,X0_2)
+    | incident_c(X0_3,X0_0)
+    | ~ incident_c(X0_3,X0_2) ),
+    inference('ConjElim',[status(thm)],[190])).
+
+fof(235,plain,
+    ( end_point(X0_0,X0_1)
+    | ~ incident_c(X0_0,X0_1)
+    | ~ ( ( part_of(alabai_skf10(X0_0,X0_1),X0_1)
+          & part_of(alabai_skf11(X0_0,X0_1),X0_1)
+          & incident_c(X0_0,alabai_skf10(X0_0,X0_1))
+          & incident_c(X0_0,alabai_skf11(X0_0,X0_1)) )
+       => ( part_of(alabai_skf10(X0_0,X0_1),alabai_skf11(X0_0,X0_1))
+          | part_of(alabai_skf11(X0_0,X0_1),alabai_skf10(X0_0,X0_1)) ) ) ),
+    inference('ExElim',[status(esa)],[194])).
+
+cnf(249,plain,
+    ( incident_c(alabai_skf0(X0_0),X0_0) ),
+    inference('Res',[status(thm)],[97,59])).
+
+fof(268,plain,
+    ( end_point(X0_0,X0_1)
+    | ~ incident_c(X0_0,X0_1)
+    | ( part_of(alabai_skf10(X0_0,X0_1),X0_1)
+      & part_of(alabai_skf11(X0_0,X0_1),X0_1)
+      & incident_c(X0_0,alabai_skf10(X0_0,X0_1))
+      & incident_c(X0_0,alabai_skf11(X0_0,X0_1))
+      & ~ ( part_of(alabai_skf10(X0_0,X0_1),alabai_skf11(X0_0,X0_1))
+          | part_of(alabai_skf11(X0_0,X0_1),alabai_skf10(X0_0,X0_1)) ) ) ),
+    inference('NegImpl',[status(thm)],[235])).
+
+cnf(287,plain,
+    ( incident_c(X0_0,sum(X0_1,X0_2))
+    | ~ incident_c(X0_0,X0_1) ),
+    inference('EqRes',[status(thm)],[230])).
+
+fof(290,plain,
+    ( end_point(X0_0,X0_1)
+    | ~ incident_c(X0_0,X0_1)
+    | ~ ( part_of(alabai_skf10(X0_0,X0_1),alabai_skf11(X0_0,X0_1))
+        | part_of(alabai_skf11(X0_0,X0_1),alabai_skf10(X0_0,X0_1)) ) ),
+    inference('ConjElim',[status(thm)],[268])).
+
+cnf(308,plain,
+    ( incident_c(X0_0,sum(X0_1,X0_2))
+    | ~ incident_c(X0_0,X0_2) ),
+    inference('EqRes',[status(thm)],[231])).
+
+fof(315,plain,
+    ( end_point(X0_0,X0_1)
+    | ~ incident_c(X0_0,X0_1)
+    | ( ~ part_of(alabai_skf10(X0_0,X0_1),alabai_skf11(X0_0,X0_1))
+      & ~ part_of(alabai_skf11(X0_0,X0_1),alabai_skf10(X0_0,X0_1)) ) ),
+    inference('NegDisj',[status(thm)],[290])).
+
+cnf(332,plain,
+    ( end_point(X0_0,X0_1)
+    | ~ incident_c(X0_0,X0_1)
+    | ~ part_of(alabai_skf11(X0_0,X0_1),alabai_skf10(X0_0,X0_1)) ),
+    inference('ConjElim',[status(thm)],[315])).
+
+cnf(454,plain,
+    ( X0_0 != sum(X0_1,X0_2)
+    | incident_c(alabai_skf0(X0_1),X0_0) ),
+    inference('Res',[status(thm)],[249,230])).
+
+cnf(481,plain,
+    ( incident_c(alabai_skf0(X0_0),sum(X0_0,X0_1)) ),
+    inference('EqRes',[status(thm)],[454])).
+
+cnf(913,plain,
+    ( X0_0 = X0_1
+    | incident_c(alabai_skf8(X0_0,X0_1),sum(X0_1,X0_2)) ),
+    inference('Res',[status(thm)],[217,287])).
+
+cnf(1219,plain,
+    ( incident_c(alabai_skf0(X0_0),sum(X0_1,sum(X0_0,X0_2))) ),
+    inference('Res',[status(thm)],[308,481])).
+
+cnf(1226,plain,
+    ( incident_c(alabai_skf5(X0_0,X0_1),sum(X0_2,X0_0))
+    | part_of(X0_0,X0_1) ),
+    inference('Res',[status(thm)],[308,187])).
+
+cnf(2142,plain,
+    ( sum(X0_0,X0_1) = X0_0 ),
+    inference('Res',[status(thm)],[216,913])).
+
+cnf(2290,plain,
+    ( part_of(X0_0,X0_1)
+    | incident_c(alabai_skf5(X0_0,X0_1),X0_2) ),
+    inference('Res_FDem',[status(thm)],[1226,287,2142,2142])).
+
+cnf(3597,plain,
+    ( part_of(X0_0,X0_1) ),
+    inference('Res',[status(thm)],[2290,188])).
+
+cnf(3610,plain,
+    ( end_point(alabai_skf0(X0_0),X0_1) ),
+    inference('Res_FDem_FSubsRes',[status(thm)],[1219,332,2142,2142,2142,2142,2142,2142,3597])).
+
+cnf(3999,plain,
+    ( $false ),
+    inference('Res',[status(thm)],[3610,198])).
+
+% END OF PROOF. 
+
+%%%%%%%%%%%%%%%%%  Statistics: %%%%%%%%%%%%%%%%%%%%%%%
+%  CPU time 3.51 sec
+%  Clausification inferences 200
+%    skolemisation      14
+%    neg. distribution  41
+%    double neg. canc.  3
+%    conj. elimination  40
+%    univ. quant. elim. 56
+%    disj. elimination  12
+%    sec. con. elim.    34
+%  Deduction inferences 0
+%  Forward simplification inferences 3896
+%    ident. lit. fact. 1685
+%    subsumption       761
+%    subs. resolution  295
+%    demodulation      1155
+%  Backward simplification inferences 93
+%    subsumption      91
+%    demodulation     2
+%  Generated clauses 1619
+%      input                 16
+%      copied                16
+%      by clausification     200
+%      by resolution         1177
+%      by forward paramod.   4
+%      by backward paramod.  9
+%      by eq. factoring      136
+%      by eq. resolution     59
+%      by backward demod.    2
+%    Redundant discarded 1014
+%      prop. tautologies 107
+%      eq. tautologies   146
+%      subsumed          761
+%  Kept clauses
+%      total   605
+%        selected   587
+%        terminal   1
+%      current 512
+%      redundant discarded 93
+%        subsumed                 91
+%        simplified by demod.     2
+%  Selection units 2378 = 2378 extracted - 0 deleted
+%     resolution 1341, deleted 0, promoted 786
+%     eq. LHS for paramod. 12, deleted 0, promoted 13
+%     redex for paramod.   954, deleted 0, promoted 110
+%     eq. factoring        17, deleted 0, promoted 9
+%     eq. resolution       54, deleted 0, promoted 50
+%%%%%%%%%%%%%%  End of statistics. %%%%%%%%%%%%%%%%%%%
+
+% Saturation aborted, possibly on some limit.
+% 1 terminal clause(s) = 1 contradiction(s) + 0 cond. contr. + 0 answer(s).

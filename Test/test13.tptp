@@ -1,0 +1,9 @@
+
+fof(axiom1,axiom,
+  ?[X] : (! [Y] : p(X,Y))
+).
+
+
+fof(conj,conjecture,
+  ![Y] : (? [X] : p(X,Y))
+).

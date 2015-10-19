@@ -1,0 +1,40 @@
+
+% PROOF: 
+cnf(0,axiom,
+    ( p
+    | q ),
+    file(dummy_file_name,some_unmodified_input)).
+
+cnf(1,plain,
+    ( p
+    | q ),
+    inference(cp,[status(thm)],[0])).
+
+cnf(2,axiom,
+    ( ~ p
+    | q ),
+    file(dummy_file_name,some_unmodified_input)).
+
+cnf(3,plain,
+    ( q ),
+    inference(cp_fSubsRes,[status(thm)],[2,1])).
+
+cnf(4,axiom,
+    ( p
+    | ~ q ),
+    file(dummy_file_name,some_unmodified_input)).
+
+cnf(5,plain,
+    ( p ),
+    inference(cp_fSubsRes,[status(thm)],[4,3])).
+
+cnf(6,negated_conjecture,
+    ( ~ p
+    | ~ q ),
+    file(dummy_file_name,some_unmodified_input)).
+
+cnf(7,plain,
+    ( $false ),
+    inference(cp_fSubsRes,[status(thm)],[6,5,3])).
+
+% END OF PROOF. 

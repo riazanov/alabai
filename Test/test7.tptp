@@ -1,0 +1,17 @@
+
+
+cnf(axiom1,axiom,
+   f(X,Y) = Y
+).
+
+
+
+cnf(axiom2,axiom,
+  f(X,b) != b | p(X)
+).
+
+
+
+cnf(goal,negated_conjecture,
+     ~p(c)
+).

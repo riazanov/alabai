@@ -1,0 +1,24 @@
+
+
+include('univ-bench.ontology.cnf.tptp').
+
+include('univ-bench.db-abstraction.tptp').
+
+
+input_clause(query13,conjecture,
+  [
+    --iPerson(X),
+    --ihasAlumnus('http://www.University0.edu',X),
+    ++answer(X)
+  ]).
+
+% 3 answers expected.
+
+% 3 answers found:
+
+% | {{~db_abs_iundergraduateDegreeFrom}}(X0,'http://www.University0.edu') \/ <<answer>>(X0)
+
+% | {{~db_abs_imastersDegreeFrom}}(X0,'http://www.University0.edu') \/ <<answer>>(X0) 
+
+% | {{~db_abs_idoctoralDegreeFrom}}(X0,'http://www.University0.edu') \/ <<answer>>(X0) 
+

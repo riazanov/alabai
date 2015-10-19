@@ -1,0 +1,14 @@
+
+cnf(axiom1,axiom,
+
+   p(a) | p(b)
+).
+
+cnf(axiom2,axiom,
+  q(X) | ~p(X)
+).
+
+
+cnf(goal,negated_conjecture,
+     ~q(X) | answer(X)
+).

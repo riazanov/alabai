@@ -1,0 +1,18 @@
+
+
+input_clause(axiom1,axiom,
+   [++p, ++q]
+).
+
+input_clause(axiom2,axiom,
+     [--p, ++q]
+).
+
+input_clause(axiom3,axiom,
+     [++p, --q]
+).
+
+
+input_clause(goal,conjecture,
+     [--p, --q]
+).

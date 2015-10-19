@@ -1,0 +1,716 @@
+%-- Everything is in the Abstract or Data domain
+input_formula(axiom_0,axiom,(
+ ![X]: (abstractDomain(X) | dataDomain(X))
+)).
+%-- The abstract domain must be non-empty.
+input_formula(axiom_1,axiom,(
+ ?[X]: (abstractDomain(X))
+)).
+%-- The data domain must be non-empty (we know that 1 exists)
+input_formula(axiom_2,axiom,(
+ ?[X]: (dataDomain(X))
+)).
+%-- The Abstract and Data domains are distinct
+input_formula(axiom_3,axiom,(
+ ![X]: (~(abstractDomain(X) & dataDomain(X)))
+)).
+%-- Everything in Thing is Abstract
+input_formula(axiom_4,axiom,(
+ ![X]: (iowlThing(X) => abstractDomain(X))
+)).
+%-- Anything in Nothing is abstract
+input_formula(axiom_5,axiom,(
+ ![X]: (iowlNothing(X) => abstractDomain(X))
+)).
+%-- All Abstract things are in Thing
+input_formula(axiom_6,axiom,(
+ ![X]: (abstractDomain(X) => iowlThing(X))
+)).
+%-- Nothing is empty
+input_formula(axiom_7,axiom,(
+ ![X]: (~iowlNothing(X))
+)).
+%-- Strings are Data objects 
+input_formula(axiom_8,axiom,(
+ ![X]: (xsd_string(X) => dataDomain(X))
+)).
+%-- Integers are Data objects 
+input_formula(axiom_9,axiom,(
+ ![X]: (xsd_integer(X) => dataDomain(X))
+)).
+%-- String and Integer are disjoint 
+input_formula(axiom_10,axiom,(
+ ![X]: (dataDomain(X) => ~(xsd_string(X) & xsd_integer(X)))
+)).
+%-- Class iAdministrativeStaff is subset of Abstract domain
+input_formula(axiom_11,axiom,(
+ ![X]: (iAdministrativeStaff(X) => abstractDomain(X))
+)).
+%-- Super iAdministrativeStaff
+input_formula(axiom_12,axiom,(
+ ![X]: (iAdministrativeStaff(X) => iEmployee(X))
+)).
+%-- Class iArticle is subset of Abstract domain
+input_formula(axiom_13,axiom,(
+ ![X]: (iArticle(X) => abstractDomain(X))
+)).
+%-- Super iArticle
+input_formula(axiom_14,axiom,(
+ ![X]: (iArticle(X) => iPublication(X))
+)).
+%-- Class iAssistantProfessor is subset of Abstract domain
+input_formula(axiom_15,axiom,(
+ ![X]: (iAssistantProfessor(X) => abstractDomain(X))
+)).
+%-- Super iAssistantProfessor
+input_formula(axiom_16,axiom,(
+ ![X]: (iAssistantProfessor(X) => iProfessor(X))
+)).
+%-- Class iAssociateProfessor is subset of Abstract domain
+input_formula(axiom_17,axiom,(
+ ![X]: (iAssociateProfessor(X) => abstractDomain(X))
+)).
+%-- Super iAssociateProfessor
+input_formula(axiom_18,axiom,(
+ ![X]: (iAssociateProfessor(X) => iProfessor(X))
+)).
+%-- Class iBook is subset of Abstract domain
+input_formula(axiom_19,axiom,(
+ ![X]: (iBook(X) => abstractDomain(X))
+)).
+%-- Super iBook
+input_formula(axiom_20,axiom,(
+ ![X]: (iBook(X) => iPublication(X))
+)).
+%-- Class iChair is subset of Abstract domain
+input_formula(axiom_21,axiom,(
+ ![X]: (iChair(X) => abstractDomain(X))
+)).
+%-- Equality iChair
+input_formula(axiom_22,axiom,(
+ ![X]: (iChair(X) <=> ((?[Y]: (iheadOf(X,Y) & iDepartment(Y))) & iPerson(X)))
+)).
+%-- Super iChair
+input_formula(axiom_23,axiom,(
+ ![X]: (iChair(X) => iProfessor(X))
+)).
+%-- Class iClericalStaff is subset of Abstract domain
+input_formula(axiom_24,axiom,(
+ ![X]: (iClericalStaff(X) => abstractDomain(X))
+)).
+%-- Super iClericalStaff
+input_formula(axiom_25,axiom,(
+ ![X]: (iClericalStaff(X) => iAdministrativeStaff(X))
+)).
+%-- Class iCollege is subset of Abstract domain
+input_formula(axiom_26,axiom,(
+ ![X]: (iCollege(X) => abstractDomain(X))
+)).
+%-- Super iCollege
+input_formula(axiom_27,axiom,(
+ ![X]: (iCollege(X) => iOrganization(X))
+)).
+%-- Class iConferencePaper is subset of Abstract domain
+input_formula(axiom_28,axiom,(
+ ![X]: (iConferencePaper(X) => abstractDomain(X))
+)).
+%-- Super iConferencePaper
+input_formula(axiom_29,axiom,(
+ ![X]: (iConferencePaper(X) => iArticle(X))
+)).
+%-- Class iCourse is subset of Abstract domain
+input_formula(axiom_30,axiom,(
+ ![X]: (iCourse(X) => abstractDomain(X))
+)).
+%-- Super iCourse
+input_formula(axiom_31,axiom,(
+ ![X]: (iCourse(X) => iWork(X))
+)).
+%-- Class iDean is subset of Abstract domain
+input_formula(axiom_32,axiom,(
+ ![X]: (iDean(X) => abstractDomain(X))
+)).
+%-- Equality iDean
+input_formula(axiom_33,axiom,(
+ ![X]: (iDean(X) <=> ((?[Y]: (iheadOf(X,Y) & iCollege(Y))) & iPerson(X)))
+)).
+%-- Super iDean
+input_formula(axiom_34,axiom,(
+ ![X]: (iDean(X) => iProfessor(X))
+)).
+%-- Class iDepartment is subset of Abstract domain
+input_formula(axiom_35,axiom,(
+ ![X]: (iDepartment(X) => abstractDomain(X))
+)).
+%-- Super iDepartment
+input_formula(axiom_36,axiom,(
+ ![X]: (iDepartment(X) => iOrganization(X))
+)).
+%-- Class iDirector is subset of Abstract domain
+input_formula(axiom_37,axiom,(
+ ![X]: (iDirector(X) => abstractDomain(X))
+)).
+%-- Equality iDirector
+input_formula(axiom_38,axiom,(
+ ![X]: (iDirector(X) <=> (iPerson(X) & (?[Y]: (iheadOf(X,Y) & iProgram(Y)))))
+)).
+%-- Class iEmployee is subset of Abstract domain
+input_formula(axiom_39,axiom,(
+ ![X]: (iEmployee(X) => abstractDomain(X))
+)).
+%-- Equality iEmployee
+input_formula(axiom_40,axiom,(
+ ![X]: (iEmployee(X) <=> (iPerson(X) & (?[Y]: (iworksFor(X,Y) & iOrganization(Y)))))
+)).
+%-- Class iFaculty is subset of Abstract domain
+input_formula(axiom_41,axiom,(
+ ![X]: (iFaculty(X) => abstractDomain(X))
+)).
+%-- Super iFaculty
+input_formula(axiom_42,axiom,(
+ ![X]: (iFaculty(X) => iEmployee(X))
+)).
+%-- Class iFullProfessor is subset of Abstract domain
+input_formula(axiom_43,axiom,(
+ ![X]: (iFullProfessor(X) => abstractDomain(X))
+)).
+%-- Super iFullProfessor
+input_formula(axiom_44,axiom,(
+ ![X]: (iFullProfessor(X) => iProfessor(X))
+)).
+%-- Class iGraduateCourse is subset of Abstract domain
+input_formula(axiom_45,axiom,(
+ ![X]: (iGraduateCourse(X) => abstractDomain(X))
+)).
+%-- Super iGraduateCourse
+input_formula(axiom_46,axiom,(
+ ![X]: (iGraduateCourse(X) => iCourse(X))
+)).
+%-- Class iGraduateStudent is subset of Abstract domain
+input_formula(axiom_47,axiom,(
+ ![X]: (iGraduateStudent(X) => abstractDomain(X))
+)).
+%-- Super iGraduateStudent
+input_formula(axiom_48,axiom,(
+ ![X]: (iGraduateStudent(X) => (?[Y]: (itakesCourse(X,Y) & iGraduateCourse(Y))))
+)).
+%-- Super iGraduateStudent
+input_formula(axiom_49,axiom,(
+ ![X]: (iGraduateStudent(X) => iPerson(X))
+)).
+%-- Class iInstitute is subset of Abstract domain
+input_formula(axiom_50,axiom,(
+ ![X]: (iInstitute(X) => abstractDomain(X))
+)).
+%-- Super iInstitute
+input_formula(axiom_51,axiom,(
+ ![X]: (iInstitute(X) => iOrganization(X))
+)).
+%-- Class iJournalArticle is subset of Abstract domain
+input_formula(axiom_52,axiom,(
+ ![X]: (iJournalArticle(X) => abstractDomain(X))
+)).
+%-- Super iJournalArticle
+input_formula(axiom_53,axiom,(
+ ![X]: (iJournalArticle(X) => iArticle(X))
+)).
+%-- Class iLecturer is subset of Abstract domain
+input_formula(axiom_54,axiom,(
+ ![X]: (iLecturer(X) => abstractDomain(X))
+)).
+%-- Super iLecturer
+input_formula(axiom_55,axiom,(
+ ![X]: (iLecturer(X) => iFaculty(X))
+)).
+%-- Class iManual is subset of Abstract domain
+input_formula(axiom_56,axiom,(
+ ![X]: (iManual(X) => abstractDomain(X))
+)).
+%-- Super iManual
+input_formula(axiom_57,axiom,(
+ ![X]: (iManual(X) => iPublication(X))
+)).
+%-- Class iOrganization is subset of Abstract domain
+input_formula(axiom_58,axiom,(
+ ![X]: (iOrganization(X) => abstractDomain(X))
+)).
+%-- Class iPerson is subset of Abstract domain
+input_formula(axiom_59,axiom,(
+ ![X]: (iPerson(X) => abstractDomain(X))
+)).
+%-- Class iPostDoc is subset of Abstract domain
+input_formula(axiom_60,axiom,(
+ ![X]: (iPostDoc(X) => abstractDomain(X))
+)).
+%-- Super iPostDoc
+input_formula(axiom_61,axiom,(
+ ![X]: (iPostDoc(X) => iFaculty(X))
+)).
+%-- Class iProfessor is subset of Abstract domain
+input_formula(axiom_62,axiom,(
+ ![X]: (iProfessor(X) => abstractDomain(X))
+)).
+%-- Super iProfessor
+input_formula(axiom_63,axiom,(
+ ![X]: (iProfessor(X) => iFaculty(X))
+)).
+%-- Class iProgram is subset of Abstract domain
+input_formula(axiom_64,axiom,(
+ ![X]: (iProgram(X) => abstractDomain(X))
+)).
+%-- Super iProgram
+input_formula(axiom_65,axiom,(
+ ![X]: (iProgram(X) => iOrganization(X))
+)).
+%-- Class iPublication is subset of Abstract domain
+input_formula(axiom_66,axiom,(
+ ![X]: (iPublication(X) => abstractDomain(X))
+)).
+%-- Class iResearch is subset of Abstract domain
+input_formula(axiom_67,axiom,(
+ ![X]: (iResearch(X) => abstractDomain(X))
+)).
+%-- Super iResearch
+input_formula(axiom_68,axiom,(
+ ![X]: (iResearch(X) => iWork(X))
+)).
+%-- Class iResearchAssistant is subset of Abstract domain
+input_formula(axiom_69,axiom,(
+ ![X]: (iResearchAssistant(X) => abstractDomain(X))
+)).
+%-- Super iResearchAssistant
+input_formula(axiom_70,axiom,(
+ ![X]: (iResearchAssistant(X) => (?[Y]: (iworksFor(X,Y) & iResearchGroup(Y))))
+)).
+%-- Super iResearchAssistant
+input_formula(axiom_71,axiom,(
+ ![X]: (iResearchAssistant(X) => iStudent(X))
+)).
+%-- Class iResearchGroup is subset of Abstract domain
+input_formula(axiom_72,axiom,(
+ ![X]: (iResearchGroup(X) => abstractDomain(X))
+)).
+%-- Super iResearchGroup
+input_formula(axiom_73,axiom,(
+ ![X]: (iResearchGroup(X) => iOrganization(X))
+)).
+%-- Class iSchedule is subset of Abstract domain
+input_formula(axiom_74,axiom,(
+ ![X]: (iSchedule(X) => abstractDomain(X))
+)).
+%-- Class iSoftware is subset of Abstract domain
+input_formula(axiom_75,axiom,(
+ ![X]: (iSoftware(X) => abstractDomain(X))
+)).
+%-- Super iSoftware
+input_formula(axiom_76,axiom,(
+ ![X]: (iSoftware(X) => iPublication(X))
+)).
+%-- Class iSpecification is subset of Abstract domain
+input_formula(axiom_77,axiom,(
+ ![X]: (iSpecification(X) => abstractDomain(X))
+)).
+%-- Super iSpecification
+input_formula(axiom_78,axiom,(
+ ![X]: (iSpecification(X) => iPublication(X))
+)).
+%-- Class iStudent is subset of Abstract domain
+input_formula(axiom_79,axiom,(
+ ![X]: (iStudent(X) => abstractDomain(X))
+)).
+%-- Equality iStudent
+input_formula(axiom_80,axiom,(
+ ![X]: (iStudent(X) <=> ((?[Y]: (itakesCourse(X,Y) & iCourse(Y))) & iPerson(X)))
+)).
+%-- Class iSystemsStaff is subset of Abstract domain
+input_formula(axiom_81,axiom,(
+ ![X]: (iSystemsStaff(X) => abstractDomain(X))
+)).
+%-- Super iSystemsStaff
+input_formula(axiom_82,axiom,(
+ ![X]: (iSystemsStaff(X) => iAdministrativeStaff(X))
+)).
+%-- Class iTeachingAssistant is subset of Abstract domain
+input_formula(axiom_83,axiom,(
+ ![X]: (iTeachingAssistant(X) => abstractDomain(X))
+)).
+%-- Equality iTeachingAssistant
+input_formula(axiom_84,axiom,(
+ ![X]: (iTeachingAssistant(X) <=> ((?[Y]: (iteachingAssistantOf(X,Y) & iCourse(Y))) & iPerson(X)))
+)).
+%-- Class iTechnicalReport is subset of Abstract domain
+input_formula(axiom_85,axiom,(
+ ![X]: (iTechnicalReport(X) => abstractDomain(X))
+)).
+%-- Super iTechnicalReport
+input_formula(axiom_86,axiom,(
+ ![X]: (iTechnicalReport(X) => iArticle(X))
+)).
+%-- Class iUndergraduateStudent is subset of Abstract domain
+input_formula(axiom_87,axiom,(
+ ![X]: (iUndergraduateStudent(X) => abstractDomain(X))
+)).
+%-- Super iUndergraduateStudent
+input_formula(axiom_88,axiom,(
+ ![X]: (iUndergraduateStudent(X) => iStudent(X))
+)).
+%-- Class iUniversity is subset of Abstract domain
+input_formula(axiom_89,axiom,(
+ ![X]: (iUniversity(X) => abstractDomain(X))
+)).
+%-- Super iUniversity
+input_formula(axiom_90,axiom,(
+ ![X]: (iUniversity(X) => iOrganization(X))
+)).
+%-- Class iUnofficialPublication is subset of Abstract domain
+input_formula(axiom_91,axiom,(
+ ![X]: (iUnofficialPublication(X) => abstractDomain(X))
+)).
+%-- Super iUnofficialPublication
+input_formula(axiom_92,axiom,(
+ ![X]: (iUnofficialPublication(X) => iPublication(X))
+)).
+%-- Class iVisitingProfessor is subset of Abstract domain
+input_formula(axiom_93,axiom,(
+ ![X]: (iVisitingProfessor(X) => abstractDomain(X))
+)).
+%-- Super iVisitingProfessor
+input_formula(axiom_94,axiom,(
+ ![X]: (iVisitingProfessor(X) => iProfessor(X))
+)).
+%-- Class iWork is subset of Abstract domain
+input_formula(axiom_95,axiom,(
+ ![X]: (iWork(X) => abstractDomain(X))
+)).
+%-- ObjectProperty: iadvisor
+input_formula(axiom_96,axiom,(
+ ![X,Y]: (iadvisor(X,Y) => (abstractDomain(X) & abstractDomain(Y)))
+)).
+%-- Domain: iadvisor
+input_formula(axiom_97,axiom,(
+ ![X,Y]: (iadvisor(X,Y) => iPerson(X))
+)).
+%-- Range: iadvisor
+input_formula(axiom_98,axiom,(
+ ![X,Y]: (iadvisor(X,Y) => iProfessor(Y))
+)).
+%-- ObjectProperty: iaffiliateOf
+input_formula(axiom_99,axiom,(
+ ![X,Y]: (iaffiliateOf(X,Y) => (abstractDomain(X) & abstractDomain(Y)))
+)).
+%-- Domain: iaffiliateOf
+input_formula(axiom_100,axiom,(
+ ![X,Y]: (iaffiliateOf(X,Y) => iOrganization(X))
+)).
+%-- Range: iaffiliateOf
+input_formula(axiom_101,axiom,(
+ ![X,Y]: (iaffiliateOf(X,Y) => iPerson(Y))
+)).
+%-- ObjectProperty: iaffiliatedOrganizationOf
+input_formula(axiom_102,axiom,(
+ ![X,Y]: (iaffiliatedOrganizationOf(X,Y) => (abstractDomain(X) & abstractDomain(Y)))
+)).
+%-- Domain: iaffiliatedOrganizationOf
+input_formula(axiom_103,axiom,(
+ ![X,Y]: (iaffiliatedOrganizationOf(X,Y) => iOrganization(X))
+)).
+%-- Range: iaffiliatedOrganizationOf
+input_formula(axiom_104,axiom,(
+ ![X,Y]: (iaffiliatedOrganizationOf(X,Y) => iOrganization(Y))
+)).
+%-- ObjectProperty: idegreeFrom
+input_formula(axiom_105,axiom,(
+ ![X,Y]: (idegreeFrom(X,Y) => (abstractDomain(X) & abstractDomain(Y)))
+)).
+%-- Domain: idegreeFrom
+input_formula(axiom_106,axiom,(
+ ![X,Y]: (idegreeFrom(X,Y) => iPerson(X))
+)).
+%-- Range: idegreeFrom
+input_formula(axiom_107,axiom,(
+ ![X,Y]: (idegreeFrom(X,Y) => iUniversity(Y))
+)).
+%-- Inverse: idegreeFrom
+input_formula(axiom_108,axiom,(
+ ![X,Y]: (idegreeFrom(X,Y) <=> ihasAlumnus(Y,X))
+)).
+%-- ObjectProperty: idoctoralDegreeFrom
+input_formula(axiom_109,axiom,(
+ ![X,Y]: (idoctoralDegreeFrom(X,Y) => (abstractDomain(X) & abstractDomain(Y)))
+)).
+%-- Domain: idoctoralDegreeFrom
+input_formula(axiom_110,axiom,(
+ ![X,Y]: (idoctoralDegreeFrom(X,Y) => iPerson(X))
+)).
+%-- Range: idoctoralDegreeFrom
+input_formula(axiom_111,axiom,(
+ ![X,Y]: (idoctoralDegreeFrom(X,Y) => iUniversity(Y))
+)).
+%-- ObjectProperty: ihasAlumnus
+input_formula(axiom_112,axiom,(
+ ![X,Y]: (ihasAlumnus(X,Y) => (abstractDomain(X) & abstractDomain(Y)))
+)).
+%-- Domain: ihasAlumnus
+input_formula(axiom_113,axiom,(
+ ![X,Y]: (ihasAlumnus(X,Y) => iUniversity(X))
+)).
+%-- Range: ihasAlumnus
+input_formula(axiom_114,axiom,(
+ ![X,Y]: (ihasAlumnus(X,Y) => iPerson(Y))
+)).
+%-- Inverse: ihasAlumnus
+input_formula(axiom_115,axiom,(
+ ![X,Y]: (ihasAlumnus(X,Y) <=> idegreeFrom(Y,X))
+)).
+%-- ObjectProperty: iheadOf
+input_formula(axiom_116,axiom,(
+ ![X,Y]: (iheadOf(X,Y) => (abstractDomain(X) & abstractDomain(Y)))
+)).
+%-- ObjectProperty: ilistedCourse
+input_formula(axiom_117,axiom,(
+ ![X,Y]: (ilistedCourse(X,Y) => (abstractDomain(X) & abstractDomain(Y)))
+)).
+%-- Domain: ilistedCourse
+input_formula(axiom_118,axiom,(
+ ![X,Y]: (ilistedCourse(X,Y) => iSchedule(X))
+)).
+%-- Range: ilistedCourse
+input_formula(axiom_119,axiom,(
+ ![X,Y]: (ilistedCourse(X,Y) => iCourse(Y))
+)).
+%-- ObjectProperty: imastersDegreeFrom
+input_formula(axiom_120,axiom,(
+ ![X,Y]: (imastersDegreeFrom(X,Y) => (abstractDomain(X) & abstractDomain(Y)))
+)).
+%-- Domain: imastersDegreeFrom
+input_formula(axiom_121,axiom,(
+ ![X,Y]: (imastersDegreeFrom(X,Y) => iPerson(X))
+)).
+%-- Range: imastersDegreeFrom
+input_formula(axiom_122,axiom,(
+ ![X,Y]: (imastersDegreeFrom(X,Y) => iUniversity(Y))
+)).
+%-- ObjectProperty: imember
+input_formula(axiom_123,axiom,(
+ ![X,Y]: (imember(X,Y) => (abstractDomain(X) & abstractDomain(Y)))
+)).
+%-- Domain: imember
+input_formula(axiom_124,axiom,(
+ ![X,Y]: (imember(X,Y) => iOrganization(X))
+)).
+%-- Range: imember
+input_formula(axiom_125,axiom,(
+ ![X,Y]: (imember(X,Y) => iPerson(Y))
+)).
+%-- ObjectProperty: imemberOf
+input_formula(axiom_126,axiom,(
+ ![X,Y]: (imemberOf(X,Y) => (abstractDomain(X) & abstractDomain(Y)))
+)).
+%-- Inverse: imemberOf
+input_formula(axiom_127,axiom,(
+ ![X,Y]: (imemberOf(X,Y) <=> imember(Y,X))
+)).
+%-- ObjectProperty: iorgPublication
+input_formula(axiom_128,axiom,(
+ ![X,Y]: (iorgPublication(X,Y) => (abstractDomain(X) & abstractDomain(Y)))
+)).
+%-- Domain: iorgPublication
+input_formula(axiom_129,axiom,(
+ ![X,Y]: (iorgPublication(X,Y) => iOrganization(X))
+)).
+%-- Range: iorgPublication
+input_formula(axiom_130,axiom,(
+ ![X,Y]: (iorgPublication(X,Y) => iPublication(Y))
+)).
+%-- ObjectProperty: ipublicationAuthor
+input_formula(axiom_131,axiom,(
+ ![X,Y]: (ipublicationAuthor(X,Y) => (abstractDomain(X) & abstractDomain(Y)))
+)).
+%-- Domain: ipublicationAuthor
+input_formula(axiom_132,axiom,(
+ ![X,Y]: (ipublicationAuthor(X,Y) => iPublication(X))
+)).
+%-- Range: ipublicationAuthor
+input_formula(axiom_133,axiom,(
+ ![X,Y]: (ipublicationAuthor(X,Y) => iPerson(Y))
+)).
+%-- ObjectProperty: ipublicationDate
+input_formula(axiom_134,axiom,(
+ ![X,Y]: (ipublicationDate(X,Y) => (abstractDomain(X) & abstractDomain(Y)))
+)).
+%-- Domain: ipublicationDate
+input_formula(axiom_135,axiom,(
+ ![X,Y]: (ipublicationDate(X,Y) => iPublication(X))
+)).
+%-- ObjectProperty: ipublicationResearch
+input_formula(axiom_136,axiom,(
+ ![X,Y]: (ipublicationResearch(X,Y) => (abstractDomain(X) & abstractDomain(Y)))
+)).
+%-- Domain: ipublicationResearch
+input_formula(axiom_137,axiom,(
+ ![X,Y]: (ipublicationResearch(X,Y) => iPublication(X))
+)).
+%-- Range: ipublicationResearch
+input_formula(axiom_138,axiom,(
+ ![X,Y]: (ipublicationResearch(X,Y) => iResearch(Y))
+)).
+%-- ObjectProperty: iresearchProject
+input_formula(axiom_139,axiom,(
+ ![X,Y]: (iresearchProject(X,Y) => (abstractDomain(X) & abstractDomain(Y)))
+)).
+%-- Domain: iresearchProject
+input_formula(axiom_140,axiom,(
+ ![X,Y]: (iresearchProject(X,Y) => iResearchGroup(X))
+)).
+%-- Range: iresearchProject
+input_formula(axiom_141,axiom,(
+ ![X,Y]: (iresearchProject(X,Y) => iResearch(Y))
+)).
+%-- ObjectProperty: isoftwareDocumentation
+input_formula(axiom_142,axiom,(
+ ![X,Y]: (isoftwareDocumentation(X,Y) => (abstractDomain(X) & abstractDomain(Y)))
+)).
+%-- Domain: isoftwareDocumentation
+input_formula(axiom_143,axiom,(
+ ![X,Y]: (isoftwareDocumentation(X,Y) => iSoftware(X))
+)).
+%-- Range: isoftwareDocumentation
+input_formula(axiom_144,axiom,(
+ ![X,Y]: (isoftwareDocumentation(X,Y) => iPublication(Y))
+)).
+%-- ObjectProperty: isoftwareVersion
+input_formula(axiom_145,axiom,(
+ ![X,Y]: (isoftwareVersion(X,Y) => (abstractDomain(X) & abstractDomain(Y)))
+)).
+%-- Domain: isoftwareVersion
+input_formula(axiom_146,axiom,(
+ ![X,Y]: (isoftwareVersion(X,Y) => iSoftware(X))
+)).
+%-- ObjectProperty: isubOrganizationOf
+input_formula(axiom_147,axiom,(
+ ![X,Y]: (isubOrganizationOf(X,Y) => (abstractDomain(X) & abstractDomain(Y)))
+)).
+%-- Transitive: isubOrganizationOf
+input_formula(axiom_148,axiom,(
+ ![X,Y,Z]: (isubOrganizationOf(X,Y) & isubOrganizationOf(Y,Z) => isubOrganizationOf(X,Z))
+)).
+%-- Domain: isubOrganizationOf
+input_formula(axiom_149,axiom,(
+ ![X,Y]: (isubOrganizationOf(X,Y) => iOrganization(X))
+)).
+%-- Range: isubOrganizationOf
+input_formula(axiom_150,axiom,(
+ ![X,Y]: (isubOrganizationOf(X,Y) => iOrganization(Y))
+)).
+%-- ObjectProperty: itakesCourse
+input_formula(axiom_151,axiom,(
+ ![X,Y]: (itakesCourse(X,Y) => (abstractDomain(X) & abstractDomain(Y)))
+)).
+%-- ObjectProperty: iteacherOf
+input_formula(axiom_152,axiom,(
+ ![X,Y]: (iteacherOf(X,Y) => (abstractDomain(X) & abstractDomain(Y)))
+)).
+%-- Domain: iteacherOf
+input_formula(axiom_153,axiom,(
+ ![X,Y]: (iteacherOf(X,Y) => iFaculty(X))
+)).
+%-- Range: iteacherOf
+input_formula(axiom_154,axiom,(
+ ![X,Y]: (iteacherOf(X,Y) => iCourse(Y))
+)).
+%-- ObjectProperty: iteachingAssistantOf
+input_formula(axiom_155,axiom,(
+ ![X,Y]: (iteachingAssistantOf(X,Y) => (abstractDomain(X) & abstractDomain(Y)))
+)).
+%-- Domain: iteachingAssistantOf
+input_formula(axiom_156,axiom,(
+ ![X,Y]: (iteachingAssistantOf(X,Y) => iTeachingAssistant(X))
+)).
+%-- Range: iteachingAssistantOf
+input_formula(axiom_157,axiom,(
+ ![X,Y]: (iteachingAssistantOf(X,Y) => iCourse(Y))
+)).
+%-- ObjectProperty: itenured
+input_formula(axiom_158,axiom,(
+ ![X,Y]: (itenured(X,Y) => (abstractDomain(X) & abstractDomain(Y)))
+)).
+%-- Domain: itenured
+input_formula(axiom_159,axiom,(
+ ![X,Y]: (itenured(X,Y) => iProfessor(X))
+)).
+%-- ObjectProperty: iundergraduateDegreeFrom
+input_formula(axiom_160,axiom,(
+ ![X,Y]: (iundergraduateDegreeFrom(X,Y) => (abstractDomain(X) & abstractDomain(Y)))
+)).
+%-- Domain: iundergraduateDegreeFrom
+input_formula(axiom_161,axiom,(
+ ![X,Y]: (iundergraduateDegreeFrom(X,Y) => iPerson(X))
+)).
+%-- Range: iundergraduateDegreeFrom
+input_formula(axiom_162,axiom,(
+ ![X,Y]: (iundergraduateDegreeFrom(X,Y) => iUniversity(Y))
+)).
+%-- ObjectProperty: iworksFor
+input_formula(axiom_163,axiom,(
+ ![X,Y]: (iworksFor(X,Y) => (abstractDomain(X) & abstractDomain(Y)))
+)).
+%-- DataProperty: iage
+input_formula(axiom_164,axiom,(
+ ![X,Y]: (iage(X,Y) => (abstractDomain(X) & dataDomain(Y)))
+)).
+%-- Domain: iage
+input_formula(axiom_165,axiom,(
+ ![X,Y]: (iage(X,Y) => iPerson(X))
+)).
+%-- DataProperty: iemailAddress
+input_formula(axiom_166,axiom,(
+ ![X,Y]: (iemailAddress(X,Y) => (abstractDomain(X) & dataDomain(Y)))
+)).
+%-- Domain: iemailAddress
+input_formula(axiom_167,axiom,(
+ ![X,Y]: (iemailAddress(X,Y) => iPerson(X))
+)).
+%-- DataProperty: iname
+input_formula(axiom_168,axiom,(
+ ![X,Y]: (iname(X,Y) => (abstractDomain(X) & dataDomain(Y)))
+)).
+%-- DataProperty: iofficeNumber
+input_formula(axiom_169,axiom,(
+ ![X,Y]: (iofficeNumber(X,Y) => (abstractDomain(X) & dataDomain(Y)))
+)).
+%-- DataProperty: iresearchInterest
+input_formula(axiom_170,axiom,(
+ ![X,Y]: (iresearchInterest(X,Y) => (abstractDomain(X) & dataDomain(Y)))
+)).
+%-- DataProperty: itelephone
+input_formula(axiom_171,axiom,(
+ ![X,Y]: (itelephone(X,Y) => (abstractDomain(X) & dataDomain(Y)))
+)).
+%-- Domain: itelephone
+input_formula(axiom_172,axiom,(
+ ![X,Y]: (itelephone(X,Y) => iPerson(X))
+)).
+%-- DataProperty: ititle
+input_formula(axiom_173,axiom,(
+ ![X,Y]: (ititle(X,Y) => (abstractDomain(X) & dataDomain(Y)))
+)).
+%-- Domain: ititle
+input_formula(axiom_174,axiom,(
+ ![X,Y]: (ititle(X,Y) => iPerson(X))
+)).
+input_formula(axiom_175,axiom,(
+ ![X,Y]: (iheadOf(X,Y) => iworksFor(X,Y))
+)).
+input_formula(axiom_176,axiom,(
+ ![X,Y]: (iworksFor(X,Y) => imemberOf(X,Y))
+)).
+input_formula(axiom_177,axiom,(
+ ![X,Y]: (idoctoralDegreeFrom(X,Y) => idegreeFrom(X,Y))
+)).
+input_formula(axiom_178,axiom,(
+ ![X,Y]: (imastersDegreeFrom(X,Y) => idegreeFrom(X,Y))
+)).
+input_formula(axiom_179,axiom,(
+ ![X,Y]: (iundergraduateDegreeFrom(X,Y) => idegreeFrom(X,Y))
+)).
+

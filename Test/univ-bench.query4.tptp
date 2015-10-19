@@ -1,0 +1,14 @@
+
+include('univ-bench.ontology.cnf.tptp').
+
+include('univ-bench.db-abstraction.tptp').
+
+input_clause(query4,conjecture,
+  [
+    --iProfessor(X),
+    --iworksFor(X,'http://www.Department0.University0.edu'),
+    --iname(X,Y1),
+    --iemailAddress(X,Y2),
+    --itelephone(X,Y3),
+    ++answer(X,Y1,Y2,Y3)
+  ]).

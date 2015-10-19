@@ -1,0 +1,24 @@
+
+
+
+
+include('my_university_semantic_map.fof.tptp').
+
+include('lubm.ontology.cnf.tptp').
+
+
+% The name of the teacher corresponds to a DB generated with
+% --seed 235 --number-of-departments 25
+
+
+input_clause(query7,conjecture,
+  [
+    --p_Student(X),
+    --p_name(X,N1),
+    --p_Course(Y),
+    --p_name(Y,N2),
+    --p_name(Teacher,"Dirk Blair"),
+    --p_teacherOf(Teacher,Y),
+    --p_takesCourse(X,Y),
+    ++answer(N1,N2)
+  ]).

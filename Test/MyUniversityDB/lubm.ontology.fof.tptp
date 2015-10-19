@@ -1,0 +1,1517 @@
+
+%  Common axioms:
+
+
+  fof('owl:Thing U dataDomain cover all model elements',axiom,(
+      ! [X] : 
+        ( p_Thing(X)
+        | dataDomain(X) ) )).
+
+
+
+  fof('There is at least one individual',axiom,(
+      ? [X] : p_Thing(X) )).
+
+
+
+  fof('There is at least one data value',axiom,(
+      ? [X] : dataDomain(X) )).
+
+
+
+  fof('owl:Thing and dataDomain are disjoint',axiom,(
+      ! [X] : ~ ( p_Thing(X)
+        & dataDomain(X) ) )).
+
+
+
+  fof('owl:Nothing is empty',axiom,(
+      ! [X] : ~ p_Nothing(X) )).
+
+
+
+  fof('integer literals are distinct from string-without-language literals',axiom,(
+      ! [X,Y] : intLit(X) != stringLitNoLang(Y) )).
+
+
+
+  fof('integer literals are distinct from string-with-language literals',axiom,(
+      ! [X,Y] : intLit(X) != stringLitWithLang(Y) )).
+
+
+
+  fof('integer literals are distinct from general typed literals',axiom,(
+      ! [X,Y] : intLit(X) != typedLit(Y) )).
+
+
+
+  fof('string-without-language literals are distinct from string-with-language literals',axiom,(
+      ! [X,Y] : stringLitNoLang(X) != stringLitWithLang(Y) )).
+
+
+
+  fof('string-without-language literals are distinct from general typed literals',axiom,(
+      ! [X,Y] : stringLitNoLang(X) != typedLit(Y) )).
+
+
+
+  fof('string-with-language literals are distinct from general typed literals',axiom,(
+      ! [X] : stringLitWithLang(X) != typedLit(Y) )).
+
+
+
+  fof('intLit is a constructor',axiom,(
+      ! [X,Y] : 
+        ( intLit(X) = intLit(Y)
+       => X = Y ) )).
+
+
+
+  fof('stringLitNoLang is a constructor',axiom,(
+      ! [X,Y] : 
+        ( stringLitNoLang(X) = stringLitNoLang(Y)
+       => X = Y ) )).
+
+
+
+  fof('stringLitWithLang is a constructor',axiom,(
+      ! [X,Y] : 
+        ( stringLitWithLang(X) = stringLitWithLang(Y)
+       => X = Y ) )).
+
+
+
+  fof('typedLit is a constructor',axiom,(
+      ! [X,Y] : 
+        ( typedLit(X) = typedLit(Y)
+       => X = Y ) )).
+
+
+
+%  End of common axioms.
+
+
+  fof('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_advisor(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_advisor(X,Y)
+       => p_Thing(Y) ) )).
+
+
+
+  fof('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#tenured must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_tenured(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#tenured must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_tenured(X,Y)
+       => p_Thing(Y) ) )).
+
+
+
+  fof('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#officeNumber must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_officeNumber(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#officeNumber must be a data value',axiom,(
+      ! [X,Y] : 
+        ( p_officeNumber(X,Y)
+       => dataDomain(Y) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_Person(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#undergraduateDegreeFrom must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_undergraduateDegreeFrom(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#undergraduateDegreeFrom must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_undergraduateDegreeFrom(X,Y)
+       => p_Thing(Y) ) )).
+
+
+
+  fof('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#hasAlumnus must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_hasAlumnus(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#hasAlumnus must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_hasAlumnus(X,Y)
+       => p_Thing(Y) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Article is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_Article(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ConferencePaper is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_ConferencePaper(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Specification is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_Specification(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Faculty is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_Faculty(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Book is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_Book(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#TechnicalReport is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_TechnicalReport(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#degreeFrom must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_degreeFrom(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#degreeFrom must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_degreeFrom(X,Y)
+       => p_Thing(Y) ) )).
+
+
+
+  fof('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#name must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_name(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#name must be a data value',axiom,(
+      ! [X,Y] : 
+        ( p_name(X,Y)
+       => dataDomain(Y) ) )).
+
+
+
+  fof('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_worksFor(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_worksFor(X,Y)
+       => p_Thing(Y) ) )).
+
+
+
+  fof('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#researchProject must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_researchProject(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#researchProject must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_researchProject(X,Y)
+       => p_Thing(Y) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_Chair(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_memberOf(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_memberOf(X,Y)
+       => p_Thing(Y) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#College is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_College(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Student is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_Student(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#doctoralDegreeFrom must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_doctoralDegreeFrom(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#doctoralDegreeFrom must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_doctoralDegreeFrom(X,Y)
+       => p_Thing(Y) ) )).
+
+
+
+  fof('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationResearch must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_publicationResearch(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationResearch must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_publicationResearch(X,Y)
+       => p_Thing(Y) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchAssistant is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_ResearchAssistant(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#listedCourse must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_listedCourse(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#listedCourse must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_listedCourse(X,Y)
+       => p_Thing(Y) ) )).
+
+
+
+  fof('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#age must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_age(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#age must be a data value',axiom,(
+      ! [X,Y] : 
+        ( p_age(X,Y)
+       => dataDomain(Y) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Software is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_Software(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationDate must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_publicationDate(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationDate must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_publicationDate(X,Y)
+       => p_Thing(Y) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#University is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_University(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Employee is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_Employee(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Institute is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_Institute(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#mastersDegreeFrom must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_mastersDegreeFrom(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#mastersDegreeFrom must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_mastersDegreeFrom(X,Y)
+       => p_Thing(Y) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ClericalStaff is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_ClericalStaff(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_ResearchGroup(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#emailAddress must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_emailAddress(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#emailAddress must be a data value',axiom,(
+      ! [X,Y] : 
+        ( p_emailAddress(X,Y)
+       => dataDomain(Y) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#UnofficialPublication is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_UnofficialPublication(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_AssistantProfessor(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_member(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_member(X,Y)
+       => p_Thing(Y) ) )).
+
+
+
+  fof('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#softwareVersion must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_softwareVersion(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#softwareVersion must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_softwareVersion(X,Y)
+       => p_Thing(Y) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_FullProfessor(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#PostDoc is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_PostDoc(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#teacherOf must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_teacherOf(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#teacherOf must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_teacherOf(X,Y)
+       => p_Thing(Y) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Manual is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_Manual(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Research is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_Research(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_Department(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#researchInterest must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_researchInterest(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#researchInterest must be a data value',axiom,(
+      ! [X,Y] : 
+        ( p_researchInterest(X,Y)
+       => dataDomain(Y) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Dean is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_Dean(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Work is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_Work(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#orgPublication must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_orgPublication(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#orgPublication must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_orgPublication(X,Y)
+       => p_Thing(Y) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#SystemsStaff is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_SystemsStaff(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#GraduateStudent is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_GraduateStudent(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_Lecturer(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_Professor(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#takesCourse must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_takesCourse(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#takesCourse must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_takesCourse(X,Y)
+       => p_Thing(Y) ) )).
+
+
+
+  fof('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#softwareDocumentation must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_softwareDocumentation(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#softwareDocumentation must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_softwareDocumentation(X,Y)
+       => p_Thing(Y) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AdministrativeStaff is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_AdministrativeStaff(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#TeachingAssistant is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_TeachingAssistant(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#GraduateCourse is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_GraduateCourse(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Course is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_Course(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_subOrganizationOf(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_subOrganizationOf(X,Y)
+       => p_Thing(Y) ) )).
+
+
+
+  fof('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_headOf(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_headOf(X,Y)
+       => p_Thing(Y) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Program is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_Program(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Director is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_Director(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_publicationAuthor(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_publicationAuthor(X,Y)
+       => p_Thing(Y) ) )).
+
+
+
+  fof('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#teachingAssistantOf must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_teachingAssistantOf(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#teachingAssistantOf must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_teachingAssistantOf(X,Y)
+       => p_Thing(Y) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Schedule is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_Schedule(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#UndergraduateStudent is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_UndergraduateStudent(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#title must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_title(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#title must be a data value',axiom,(
+      ! [X,Y] : 
+        ( p_title(X,Y)
+       => dataDomain(Y) ) )).
+
+
+
+  fof('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#affiliateOf must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_affiliateOf(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#affiliateOf must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_affiliateOf(X,Y)
+       => p_Thing(Y) ) )).
+
+
+
+  fof('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#telephone must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_telephone(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#telephone must be a data value',axiom,(
+      ! [X,Y] : 
+        ( p_telephone(X,Y)
+       => dataDomain(Y) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#JournalArticle is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_JournalArticle(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_AssociateProfessor(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#VisitingProfessor is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_VisitingProfessor(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#affiliatedOrganizationOf must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_affiliatedOrganizationOf(X,Y)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#affiliatedOrganizationOf must be an individual',axiom,(
+      ! [X,Y] : 
+        ( p_affiliatedOrganizationOf(X,Y)
+       => p_Thing(Y) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_Organization(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication is a subclass of owl:Thing',axiom,(
+      ! [X] : 
+        ( p_Publication(X)
+       => p_Thing(X) ) )).
+
+
+
+  fof('Class axiom #0',axiom,(
+      ! [X] : 
+        ( p_Director(X)
+      <=> ( p_Person(X)
+          & ? [Y0] : 
+              ( p_headOf(X,Y0)
+              & p_Program(Y0) ) ) ) )).
+
+
+
+  fof('Class axiom #1',axiom,(
+      ! [X] : 
+        ( p_AssociateProfessor(X)
+       => p_Professor(X) ) )).
+
+
+
+  fof('Class axiom #2',axiom,(
+      ! [X] : 
+        ( p_AssistantProfessor(X)
+       => p_Professor(X) ) )).
+
+
+
+  fof('Property axiom #3',axiom,(
+      ! [X,Y] : 
+        ( p_emailAddress(X,Y)
+       => p_Person(X) ) )).
+
+
+
+  fof('Class axiom #4',axiom,(
+      ! [X] : 
+        ( p_UnofficialPublication(X)
+       => p_Publication(X) ) )).
+
+
+
+  fof('Property axiom #5',axiom,(
+      ! [X,Y] : 
+        ( p_teacherOf(X,Y)
+       => p_Course(Y) ) )).
+
+
+
+  fof('Class axiom #6',axiom,(
+      ! [X] : 
+        ( p_GraduateStudent(X)
+       => p_Person(X) ) )).
+
+
+
+  fof('Property axiom #7',axiom,(
+      ! [X,Y] : 
+        ( p_telephone(X,Y)
+       => p_Person(X) ) )).
+
+
+
+  fof('Class axiom #8',axiom,(
+      ! [X] : 
+        ( p_Lecturer(X)
+       => p_Faculty(X) ) )).
+
+
+
+  fof('Class axiom #9',axiom,(
+      ! [X] : 
+        ( p_Dean(X)
+      <=> ( p_Person(X)
+          & ? [Y0] : 
+              ( p_headOf(X,Y0)
+              & p_College(Y0) ) ) ) )).
+
+
+
+  fof('Class axiom #10',axiom,(
+      ! [X] : 
+        ( p_ResearchAssistant(X)
+       => ? [Y0] : 
+            ( p_worksFor(X,Y0)
+            & p_ResearchGroup(Y0) ) ) )).
+
+
+
+  fof('Class axiom #11',axiom,(
+      ! [X] : 
+        ( p_Program(X)
+       => p_Organization(X) ) )).
+
+
+
+  fof('Class axiom #12',axiom,(
+      ! [X] : 
+        ( p_ConferencePaper(X)
+       => p_Article(X) ) )).
+
+
+
+  fof('Class axiom #13',axiom,(
+      ! [X] : 
+        ( p_Institute(X)
+       => p_Organization(X) ) )).
+
+
+
+  fof('Class axiom #14',axiom,(
+      ! [X] : 
+        ( p_PostDoc(X)
+       => p_Faculty(X) ) )).
+
+
+
+  fof('Class axiom #15',axiom,(
+      ! [X] : 
+        ( p_College(X)
+       => p_Organization(X) ) )).
+
+
+
+  fof('Property axiom #16',axiom,(
+      ! [X,Y] : 
+        ( p_advisor(X,Y)
+       => p_Professor(Y) ) )).
+
+
+
+  fof('Property axiom #17',axiom,(
+      ! [X,Y] : 
+        ( p_subOrganizationOf(X,Y)
+       => p_Organization(Y) ) )).
+
+
+
+  fof('Class axiom #18',axiom,(
+      ! [X] : 
+        ( p_Manual(X)
+       => p_Publication(X) ) )).
+
+
+
+  fof('Property axiom #19',axiom,(
+      ! [X,Y] : 
+        ( p_mastersDegreeFrom(X,Y)
+       => p_degreeFrom(X,Y) ) )).
+
+
+
+  fof('Property axiom #20',axiom,(
+      ! [X,Y] : 
+        ( p_headOf(X,Y)
+       => p_worksFor(X,Y) ) )).
+
+
+
+  fof('Property axiom #21',axiom,(
+      ! [X,Y] : 
+        ( p_researchProject(X,Y)
+       => p_ResearchGroup(X) ) )).
+
+
+
+  fof('Property axiom #22',axiom,(
+      ! [X,Y] : 
+        ( p_orgPublication(X,Y)
+       => p_Publication(Y) ) )).
+
+
+
+  fof('Class axiom #23',axiom,(
+      ! [X] : 
+        ( p_Software(X)
+       => p_Publication(X) ) )).
+
+
+
+  fof('Property axiom #24',axiom,(
+      ! [X,Y] : 
+        ( p_worksFor(X,Y)
+       => p_memberOf(X,Y) ) )).
+
+
+
+  fof('Class axiom #25',axiom,(
+      ! [X] : 
+        ( p_Chair(X)
+       => p_Professor(X) ) )).
+
+
+
+  fof('Property axiom #26',axiom,(
+      ! [X,Y] : 
+        ( p_softwareVersion(X,Y)
+       => p_Software(X) ) )).
+
+
+
+  fof('Property axiom #27',axiom,(
+      ! [X,Y] : 
+        ( p_undergraduateDegreeFrom(X,Y)
+       => p_degreeFrom(X,Y) ) )).
+
+
+
+  fof('Property axiom #28',axiom,(
+      ! [X,Y] : 
+        ( p_subOrganizationOf(X,Y)
+       => p_Organization(X) ) )).
+
+
+
+  fof('Class axiom #29',axiom,(
+      ! [X] : 
+        ( p_Article(X)
+       => p_Publication(X) ) )).
+
+
+
+  fof('Property axiom #30',axiom,(
+      ! [X,Y] : 
+        ( p_hasAlumnus(X,Y)
+       => p_Person(Y) ) )).
+
+
+
+  fof('Class axiom #31',axiom,(
+      ! [X] : 
+        ( p_FullProfessor(X)
+       => p_Professor(X) ) )).
+
+
+
+  fof('Class axiom #32',axiom,(
+      ! [X] : 
+        ( p_TechnicalReport(X)
+       => p_Article(X) ) )).
+
+
+
+  fof('Class axiom #33',axiom,(
+      ! [X] : 
+        ( p_Department(X)
+       => p_Organization(X) ) )).
+
+
+
+  fof('Property axiom #34',axiom,(
+      ! [X,Y] : 
+        ( p_member(X,Y)
+       => p_Person(Y) ) )).
+
+
+
+  fof('Class axiom #35',axiom,(
+      ! [X] : 
+        ( p_SystemsStaff(X)
+       => p_AdministrativeStaff(X) ) )).
+
+
+
+  fof('Property axiom #36',axiom,(
+      ! [X,Y] : 
+        ( p_teachingAssistantOf(X,Y)
+       => p_Course(Y) ) )).
+
+
+
+  fof('Property axiom #37',axiom,(
+      ! [X,Y] : 
+        ( p_undergraduateDegreeFrom(X,Y)
+       => p_Person(X) ) )).
+
+
+
+  fof('Class axiom #38',axiom,(
+      ! [X] : 
+        ( p_Professor(X)
+       => p_Faculty(X) ) )).
+
+
+
+  fof('Property axiom #39',axiom,(
+      ! [X,Y,Z] : 
+        ( ( p_subOrganizationOf(X,Y)
+          & p_subOrganizationOf(Y,Z) )
+       => p_subOrganizationOf(X,Z) ) )).
+
+
+
+  fof('Property axiom #40',axiom,(
+      ! [X,Y] : 
+        ( p_softwareDocumentation(X,Y)
+       => p_Publication(Y) ) )).
+
+
+
+  fof('Class axiom #41',axiom,(
+      ! [X] : 
+        ( p_Chair(X)
+      <=> ( p_Person(X)
+          & ? [Y0] : 
+              ( p_headOf(X,Y0)
+              & p_Department(Y0) ) ) ) )).
+
+
+
+  fof('Property axiom #42',axiom,(
+      ! [X,Y] : 
+        ( p_degreeFrom(X,Y)
+       => p_Person(X) ) )).
+
+
+
+  fof('Class axiom #43',axiom,(
+      ! [X] : 
+        ( p_Student(X)
+      <=> ( p_Person(X)
+          & ? [Y0] : 
+              ( p_takesCourse(X,Y0)
+              & p_Course(Y0) ) ) ) )).
+
+
+
+  fof('Property axiom #44',axiom,(
+      ! [X,Y] : 
+        ( p_publicationResearch(X,Y)
+       => p_Research(Y) ) )).
+
+
+
+  fof('Class axiom #45',axiom,(
+      ! [X] : 
+        ( p_Employee(X)
+      <=> ( p_Person(X)
+          & ? [Y0] : 
+              ( p_worksFor(X,Y0)
+              & p_Organization(Y0) ) ) ) )).
+
+
+
+  fof('Property axiom #46',axiom,(
+      ! [X,Y] : 
+        ( p_member(X,Y)
+       => p_Organization(X) ) )).
+
+
+
+  fof('Property axiom #47',axiom,(
+      ! [X,Y] : 
+        ( p_hasAlumnus(X,Y)
+       => p_University(X) ) )).
+
+
+
+  fof('Class axiom #48',axiom,(
+      ! [X] : 
+        ( p_Dean(X)
+       => p_Professor(X) ) )).
+
+
+
+  fof('Property axiom #49',axiom,(
+      ! [X,Y] : 
+        ( p_teacherOf(X,Y)
+       => p_Faculty(X) ) )).
+
+
+
+  fof('Class axiom #50',axiom,(
+      ! [X] : 
+        ( p_ResearchAssistant(X)
+       => p_Student(X) ) )).
+
+
+
+  fof('Class axiom #51',axiom,(
+      ! [X] : 
+        ( p_VisitingProfessor(X)
+       => p_Professor(X) ) )).
+
+
+
+  fof('Class axiom #52',axiom,(
+      ! [X] : 
+        ( p_ResearchGroup(X)
+       => p_Organization(X) ) )).
+
+
+
+  fof('Class axiom #53',axiom,(
+      ! [X] : 
+        ( p_Specification(X)
+       => p_Publication(X) ) )).
+
+
+
+  fof('Class axiom #54',axiom,(
+      ! [X] : 
+        ( p_Book(X)
+       => p_Publication(X) ) )).
+
+
+
+  fof('Property axiom #55',axiom,(
+      ! [X,Y] : 
+        ( p_teachingAssistantOf(X,Y)
+       => p_TeachingAssistant(X) ) )).
+
+
+
+  fof('Class axiom #56',axiom,(
+      ! [X] : 
+        ( p_GraduateStudent(X)
+       => ? [Y0] : 
+            ( p_takesCourse(X,Y0)
+            & p_GraduateCourse(Y0) ) ) )).
+
+
+
+  fof('Property axiom #57',axiom,(
+      ! [X,Y] : 
+        ( p_memberOf(X,Y)
+      <=> p_member(Y,X) ) )).
+
+
+
+  fof('Property axiom #58',axiom,(
+      ! [X,Y] : 
+        ( p_doctoralDegreeFrom(X,Y)
+       => p_degreeFrom(X,Y) ) )).
+
+
+
+  fof('Class axiom #59',axiom,(
+      ! [X] : 
+        ( p_Course(X)
+       => p_Work(X) ) )).
+
+
+
+  fof('Property axiom #60',axiom,(
+      ! [X,Y] : 
+        ( p_affiliatedOrganizationOf(X,Y)
+       => p_Organization(X) ) )).
+
+
+
+  fof('Class axiom #61',axiom,(
+      ! [X] : 
+        ( p_ClericalStaff(X)
+       => p_AdministrativeStaff(X) ) )).
+
+
+
+  fof('Property axiom #62',axiom,(
+      ! [X,Y] : 
+        ( p_affiliateOf(X,Y)
+       => p_Organization(X) ) )).
+
+
+
+  fof('Class axiom #63',axiom,(
+      ! [X] : 
+        ( p_TeachingAssistant(X)
+      <=> ( p_Person(X)
+          & ? [Y0] : 
+              ( p_teachingAssistantOf(X,Y0)
+              & p_Course(Y0) ) ) ) )).
+
+
+
+  fof('Class axiom #64',axiom,(
+      ! [X] : 
+        ( p_GraduateCourse(X)
+       => p_Course(X) ) )).
+
+
+
+  fof('Property axiom #65',axiom,(
+      ! [X,Y] : 
+        ( p_mastersDegreeFrom(X,Y)
+       => p_Person(X) ) )).
+
+
+
+  fof('Property axiom #66',axiom,(
+      ! [X,Y] : 
+        ( p_degreeFrom(X,Y)
+      <=> p_hasAlumnus(Y,X) ) )).
+
+
+
+  fof('Class axiom #67',axiom,(
+      ! [X] : 
+        ( p_Faculty(X)
+       => p_Employee(X) ) )).
+
+
+
+  fof('Class axiom #68',axiom,(
+      ! [X] : 
+        ( p_UndergraduateStudent(X)
+       => p_Student(X) ) )).
+
+
+
+  fof('Property axiom #69',axiom,(
+      ! [X,Y] : 
+        ( p_listedCourse(X,Y)
+       => p_Schedule(X) ) )).
+
+
+
+  fof('Property axiom #70',axiom,(
+      ! [X,Y] : 
+        ( p_doctoralDegreeFrom(X,Y)
+       => p_Person(X) ) )).
+
+
+
+  fof('Class axiom #71',axiom,(
+      ! [X] : 
+        ( p_University(X)
+       => p_Organization(X) ) )).
+
+
+
+  fof('Property axiom #72',axiom,(
+      ! [X,Y] : 
+        ( p_advisor(X,Y)
+       => p_Person(X) ) )).
+
+
+
+  fof('Property axiom #73',axiom,(
+      ! [X,Y] : 
+        ( p_softwareDocumentation(X,Y)
+       => p_Software(X) ) )).
+
+
+
+  fof('Property axiom #74',axiom,(
+      ! [X,Y] : 
+        ( p_publicationDate(X,Y)
+       => p_Publication(X) ) )).
+
+
+
+  fof('Property axiom #75',axiom,(
+      ! [X,Y] : 
+        ( p_publicationResearch(X,Y)
+       => p_Publication(X) ) )).
+
+
+
+  fof('Property axiom #76',axiom,(
+      ! [X,Y] : 
+        ( p_doctoralDegreeFrom(X,Y)
+       => p_University(Y) ) )).
+
+
+
+  fof('Class axiom #77',axiom,(
+      ! [X] : 
+        ( p_AdministrativeStaff(X)
+       => p_Employee(X) ) )).
+
+
+
+  fof('Property axiom #78',axiom,(
+      ! [X,Y] : 
+        ( p_researchProject(X,Y)
+       => p_Research(Y) ) )).
+
+
+
+  fof('Property axiom #79',axiom,(
+      ! [X,Y] : 
+        ( p_affiliateOf(X,Y)
+       => p_Person(Y) ) )).
+
+
+
+  fof('Property axiom #80',axiom,(
+      ! [X,Y] : 
+        ( p_publicationAuthor(X,Y)
+       => p_Person(Y) ) )).
+
+
+
+  fof('Property axiom #81',axiom,(
+      ! [X,Y] : 
+        ( p_title(X,Y)
+       => p_Person(X) ) )).
+
+
+
+  fof('Property axiom #82',axiom,(
+      ! [X,Y] : 
+        ( p_listedCourse(X,Y)
+       => p_Course(Y) ) )).
+
+
+
+  fof('Property axiom #83',axiom,(
+      ! [X,Y] : 
+        ( p_degreeFrom(X,Y)
+       => p_University(Y) ) )).
+
+
+
+  fof('Property axiom #84',axiom,(
+      ! [X,Y] : 
+        ( p_publicationAuthor(X,Y)
+       => p_Publication(X) ) )).
+
+
+
+  fof('Property axiom #85',axiom,(
+      ! [X,Y] : 
+        ( p_undergraduateDegreeFrom(X,Y)
+       => p_University(Y) ) )).
+
+
+
+  fof('Class axiom #86',axiom,(
+      ! [X] : 
+        ( p_JournalArticle(X)
+       => p_Article(X) ) )).
+
+
+
+  fof('Property axiom #87',axiom,(
+      ! [X,Y] : 
+        ( p_age(X,Y)
+       => p_Person(X) ) )).
+
+
+
+  fof('Class axiom #88',axiom,(
+      ! [X] : 
+        ( p_Research(X)
+       => p_Work(X) ) )).
+
+
+
+  fof('Property axiom #89',axiom,(
+      ! [X,Y] : 
+        ( p_affiliatedOrganizationOf(X,Y)
+       => p_Organization(Y) ) )).
+
+
+
+  fof('Property axiom #90',axiom,(
+      ! [X,Y] : 
+        ( p_mastersDegreeFrom(X,Y)
+       => p_University(Y) ) )).
+
+
+
+  fof('Property axiom #91',axiom,(
+      ! [X,Y] : 
+        ( p_tenured(X,Y)
+       => p_Professor(X) ) )).
+
+
+
+  fof('Property axiom #92',axiom,(
+      ! [X,Y] : 
+        ( p_orgPublication(X,Y)
+       => p_Organization(X) ) )).
+
+
+
+

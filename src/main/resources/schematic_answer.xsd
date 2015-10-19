@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+ <xs:schema  
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns="alabai"
+  targetNamespace="alabai"
+  elementFormDefault="qualified">
+  
+  <xs:annotation>
+    <xs:documentation> 
+    This is the XML schema for temporary rendering of schematic answers in Alabai.
+    </xs:documentation>
+  </xs:annotation>
+
+  <xs:element name="generic_answer">
+    <xs:complexType>
+      <xs:sequence>
+	<xs:element name="condition" type="LiteralList" minOccurs="0" maxOccurs="1"/>
+	<xs:element name="conclusion" type="LiteralList" minOccurs="0" maxOccurs="1"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+    
+
+  <xs:complexType name="LiteralList">
+    <xs:sequence>
+      <xs:element name="literal" type="Literal" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+
+
+  <xs:complexType name="Literal">
+
+    <xs:sequence>
+      <xs:element name="atom" type="Atom"/>
+    </xs:sequence>
+
+    <xs:attribute name="polarity" type="xs:string" use="required"/>
+
+  </xs:complexType>
+
+
+  <xs:complexType name="Atom">
+    <xs:sequence>
+      <xs:element name="literal" type="Literal" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+
+
+
+ </xs:schema>

@@ -1,0 +1,15 @@
+
+
+include('univ-bench.ontology.cnf.tptp').
+
+include('univ-bench.db-abstraction.tptp').
+
+
+input_clause(query12,conjecture,
+  [
+    --iChair(X),
+    --iDepartment(Y),
+    --iworksFor(X,Y),
+    --isubOrganizationOf(Y,'http://www.University0.edu'),
+    ++answer(X,Y)
+  ]).

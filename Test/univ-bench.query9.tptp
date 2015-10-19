@@ -1,0 +1,23 @@
+
+
+include('univ-bench.ontology.cnf.tptp').
+
+include('univ-bench.db-abstraction.tptp').
+
+
+input_clause(query9,conjecture,
+  [
+    --iStudent(X),
+    --iFaculty(Y),
+    --iCourse(Z),
+    --iadvisor(X,Y),
+    --itakesCourse(X,Z),
+    --iteacherOf(Y,Z),
+    ++answer(X,Y,Z)
+  ]).
+
+% 1 answer expected.
+
+% 1 answer found: 
+
+% | <<answer>>(X0,X1,X2) \/ {{~db_abs_iteacherOf}}(X1,X2) \/ {{~db_abs_iadvisor}}(X0,X1) \/ {{~db_abs_itakesCourse}}(X0,X2) 

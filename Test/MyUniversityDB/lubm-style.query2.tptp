@@ -1,0 +1,28 @@
+
+include('my_university_semantic_map.fof.tptp').
+
+include('lubm.ontology.cnf.tptp').
+
+
+input_clause(query2,conjecture,
+  [
+    --p_GraduateStudent(X),
+    --p_University(Y),
+    --p_Department(Z),
+    --p_memberOf(X,Z),
+    --p_subOrganizationOf(Z,Y),
+    --p_undergraduateDegreeFrom(X,Y),
+    --p_name(X,N1),
+    --p_name(Y,N2),
+    --p_name(Z,N3),
+    ++answer(N1,N2,N3)
+  ]).
+
+
+
+
+
+
+
+
+

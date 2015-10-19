@@ -1,0 +1,24 @@
+
+include('my_university_semantic_map.fof.tptp').
+
+include('lubm.ontology.cnf.tptp').
+
+
+% The code of the course corresponds to a DB generated with
+% --seed 235 --number-of-departments 25
+
+input_clause(query1,conjecture,
+  [
+    --p_GraduateStudent(X),
+    --p_takesCourse(X,courseEntity("BioGeog00540")),
+    --p_name(X,N),
+    ++answer(N)
+  ]).
+
+
+
+
+
+
+
+

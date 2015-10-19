@@ -1,0 +1,33 @@
+
+include('univ-bench.ontology.cnf.tptp').
+
+include('univ-bench.db-abstraction.tptp').
+
+
+input_clause(query2,conjecture,
+  [
+    --iGraduateStudent(X),
+    --iUniversity(Y),
+    --iDepartment(Z),
+    --imemberOf(X,Z),
+    --isubOrganizationOf(Z,Y),
+    --iundergraduateDegreeFrom(X,Y),
+    ++answer(X,Y,Z)
+  ]).
+
+
+%  Known answers:
+
+
+% | <<answer>>(X0,X1,X2) \/ {{~db_abs_isubOrganizationOf}}(X2,X1) \/ {{~db_abs_iundergraduateDegreeFrom}}(X0,X1) \/ {{~db_abs_imemberOf}}(X0,X2) \/ {{~db_abs_iGraduateStudent}}(X0) \/ {{~db_abs_iDepartment}}(X2)
+% | <<answer>>(X0,X1,X2) \/ {{~db_abs_iworksFor}}(X0,X2) \/ {{~db_abs_isubOrganizationOf}}(X2,X3) \/ {{~db_abs_isubOrganizationOf}}(X3,X1) \/ {{~db_abs_iundergraduateDegreeFrom}}(X0,X1) \/ {{~db_abs_iGraduateStudent}}(X0) \/ {{~db_abs_iDepartment}}(X2) 
+% | <<answer>>(X0,X1,X2) \/ {{~db_abs_iworksFor}}(X0,X2) \/ {{~db_abs_isubOrganizationOf}}(X2,X1) \/ {{~db_abs_iundergraduateDegreeFrom}}(X0,X1) \/ {{~db_abs_iGraduateStudent}}(X0) \/ {{~db_abs_iDepartment}}(X2)
+% | <<answer>>(X0,X1,X2) \/ {{~db_abs_iworksFor}}(X0,X2) \/ {{~db_abs_isubOrganizationOf}}(X2,X3) \/ {{~db_abs_isubOrganizationOf}}(X4,X1) \/ {{~db_abs_isubOrganizationOf}}(X3,X5) \/ {{~db_abs_isubOrganizationOf}}(X5,X4) \/ {{~db_abs_iundergraduateDegreeFrom}}(X0,X1) \/ {{~db_abs_iGraduateStudent}}(X0) \/ {{~db_abs_iDepartment}}(X2)
+% | <<answer>>(X0,X1,X2) \/ {{~db_abs_isubOrganizationOf}}(X2,X3) \/ {{~db_abs_isubOrganizationOf}}(X4,X1) \/ {{~db_abs_isubOrganizationOf}}(X3,X5) \/ {{~db_abs_isubOrganizationOf}}(X5,X4) \/ {{~db_abs_iundergraduateDegreeFrom}}(X0,X1) \/ {{~db_abs_imemberOf}}(X0,X2) \/ {{~db_abs_iGraduateStudent}}(X0) \/ {{~db_abs_iDepartment}}(X2)
+
+
+
+
+
+
+

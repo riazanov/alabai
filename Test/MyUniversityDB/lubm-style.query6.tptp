@@ -1,0 +1,14 @@
+
+
+
+include('my_university_semantic_map.fof.tptp').
+
+include('lubm.ontology.cnf.tptp').
+
+
+input_clause(query6,conjecture,
+  [
+   --p_Student(X),
+   --p_name(X,N),
+    ++answer(N)
+  ]).

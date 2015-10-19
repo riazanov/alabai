@@ -1,0 +1,13 @@
+
+
+include('univ-bench.ontology.cnf.tptp').
+
+include('univ-bench.db-abstraction.tptp').
+
+
+
+input_clause(query6,conjecture,
+  [
+   --iStudent(X),
+    ++answer(X)
+  ]).

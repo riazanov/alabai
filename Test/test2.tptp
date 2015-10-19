@@ -1,0 +1,18 @@
+
+
+cnf(axiom1,axiom,
+     (p(X,Y) | q(Y,X))
+).
+
+cnf(axiom2,axiom,
+     (~p(X,Y) | q(Y,X))
+).
+
+cnf(axiom3,axiom,
+     (p(X,Y) | ~q(Y,X))
+).
+
+
+cnf(goal,negated_conjecture,
+     (~p(a,b) | ~q(b,a))
+).

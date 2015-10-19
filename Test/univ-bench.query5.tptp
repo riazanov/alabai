@@ -1,0 +1,13 @@
+
+include('univ-bench.ontology.cnf.tptp').
+
+include('univ-bench.db-abstraction.tptp').
+
+
+
+input_clause(query5,conjecture,
+  [
+   --iPerson(X),
+   --imemberOf(X,'http://www.Department0.University0.edu'),
+    ++answer(X)
+  ]).

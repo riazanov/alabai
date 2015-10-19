@@ -1,0 +1,1141 @@
+input_clause(cl821_anc_org_in,axiom,
+ [
+  ++idegreeFrom(X0,X1),
+  --iundergraduateDegreeFrom(X0,X1)
+ ]).
+input_clause(cl820_anc_org_in,axiom,
+ [
+  ++idegreeFrom(X0,X1),
+  --imastersDegreeFrom(X0,X1)
+ ]).
+input_clause(cl819_anc_org_in,axiom,
+ [
+  ++idegreeFrom(X0,X1),
+  --idoctoralDegreeFrom(X0,X1)
+ ]).
+input_clause(cl818_anc_org_in,axiom,
+ [
+  ++imemberOf(X0,X1),
+  --iworksFor(X0,X1)
+ ]).
+input_clause(cl817_anc_org_in,axiom,
+ [
+  ++iworksFor(X0,X1),
+  --iheadOf(X0,X1)
+ ]).
+input_clause(cl816_anc_org_in,axiom,
+ [
+  ++iPerson(X0),
+  --ititle(X0,X1)
+ ]).
+input_clause(cl815_anc_org_in,axiom,
+ [
+  ++dataDomain(X0),
+  --ititle(X1,X0)
+ ]).
+input_clause(cl814_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --ititle(X0,X1)
+ ]).
+input_clause(cl813_anc_org_in,axiom,
+ [
+  ++iPerson(X0),
+  --itelephone(X0,X1)
+ ]).
+input_clause(cl812_anc_org_in,axiom,
+ [
+  ++dataDomain(X0),
+  --itelephone(X1,X0)
+ ]).
+input_clause(cl811_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --itelephone(X0,X1)
+ ]).
+input_clause(cl810_anc_org_in,axiom,
+ [
+  ++dataDomain(X0),
+  --iresearchInterest(X1,X0)
+ ]).
+input_clause(cl809_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iresearchInterest(X0,X1)
+ ]).
+input_clause(cl808_anc_org_in,axiom,
+ [
+  ++dataDomain(X0),
+  --iofficeNumber(X1,X0)
+ ]).
+input_clause(cl807_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iofficeNumber(X0,X1)
+ ]).
+input_clause(cl806_anc_org_in,axiom,
+ [
+  ++dataDomain(X0),
+  --iname(X1,X0)
+ ]).
+input_clause(cl805_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iname(X0,X1)
+ ]).
+input_clause(cl804_anc_org_in,axiom,
+ [
+  ++iPerson(X0),
+  --iemailAddress(X0,X1)
+ ]).
+input_clause(cl803_anc_org_in,axiom,
+ [
+  ++dataDomain(X0),
+  --iemailAddress(X1,X0)
+ ]).
+input_clause(cl802_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iemailAddress(X0,X1)
+ ]).
+input_clause(cl801_anc_org_in,axiom,
+ [
+  ++iPerson(X0),
+  --iage(X0,X1)
+ ]).
+input_clause(cl800_anc_org_in,axiom,
+ [
+  ++dataDomain(X0),
+  --iage(X1,X0)
+ ]).
+input_clause(cl799_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iage(X0,X1)
+ ]).
+input_clause(cl798_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iworksFor(X1,X0)
+ ]).
+input_clause(cl797_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iworksFor(X0,X1)
+ ]).
+input_clause(cl796_anc_org_in,axiom,
+ [
+  ++iUniversity(X0),
+  --iundergraduateDegreeFrom(X1,X0)
+ ]).
+input_clause(cl795_anc_org_in,axiom,
+ [
+  ++iPerson(X0),
+  --iundergraduateDegreeFrom(X0,X1)
+ ]).
+input_clause(cl794_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iundergraduateDegreeFrom(X1,X0)
+ ]).
+input_clause(cl793_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iundergraduateDegreeFrom(X0,X1)
+ ]).
+input_clause(cl792_anc_org_in,axiom,
+ [
+  ++iProfessor(X0),
+  --itenured(X0,X1)
+ ]).
+input_clause(cl791_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --itenured(X1,X0)
+ ]).
+input_clause(cl790_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --itenured(X0,X1)
+ ]).
+input_clause(cl789_anc_org_in,axiom,
+ [
+  ++iCourse(X0),
+  --iteachingAssistantOf(X1,X0)
+ ]).
+input_clause(cl788_anc_org_in,axiom,
+ [
+  ++iTeachingAssistant(X0),
+  --iteachingAssistantOf(X0,X1)
+ ]).
+input_clause(cl787_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iteachingAssistantOf(X1,X0)
+ ]).
+input_clause(cl786_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iteachingAssistantOf(X0,X1)
+ ]).
+input_clause(cl785_anc_org_in,axiom,
+ [
+  ++iCourse(X0),
+  --iteacherOf(X1,X0)
+ ]).
+input_clause(cl784_anc_org_in,axiom,
+ [
+  ++iFaculty(X0),
+  --iteacherOf(X0,X1)
+ ]).
+input_clause(cl783_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iteacherOf(X1,X0)
+ ]).
+input_clause(cl782_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iteacherOf(X0,X1)
+ ]).
+input_clause(cl781_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --itakesCourse(X1,X0)
+ ]).
+input_clause(cl780_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --itakesCourse(X0,X1)
+ ]).
+input_clause(cl779_anc_org_in,axiom,
+ [
+  ++iOrganization(X0),
+  --isubOrganizationOf(X1,X0)
+ ]).
+input_clause(cl778_anc_org_in,axiom,
+ [
+  ++iOrganization(X0),
+  --isubOrganizationOf(X0,X1)
+ ]).
+input_clause(cl777_anc_org_in,axiom,
+ [
+  ++isubOrganizationOf(X2,X1),
+  --isubOrganizationOf(X0,X1),
+  --isubOrganizationOf(X2,X0)
+ ]).
+input_clause(cl776_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --isubOrganizationOf(X1,X0)
+ ]).
+input_clause(cl775_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --isubOrganizationOf(X0,X1)
+ ]).
+input_clause(cl774_anc_org_in,axiom,
+ [
+  ++iSoftware(X0),
+  --isoftwareVersion(X0,X1)
+ ]).
+input_clause(cl773_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --isoftwareVersion(X1,X0)
+ ]).
+input_clause(cl772_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --isoftwareVersion(X0,X1)
+ ]).
+input_clause(cl771_anc_org_in,axiom,
+ [
+  ++iPublication(X0),
+  --isoftwareDocumentation(X1,X0)
+ ]).
+input_clause(cl770_anc_org_in,axiom,
+ [
+  ++iSoftware(X0),
+  --isoftwareDocumentation(X0,X1)
+ ]).
+input_clause(cl769_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --isoftwareDocumentation(X1,X0)
+ ]).
+input_clause(cl768_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --isoftwareDocumentation(X0,X1)
+ ]).
+input_clause(cl767_anc_org_in,axiom,
+ [
+  ++iResearch(X0),
+  --iresearchProject(X1,X0)
+ ]).
+input_clause(cl766_anc_org_in,axiom,
+ [
+  ++iResearchGroup(X0),
+  --iresearchProject(X0,X1)
+ ]).
+input_clause(cl765_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iresearchProject(X1,X0)
+ ]).
+input_clause(cl764_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iresearchProject(X0,X1)
+ ]).
+input_clause(cl763_anc_org_in,axiom,
+ [
+  ++iResearch(X0),
+  --ipublicationResearch(X1,X0)
+ ]).
+input_clause(cl762_anc_org_in,axiom,
+ [
+  ++iPublication(X0),
+  --ipublicationResearch(X0,X1)
+ ]).
+input_clause(cl761_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --ipublicationResearch(X1,X0)
+ ]).
+input_clause(cl760_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --ipublicationResearch(X0,X1)
+ ]).
+input_clause(cl759_anc_org_in,axiom,
+ [
+  ++iPublication(X0),
+  --ipublicationDate(X0,X1)
+ ]).
+input_clause(cl758_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --ipublicationDate(X1,X0)
+ ]).
+input_clause(cl757_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --ipublicationDate(X0,X1)
+ ]).
+input_clause(cl756_anc_org_in,axiom,
+ [
+  ++iPerson(X0),
+  --ipublicationAuthor(X1,X0)
+ ]).
+input_clause(cl755_anc_org_in,axiom,
+ [
+  ++iPublication(X0),
+  --ipublicationAuthor(X0,X1)
+ ]).
+input_clause(cl754_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --ipublicationAuthor(X1,X0)
+ ]).
+input_clause(cl753_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --ipublicationAuthor(X0,X1)
+ ]).
+input_clause(cl752_anc_org_in,axiom,
+ [
+  ++iPublication(X0),
+  --iorgPublication(X1,X0)
+ ]).
+input_clause(cl751_anc_org_in,axiom,
+ [
+  ++iOrganization(X0),
+  --iorgPublication(X0,X1)
+ ]).
+input_clause(cl750_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iorgPublication(X1,X0)
+ ]).
+input_clause(cl749_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iorgPublication(X0,X1)
+ ]).
+input_clause(cl748_anc_org_in,axiom,
+ [
+  ++imemberOf(X0,X1),
+  --imember(X1,X0)
+ ]).
+input_clause(cl747_anc_org_in,axiom,
+ [
+  ++imember(X0,X1),
+  --imemberOf(X1,X0)
+ ]).
+input_clause(cl746_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --imemberOf(X1,X0)
+ ]).
+input_clause(cl745_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --imemberOf(X0,X1)
+ ]).
+input_clause(cl744_anc_org_in,axiom,
+ [
+  ++iPerson(X0),
+  --imember(X1,X0)
+ ]).
+input_clause(cl743_anc_org_in,axiom,
+ [
+  ++iOrganization(X0),
+  --imember(X0,X1)
+ ]).
+input_clause(cl742_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --imember(X1,X0)
+ ]).
+input_clause(cl741_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --imember(X0,X1)
+ ]).
+input_clause(cl740_anc_org_in,axiom,
+ [
+  ++iUniversity(X0),
+  --imastersDegreeFrom(X1,X0)
+ ]).
+input_clause(cl739_anc_org_in,axiom,
+ [
+  ++iPerson(X0),
+  --imastersDegreeFrom(X0,X1)
+ ]).
+input_clause(cl738_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --imastersDegreeFrom(X1,X0)
+ ]).
+input_clause(cl737_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --imastersDegreeFrom(X0,X1)
+ ]).
+input_clause(cl736_anc_org_in,axiom,
+ [
+  ++iCourse(X0),
+  --ilistedCourse(X1,X0)
+ ]).
+input_clause(cl735_anc_org_in,axiom,
+ [
+  ++iSchedule(X0),
+  --ilistedCourse(X0,X1)
+ ]).
+input_clause(cl734_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --ilistedCourse(X1,X0)
+ ]).
+input_clause(cl733_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --ilistedCourse(X0,X1)
+ ]).
+input_clause(cl732_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iheadOf(X1,X0)
+ ]).
+input_clause(cl731_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iheadOf(X0,X1)
+ ]).
+input_clause(cl730_anc_org_in,axiom,
+ [
+  ++ihasAlumnus(X0,X1),
+  --idegreeFrom(X1,X0)
+ ]).
+input_clause(cl729_anc_org_in,axiom,
+ [
+  ++idegreeFrom(X0,X1),
+  --ihasAlumnus(X1,X0)
+ ]).
+input_clause(cl728_anc_org_in,axiom,
+ [
+  ++iPerson(X0),
+  --ihasAlumnus(X1,X0)
+ ]).
+input_clause(cl727_anc_org_in,axiom,
+ [
+  ++iUniversity(X0),
+  --ihasAlumnus(X0,X1)
+ ]).
+input_clause(cl726_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --ihasAlumnus(X1,X0)
+ ]).
+input_clause(cl725_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --ihasAlumnus(X0,X1)
+ ]).
+input_clause(cl724_anc_org_in,axiom,
+ [
+  ++iUniversity(X0),
+  --idoctoralDegreeFrom(X1,X0)
+ ]).
+input_clause(cl723_anc_org_in,axiom,
+ [
+  ++iPerson(X0),
+  --idoctoralDegreeFrom(X0,X1)
+ ]).
+input_clause(cl722_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --idoctoralDegreeFrom(X1,X0)
+ ]).
+input_clause(cl721_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --idoctoralDegreeFrom(X0,X1)
+ ]).
+input_clause(cl720_anc_org_in,axiom,
+ [
+  ++idegreeFrom(X0,X1),
+  --ihasAlumnus(X1,X0)
+ ]).
+input_clause(cl719_anc_org_in,axiom,
+ [
+  ++ihasAlumnus(X0,X1),
+  --idegreeFrom(X1,X0)
+ ]).
+input_clause(cl718_anc_org_in,axiom,
+ [
+  ++iUniversity(X0),
+  --idegreeFrom(X1,X0)
+ ]).
+input_clause(cl717_anc_org_in,axiom,
+ [
+  ++iPerson(X0),
+  --idegreeFrom(X0,X1)
+ ]).
+input_clause(cl716_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --idegreeFrom(X1,X0)
+ ]).
+input_clause(cl715_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --idegreeFrom(X0,X1)
+ ]).
+input_clause(cl714_anc_org_in,axiom,
+ [
+  ++iOrganization(X0),
+  --iaffiliatedOrganizationOf(X1,X0)
+ ]).
+input_clause(cl713_anc_org_in,axiom,
+ [
+  ++iOrganization(X0),
+  --iaffiliatedOrganizationOf(X0,X1)
+ ]).
+input_clause(cl712_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iaffiliatedOrganizationOf(X1,X0)
+ ]).
+input_clause(cl711_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iaffiliatedOrganizationOf(X0,X1)
+ ]).
+input_clause(cl710_anc_org_in,axiom,
+ [
+  ++iPerson(X0),
+  --iaffiliateOf(X1,X0)
+ ]).
+input_clause(cl709_anc_org_in,axiom,
+ [
+  ++iOrganization(X0),
+  --iaffiliateOf(X0,X1)
+ ]).
+input_clause(cl708_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iaffiliateOf(X1,X0)
+ ]).
+input_clause(cl707_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iaffiliateOf(X0,X1)
+ ]).
+input_clause(cl706_anc_org_in,axiom,
+ [
+  ++iProfessor(X0),
+  --iadvisor(X1,X0)
+ ]).
+input_clause(cl705_anc_org_in,axiom,
+ [
+  ++iPerson(X0),
+  --iadvisor(X0,X1)
+ ]).
+input_clause(cl704_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iadvisor(X1,X0)
+ ]).
+input_clause(cl703_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iadvisor(X0,X1)
+ ]).
+input_clause(cl702_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iWork(X0)
+ ]).
+input_clause(cl701_anc_org_in,axiom,
+ [
+  ++iProfessor(X0),
+  --iVisitingProfessor(X0)
+ ]).
+input_clause(cl700_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iVisitingProfessor(X0)
+ ]).
+input_clause(cl699_anc_org_in,axiom,
+ [
+  ++iPublication(X0),
+  --iUnofficialPublication(X0)
+ ]).
+input_clause(cl698_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iUnofficialPublication(X0)
+ ]).
+input_clause(cl697_anc_org_in,axiom,
+ [
+  ++iOrganization(X0),
+  --iUniversity(X0)
+ ]).
+input_clause(cl696_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iUniversity(X0)
+ ]).
+input_clause(cl695_anc_org_in,axiom,
+ [
+  ++iStudent(X0),
+  --iUndergraduateStudent(X0)
+ ]).
+input_clause(cl694_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iUndergraduateStudent(X0)
+ ]).
+input_clause(cl693_anc_org_in,axiom,
+ [
+  ++iArticle(X0),
+  --iTechnicalReport(X0)
+ ]).
+input_clause(cl692_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iTechnicalReport(X0)
+ ]).
+input_clause(cl691_anc_org_in,axiom,
+ [
+  --iCourse(X1),
+  --iPerson(X0),
+  ++iTeachingAssistant(X0),
+  --iteachingAssistantOf(X0,X1)
+ ]).
+input_clause(cl690_anc_org_in,axiom,
+ [
+  ++iPerson(X0),
+  --iTeachingAssistant(X0)
+ ]).
+input_clause(cl689_anc_org_in,axiom,
+ [
+  ++iCourse(sk6(X0)),
+  --iTeachingAssistant(X0)
+ ]).
+input_clause(cl688_anc_org_in,axiom,
+ [
+  ++iteachingAssistantOf(X0,sk6(X0)),
+  --iTeachingAssistant(X0)
+ ]).
+input_clause(cl687_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iTeachingAssistant(X0)
+ ]).
+input_clause(cl686_anc_org_in,axiom,
+ [
+  ++iAdministrativeStaff(X0),
+  --iSystemsStaff(X0)
+ ]).
+input_clause(cl685_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iSystemsStaff(X0)
+ ]).
+input_clause(cl684_anc_org_in,axiom,
+ [
+  --iCourse(X1),
+  --iPerson(X0),
+  ++iStudent(X0),
+  --itakesCourse(X0,X1)
+ ]).
+input_clause(cl683_anc_org_in,axiom,
+ [
+  ++iPerson(X0),
+  --iStudent(X0)
+ ]).
+input_clause(cl682_anc_org_in,axiom,
+ [
+  ++iCourse(sk5(X0)),
+  --iStudent(X0)
+ ]).
+input_clause(cl681_anc_org_in,axiom,
+ [
+  ++itakesCourse(X0,sk5(X0)),
+  --iStudent(X0)
+ ]).
+input_clause(cl680_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iStudent(X0)
+ ]).
+input_clause(cl679_anc_org_in,axiom,
+ [
+  ++iPublication(X0),
+  --iSpecification(X0)
+ ]).
+input_clause(cl678_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iSpecification(X0)
+ ]).
+input_clause(cl677_anc_org_in,axiom,
+ [
+  ++iPublication(X0),
+  --iSoftware(X0)
+ ]).
+input_clause(cl676_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iSoftware(X0)
+ ]).
+input_clause(cl675_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iSchedule(X0)
+ ]).
+input_clause(cl674_anc_org_in,axiom,
+ [
+  ++iOrganization(X0),
+  --iResearchGroup(X0)
+ ]).
+input_clause(cl673_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iResearchGroup(X0)
+ ]).
+input_clause(cl672_anc_org_in,axiom,
+ [
+  ++iStudent(X0),
+  --iResearchAssistant(X0)
+ ]).
+input_clause(cl671_anc_org_in,axiom,
+ [
+  ++iResearchGroup(sk4(X0)),
+  --iResearchAssistant(X0)
+ ]).
+input_clause(cl670_anc_org_in,axiom,
+ [
+  ++iworksFor(X0,sk4(X0)),
+  --iResearchAssistant(X0)
+ ]).
+input_clause(cl669_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iResearchAssistant(X0)
+ ]).
+input_clause(cl668_anc_org_in,axiom,
+ [
+  ++iWork(X0),
+  --iResearch(X0)
+ ]).
+input_clause(cl667_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iResearch(X0)
+ ]).
+input_clause(cl666_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iPublication(X0)
+ ]).
+input_clause(cl665_anc_org_in,axiom,
+ [
+  ++iOrganization(X0),
+  --iProgram(X0)
+ ]).
+input_clause(cl664_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iProgram(X0)
+ ]).
+input_clause(cl663_anc_org_in,axiom,
+ [
+  ++iFaculty(X0),
+  --iProfessor(X0)
+ ]).
+input_clause(cl662_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iProfessor(X0)
+ ]).
+input_clause(cl661_anc_org_in,axiom,
+ [
+  ++iFaculty(X0),
+  --iPostDoc(X0)
+ ]).
+input_clause(cl660_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iPostDoc(X0)
+ ]).
+input_clause(cl659_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iPerson(X0)
+ ]).
+input_clause(cl658_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iOrganization(X0)
+ ]).
+input_clause(cl657_anc_org_in,axiom,
+ [
+  ++iPublication(X0),
+  --iManual(X0)
+ ]).
+input_clause(cl656_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iManual(X0)
+ ]).
+input_clause(cl655_anc_org_in,axiom,
+ [
+  ++iFaculty(X0),
+  --iLecturer(X0)
+ ]).
+input_clause(cl654_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iLecturer(X0)
+ ]).
+input_clause(cl653_anc_org_in,axiom,
+ [
+  ++iArticle(X0),
+  --iJournalArticle(X0)
+ ]).
+input_clause(cl652_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iJournalArticle(X0)
+ ]).
+input_clause(cl651_anc_org_in,axiom,
+ [
+  ++iOrganization(X0),
+  --iInstitute(X0)
+ ]).
+input_clause(cl650_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iInstitute(X0)
+ ]).
+input_clause(cl649_anc_org_in,axiom,
+ [
+  ++iPerson(X0),
+  --iGraduateStudent(X0)
+ ]).
+input_clause(cl648_anc_org_in,axiom,
+ [
+  ++iGraduateCourse(sk3(X0)),
+  --iGraduateStudent(X0)
+ ]).
+input_clause(cl647_anc_org_in,axiom,
+ [
+  ++itakesCourse(X0,sk3(X0)),
+  --iGraduateStudent(X0)
+ ]).
+input_clause(cl646_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iGraduateStudent(X0)
+ ]).
+input_clause(cl645_anc_org_in,axiom,
+ [
+  ++iCourse(X0),
+  --iGraduateCourse(X0)
+ ]).
+input_clause(cl644_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iGraduateCourse(X0)
+ ]).
+input_clause(cl643_anc_org_in,axiom,
+ [
+  ++iProfessor(X0),
+  --iFullProfessor(X0)
+ ]).
+input_clause(cl642_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iFullProfessor(X0)
+ ]).
+input_clause(cl641_anc_org_in,axiom,
+ [
+  ++iEmployee(X0),
+  --iFaculty(X0)
+ ]).
+input_clause(cl640_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iFaculty(X0)
+ ]).
+input_clause(cl639_anc_org_in,axiom,
+ [
+  --iworksFor(X0,X1),
+  --iOrganization(X1),
+  ++iEmployee(X0),
+  --iPerson(X0)
+ ]).
+input_clause(cl638_anc_org_in,axiom,
+ [
+  ++iOrganization(sk2(X0)),
+  --iEmployee(X0)
+ ]).
+input_clause(cl637_anc_org_in,axiom,
+ [
+  ++iworksFor(X0,sk2(X0)),
+  --iEmployee(X0)
+ ]).
+input_clause(cl636_anc_org_in,axiom,
+ [
+  ++iPerson(X0),
+  --iEmployee(X0)
+ ]).
+input_clause(cl635_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iEmployee(X0)
+ ]).
+input_clause(cl634_anc_org_in,axiom,
+ [
+  --iheadOf(X0,X1),
+  --iProgram(X1),
+  ++iDirector(X0),
+  --iPerson(X0)
+ ]).
+input_clause(cl633_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iDirector(X0)
+ ]).
+input_clause(cl632_anc_org_in,axiom,
+ [
+  ++iOrganization(X0),
+  --iDepartment(X0)
+ ]).
+input_clause(cl631_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iDepartment(X0)
+ ]).
+input_clause(cl630_anc_org_in,axiom,
+ [
+  ++iProfessor(X0),
+  --iDean(X0)
+ ]).
+input_clause(cl629_anc_org_in,axiom,
+ [
+  --iCollege(X1),
+  --iPerson(X0),
+  ++iDean(X0),
+  --iheadOf(X0,X1)
+ ]).
+input_clause(cl628_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iDean(X0)
+ ]).
+input_clause(cl627_anc_org_in,axiom,
+ [
+  ++iWork(X0),
+  --iCourse(X0)
+ ]).
+input_clause(cl626_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iCourse(X0)
+ ]).
+input_clause(cl625_anc_org_in,axiom,
+ [
+  ++iArticle(X0),
+  --iConferencePaper(X0)
+ ]).
+input_clause(cl624_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iConferencePaper(X0)
+ ]).
+input_clause(cl623_anc_org_in,axiom,
+ [
+  ++iOrganization(X0),
+  --iCollege(X0)
+ ]).
+input_clause(cl622_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iCollege(X0)
+ ]).
+input_clause(cl621_anc_org_in,axiom,
+ [
+  ++iAdministrativeStaff(X0),
+  --iClericalStaff(X0)
+ ]).
+input_clause(cl620_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iClericalStaff(X0)
+ ]).
+input_clause(cl619_anc_org_in,axiom,
+ [
+  ++iProfessor(X0),
+  --iChair(X0)
+ ]).
+input_clause(cl618_anc_org_in,axiom,
+ [
+  --iDepartment(X1),
+  --iPerson(X0),
+  ++iChair(X0),
+  --iheadOf(X0,X1)
+ ]).
+input_clause(cl617_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iChair(X0)
+ ]).
+input_clause(cl616_anc_org_in,axiom,
+ [
+  ++iPublication(X0),
+  --iBook(X0)
+ ]).
+input_clause(cl615_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iBook(X0)
+ ]).
+input_clause(cl614_anc_org_in,axiom,
+ [
+  ++iProfessor(X0),
+  --iAssociateProfessor(X0)
+ ]).
+input_clause(cl613_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iAssociateProfessor(X0)
+ ]).
+input_clause(cl612_anc_org_in,axiom,
+ [
+  ++iProfessor(X0),
+  --iAssistantProfessor(X0)
+ ]).
+input_clause(cl611_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iAssistantProfessor(X0)
+ ]).
+input_clause(cl610_anc_org_in,axiom,
+ [
+  ++iPublication(X0),
+  --iArticle(X0)
+ ]).
+input_clause(cl609_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iArticle(X0)
+ ]).
+input_clause(cl608_anc_org_in,axiom,
+ [
+  ++iEmployee(X0),
+  --iAdministrativeStaff(X0)
+ ]).
+input_clause(cl607_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iAdministrativeStaff(X0)
+ ]).
+input_clause(cl606_anc_org_in,axiom,
+ [
+  --xsd_string(X0),
+  --xsd_integer(X0),
+  --dataDomain(X0)
+ ]).
+input_clause(cl605_anc_org_in,axiom,
+ [
+  ++dataDomain(X0),
+  --xsd_integer(X0)
+ ]).
+input_clause(cl604_anc_org_in,axiom,
+ [
+  ++dataDomain(X0),
+  --xsd_string(X0)
+ ]).
+input_clause(cl603_anc_org_in,axiom,
+ [
+  --iowlNothing(X0)
+ ]).
+input_clause(cl602_anc_org_in,axiom,
+ [
+  ++iowlThing(X0),
+  --abstractDomain(X0)
+ ]).
+input_clause(cl601_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iowlNothing(X0)
+ ]).
+input_clause(cl600_anc_org_in,axiom,
+ [
+  ++abstractDomain(X0),
+  --iowlThing(X0)
+ ]).
+input_clause(cl599_anc_org_in,axiom,
+ [
+  --dataDomain(X0),
+  --abstractDomain(X0)
+ ]).
+input_clause(cl598_anc_org_in,axiom,
+ [
+  ++dataDomain(sk1)
+ ]).
+input_clause(cl597_anc_org_in,axiom,
+ [
+  ++abstractDomain(sk0)
+ ]).
+input_clause(cl596_anc_org_in,axiom,
+ [
+  ++dataDomain(X0),
+  ++abstractDomain(X0)
+ ]).

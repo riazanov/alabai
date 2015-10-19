@@ -1,0 +1,1327 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Alabai JE (no version yet)
+% Started:      2010-06-06 12:47:51 EDT
+% Host:         heavy/127.0.1.1
+% Work. dir.:   /home/riazanoa/AlabaiJE
+% Arguments:    -t 10 -I /home/riazanoa/TPTP-v4.0.1/ -c config.xml -p sample_plug_ins.SamplePlugIn1 --print-input false --max-num-of-terminal-clauses 1 --print-proofs true --proof-format tptp /home/riazanoa/TPTP-v4.0.1/Problems/LCL/LCL639+1.001.p 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Loading plug-in sample_plug_ins.SamplePlugIn1
+% Reading configuration from file config.xml
+% Reading main input file: /home/riazanoa/TPTP-v4.0.1/Problems/LCL/LCL639+1.001.p
+% Include directory: /home/riazanoa/TPTP-v4.0.1/
+% End of main input file /home/riazanoa/TPTP-v4.0.1/Problems/LCL/LCL639+1.001.p
+% Contradiction: #[209]  ; NegConj { 186 102 36 |Res FSubsRes}
+% PROOF: 
+fof(0,negated_conjecture,(
+    ~ ~ ? [X1_0] : ~ ( ~ ! [X1_1] : 
+                ( ~ r1(X1_0,X1_1)
+                | ~ ( ~ ! [X1_0] : 
+                          ( ~ r1(X1_1,X1_0)
+                          | ! [X1_1] : 
+                              ( ~ r1(X1_0,X1_1)
+                              | ~ ( ~ p1(X1_1)
+                                  & ! [X1_0] : 
+                                      ( ~ r1(X1_1,X1_0)
+                                      | p1(X1_0) ) ) ) )
+                    & ! [X1_0] : 
+                        ( ~ r1(X1_1,X1_0)
+                        | p1(X1_0)
+                        | ~ ! [X1_1] : 
+                              ( ~ r1(X1_0,X1_1)
+                              | p1(X1_1) ) ) ) )
+          | ~ ! [X1_1] : 
+                ( ~ r1(X1_0,X1_1)
+                | ~ ( ~ ! [X1_0] : 
+                          ( ~ r1(X1_1,X1_0)
+                          | ! [X1_1] : 
+                              ( ~ r1(X1_0,X1_1)
+                              | ~ ( ~ p1(X1_1)
+                                  & ~ ! [X1_0] : 
+                                        ( ~ r1(X1_1,X1_0)
+                                        | ~ p1(X1_0) ) ) ) )
+                    & ! [X1_0] : 
+                        ( ~ r1(X1_1,X1_0)
+                        | p1(X1_0)
+                        | ! [X1_1] : 
+                            ( ~ r1(X1_0,X1_1)
+                            | ~ p1(X1_1) ) ) ) )
+          | ~ ! [X1_1] : 
+                ( ~ r1(X1_0,X1_1)
+                | ~ ( ! [X1_0] : 
+                        ( ~ r1(X1_1,X1_0)
+                        | ~ p1(X1_0) )
+                    & ! [X1_0] : 
+                        ( ~ r1(X1_1,X1_0)
+                        | p1(X1_0) ) ) )
+          | ~ ! [X1_1] : 
+                ( ~ r1(X1_0,X1_1)
+                | ~ ( ~ ! [X1_0] : 
+                          ( ~ r1(X1_1,X1_0)
+                          | ! [X1_1] : 
+                              ( ~ r1(X1_0,X1_1)
+                              | ~ ! [X1_0] : 
+                                    ( ~ r1(X1_1,X1_0)
+                                    | ~ p1(X1_0) ) ) )
+                    & ! [X1_0] : 
+                        ( ~ r1(X1_1,X1_0)
+                        | ~ ! [X1_1] : 
+                              ( ~ r1(X1_0,X1_1)
+                              | ~ p1(X1_1) ) ) ) )
+          | ~ ! [X1_1] : 
+                ( ~ r1(X1_0,X1_1)
+                | ~ ( ~ ! [X1_0] : 
+                          ( ~ r1(X1_1,X1_0)
+                          | ! [X1_1] : 
+                              ( ~ r1(X1_0,X1_1)
+                              | p1(X1_1) ) )
+                    & ! [X1_0] : 
+                        ( ~ r1(X1_1,X1_0)
+                        | p1(X1_0) ) ) )
+          | ~ ! [X1_1] : 
+                ( ~ r1(X1_0,X1_1)
+                | ~ ! [X1_0] : 
+                      ( ~ r1(X1_1,X1_0)
+                      | $false ) )
+          | ! [X1_1] : 
+              ( ~ r1(X1_0,X1_1)
+              | ! [X1_0] : 
+                  ( ~ r1(X1_1,X1_0)
+                  | ~ ! [X1_1] : 
+                        ( ~ r1(X1_0,X1_1)
+                        | p1(X1_1) ) )
+              | ! [X1_0] : 
+                  ( ~ r1(X1_1,X1_0)
+                  | p1(X1_0) ) ) ) ),
+    file(dummy_file_name,some_unmodified_input)).
+
+fof(1,plain,(
+    ~ ~ ? [X1_0] : ~ ( ~ ! [X1_1] : 
+                ( ~ r1(X1_0,X1_1)
+                | ~ ( ~ ! [X1_0] : 
+                          ( ~ r1(X1_1,X1_0)
+                          | ! [X1_1] : 
+                              ( ~ r1(X1_0,X1_1)
+                              | ~ ( ~ p1(X1_1)
+                                  & ! [X1_0] : 
+                                      ( ~ r1(X1_1,X1_0)
+                                      | p1(X1_0) ) ) ) )
+                    & ! [X1_0] : 
+                        ( ~ r1(X1_1,X1_0)
+                        | p1(X1_0)
+                        | ~ ! [X1_1] : 
+                              ( ~ r1(X1_0,X1_1)
+                              | p1(X1_1) ) ) ) )
+          | ~ ! [X1_1] : 
+                ( ~ r1(X1_0,X1_1)
+                | ~ ( ~ ! [X1_0] : 
+                          ( ~ r1(X1_1,X1_0)
+                          | ! [X1_1] : 
+                              ( ~ r1(X1_0,X1_1)
+                              | ~ ( ~ p1(X1_1)
+                                  & ~ ! [X1_0] : 
+                                        ( ~ r1(X1_1,X1_0)
+                                        | ~ p1(X1_0) ) ) ) )
+                    & ! [X1_0] : 
+                        ( ~ r1(X1_1,X1_0)
+                        | p1(X1_0)
+                        | ! [X1_1] : 
+                            ( ~ r1(X1_0,X1_1)
+                            | ~ p1(X1_1) ) ) ) )
+          | ~ ! [X1_1] : 
+                ( ~ r1(X1_0,X1_1)
+                | ~ ( ! [X1_0] : 
+                        ( ~ r1(X1_1,X1_0)
+                        | ~ p1(X1_0) )
+                    & ! [X1_0] : 
+                        ( ~ r1(X1_1,X1_0)
+                        | p1(X1_0) ) ) )
+          | ~ ! [X1_1] : 
+                ( ~ r1(X1_0,X1_1)
+                | ~ ( ~ ! [X1_0] : 
+                          ( ~ r1(X1_1,X1_0)
+                          | ! [X1_1] : 
+                              ( ~ r1(X1_0,X1_1)
+                              | ~ ! [X1_0] : 
+                                    ( ~ r1(X1_1,X1_0)
+                                    | ~ p1(X1_0) ) ) )
+                    & ! [X1_0] : 
+                        ( ~ r1(X1_1,X1_0)
+                        | ~ ! [X1_1] : 
+                              ( ~ r1(X1_0,X1_1)
+                              | ~ p1(X1_1) ) ) ) )
+          | ~ ! [X1_1] : 
+                ( ~ r1(X1_0,X1_1)
+                | ~ ( ~ ! [X1_0] : 
+                          ( ~ r1(X1_1,X1_0)
+                          | ! [X1_1] : 
+                              ( ~ r1(X1_0,X1_1)
+                              | p1(X1_1) ) )
+                    & ! [X1_0] : 
+                        ( ~ r1(X1_1,X1_0)
+                        | p1(X1_0) ) ) )
+          | ~ ! [X1_1] : 
+                ( ~ r1(X1_0,X1_1)
+                | ~ ! [X1_0] : 
+                      ( ~ r1(X1_1,X1_0)
+                      | $false ) )
+          | ! [X1_1] : 
+              ( ~ r1(X1_0,X1_1)
+              | ! [X1_0] : 
+                  ( ~ r1(X1_1,X1_0)
+                  | ~ ! [X1_1] : 
+                        ( ~ r1(X1_0,X1_1)
+                        | p1(X1_1) ) )
+              | ! [X1_0] : 
+                  ( ~ r1(X1_1,X1_0)
+                  | p1(X1_0) ) ) ) ),
+    inference('Cp',[status(thm)],[0])).
+
+fof(2,plain,(
+    ? [X0_0] : ~ ( ~ ! [X0_1] : 
+            ( ~ r1(X0_0,X0_1)
+            | ~ ( ~ ! [X0_0] : 
+                      ( ~ r1(X0_1,X0_0)
+                      | ! [X0_1] : 
+                          ( ~ r1(X0_0,X0_1)
+                          | ~ ( ~ p1(X0_1)
+                              & ! [X0_0] : 
+                                  ( ~ r1(X0_1,X0_0)
+                                  | p1(X0_0) ) ) ) )
+                & ! [X0_0] : 
+                    ( ~ r1(X0_1,X0_0)
+                    | p1(X0_0)
+                    | ~ ! [X0_1] : 
+                          ( ~ r1(X0_0,X0_1)
+                          | p1(X0_1) ) ) ) )
+      | ~ ! [X0_1] : 
+            ( ~ r1(X0_0,X0_1)
+            | ~ ( ~ ! [X0_0] : 
+                      ( ~ r1(X0_1,X0_0)
+                      | ! [X0_1] : 
+                          ( ~ r1(X0_0,X0_1)
+                          | ~ ( ~ p1(X0_1)
+                              & ~ ! [X0_0] : 
+                                    ( ~ r1(X0_1,X0_0)
+                                    | ~ p1(X0_0) ) ) ) )
+                & ! [X0_0] : 
+                    ( ~ r1(X0_1,X0_0)
+                    | p1(X0_0)
+                    | ! [X0_1] : 
+                        ( ~ r1(X0_0,X0_1)
+                        | ~ p1(X0_1) ) ) ) )
+      | ~ ! [X0_1] : 
+            ( ~ r1(X0_0,X0_1)
+            | ~ ( ! [X0_0] : 
+                    ( ~ r1(X0_1,X0_0)
+                    | ~ p1(X0_0) )
+                & ! [X0_0] : 
+                    ( ~ r1(X0_1,X0_0)
+                    | p1(X0_0) ) ) )
+      | ~ ! [X0_1] : 
+            ( ~ r1(X0_0,X0_1)
+            | ~ ( ~ ! [X0_0] : 
+                      ( ~ r1(X0_1,X0_0)
+                      | ! [X0_1] : 
+                          ( ~ r1(X0_0,X0_1)
+                          | ~ ! [X0_0] : 
+                                ( ~ r1(X0_1,X0_0)
+                                | ~ p1(X0_0) ) ) )
+                & ! [X0_0] : 
+                    ( ~ r1(X0_1,X0_0)
+                    | ~ ! [X0_1] : 
+                          ( ~ r1(X0_0,X0_1)
+                          | ~ p1(X0_1) ) ) ) )
+      | ~ ! [X0_1] : 
+            ( ~ r1(X0_0,X0_1)
+            | ~ ( ~ ! [X0_0] : 
+                      ( ~ r1(X0_1,X0_0)
+                      | ! [X0_1] : 
+                          ( ~ r1(X0_0,X0_1)
+                          | p1(X0_1) ) )
+                & ! [X0_0] : 
+                    ( ~ r1(X0_1,X0_0)
+                    | p1(X0_0) ) ) )
+      | ~ ! [X0_1] : 
+            ( ~ r1(X0_0,X0_1)
+            | ~ ! [X0_0] : 
+                  ( ~ r1(X0_1,X0_0)
+                  | $false ) )
+      | ! [X0_1] : 
+          ( ~ r1(X0_0,X0_1)
+          | ! [X0_0] : 
+              ( ~ r1(X0_1,X0_0)
+              | ~ ! [X0_1] : 
+                    ( ~ r1(X0_0,X0_1)
+                    | p1(X0_1) ) )
+          | ! [X0_0] : 
+              ( ~ r1(X0_1,X0_0)
+              | p1(X0_0) ) ) ) ),
+    inference('DNegCanc',[status(thm)],[1])).
+
+fof(3,plain,(
+    ~ ( ~ ! [X0_0] : 
+            ( ~ r1(alabai_skc0,X0_0)
+            | ~ ( ~ ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | ! [X0_0] : 
+                          ( ~ r1(alabai_skc0,X0_0)
+                          | ~ ( ~ p1(X0_0)
+                              & ! [X0_1] : 
+                                  ( ~ r1(X0_0,alabai_skc0)
+                                  | p1(alabai_skc0) ) ) ) )
+                & ! [X0_1] : 
+                    ( ~ r1(X0_0,alabai_skc0)
+                    | p1(alabai_skc0)
+                    | ~ ! [X0_0] : 
+                          ( ~ r1(alabai_skc0,X0_0)
+                          | p1(X0_0) ) ) ) )
+      | ~ ! [X0_0] : 
+            ( ~ r1(alabai_skc0,X0_0)
+            | ~ ( ~ ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | ! [X0_0] : 
+                          ( ~ r1(alabai_skc0,X0_0)
+                          | ~ ( ~ p1(X0_0)
+                              & ~ ! [X0_1] : 
+                                    ( ~ r1(X0_0,alabai_skc0)
+                                    | ~ p1(alabai_skc0) ) ) ) )
+                & ! [X0_1] : 
+                    ( ~ r1(X0_0,alabai_skc0)
+                    | p1(alabai_skc0)
+                    | ! [X0_0] : 
+                        ( ~ r1(alabai_skc0,X0_0)
+                        | ~ p1(X0_0) ) ) ) )
+      | ~ ! [X0_0] : 
+            ( ~ r1(alabai_skc0,X0_0)
+            | ~ ( ! [X0_1] : 
+                    ( ~ r1(X0_0,alabai_skc0)
+                    | ~ p1(alabai_skc0) )
+                & ! [X0_1] : 
+                    ( ~ r1(X0_0,alabai_skc0)
+                    | p1(alabai_skc0) ) ) )
+      | ~ ! [X0_0] : 
+            ( ~ r1(alabai_skc0,X0_0)
+            | ~ ( ~ ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | ! [X0_0] : 
+                          ( ~ r1(alabai_skc0,X0_0)
+                          | ~ ! [X0_1] : 
+                                ( ~ r1(X0_0,alabai_skc0)
+                                | ~ p1(alabai_skc0) ) ) )
+                & ! [X0_1] : 
+                    ( ~ r1(X0_0,alabai_skc0)
+                    | ~ ! [X0_0] : 
+                          ( ~ r1(alabai_skc0,X0_0)
+                          | ~ p1(X0_0) ) ) ) )
+      | ~ ! [X0_0] : 
+            ( ~ r1(alabai_skc0,X0_0)
+            | ~ ( ~ ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | ! [X0_0] : 
+                          ( ~ r1(alabai_skc0,X0_0)
+                          | p1(X0_0) ) )
+                & ! [X0_1] : 
+                    ( ~ r1(X0_0,alabai_skc0)
+                    | p1(alabai_skc0) ) ) )
+      | ~ ! [X0_0] : 
+            ( ~ r1(alabai_skc0,X0_0)
+            | ~ ! [X0_1] : 
+                  ( ~ r1(X0_0,alabai_skc0)
+                  | $false ) )
+      | ! [X0_0] : 
+          ( ~ r1(alabai_skc0,X0_0)
+          | ! [X0_1] : 
+              ( ~ r1(X0_0,alabai_skc0)
+              | ~ ! [X0_0] : 
+                    ( ~ r1(alabai_skc0,X0_0)
+                    | p1(X0_0) ) )
+          | ! [X0_1] : 
+              ( ~ r1(X0_0,alabai_skc0)
+              | p1(alabai_skc0) ) ) ) ),
+    inference('ExElim',[status(esa)],[2])).
+
+fof(4,plain,
+    ( ~ ( ~ ! [X0_0] : 
+              ( ~ r1(alabai_skc0,X0_0)
+              | ~ ( ~ ! [X0_1] : 
+                        ( ~ r1(X0_0,alabai_skc0)
+                        | ! [X0_0] : 
+                            ( ~ r1(alabai_skc0,X0_0)
+                            | ~ ( ~ p1(X0_0)
+                                & ! [X0_1] : 
+                                    ( ~ r1(X0_0,alabai_skc0)
+                                    | p1(alabai_skc0) ) ) ) )
+                  & ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | p1(alabai_skc0)
+                      | ~ ! [X0_0] : 
+                            ( ~ r1(alabai_skc0,X0_0)
+                            | p1(X0_0) ) ) ) )
+        | ~ ! [X0_0] : 
+              ( ~ r1(alabai_skc0,X0_0)
+              | ~ ( ~ ! [X0_1] : 
+                        ( ~ r1(X0_0,alabai_skc0)
+                        | ! [X0_0] : 
+                            ( ~ r1(alabai_skc0,X0_0)
+                            | ~ ( ~ p1(X0_0)
+                                & ~ ! [X0_1] : 
+                                      ( ~ r1(X0_0,alabai_skc0)
+                                      | ~ p1(alabai_skc0) ) ) ) )
+                  & ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | p1(alabai_skc0)
+                      | ! [X0_0] : 
+                          ( ~ r1(alabai_skc0,X0_0)
+                          | ~ p1(X0_0) ) ) ) )
+        | ~ ! [X0_0] : 
+              ( ~ r1(alabai_skc0,X0_0)
+              | ~ ( ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | ~ p1(alabai_skc0) )
+                  & ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | p1(alabai_skc0) ) ) )
+        | ~ ! [X0_0] : 
+              ( ~ r1(alabai_skc0,X0_0)
+              | ~ ( ~ ! [X0_1] : 
+                        ( ~ r1(X0_0,alabai_skc0)
+                        | ! [X0_0] : 
+                            ( ~ r1(alabai_skc0,X0_0)
+                            | ~ ! [X0_1] : 
+                                  ( ~ r1(X0_0,alabai_skc0)
+                                  | ~ p1(alabai_skc0) ) ) )
+                  & ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | ~ ! [X0_0] : 
+                            ( ~ r1(alabai_skc0,X0_0)
+                            | ~ p1(X0_0) ) ) ) )
+        | ~ ! [X0_0] : 
+              ( ~ r1(alabai_skc0,X0_0)
+              | ~ ( ~ ! [X0_1] : 
+                        ( ~ r1(X0_0,alabai_skc0)
+                        | ! [X0_0] : 
+                            ( ~ r1(alabai_skc0,X0_0)
+                            | p1(X0_0) ) )
+                  & ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | p1(alabai_skc0) ) ) )
+        | ~ ! [X0_0] : 
+              ( ~ r1(alabai_skc0,X0_0)
+              | ~ ! [X0_1] : 
+                    ( ~ r1(X0_0,alabai_skc0)
+                    | $false ) ) )
+    & ~ ! [X0_0] : 
+          ( ~ r1(alabai_skc0,X0_0)
+          | ! [X0_1] : 
+              ( ~ r1(X0_0,alabai_skc0)
+              | ~ ! [X0_0] : 
+                    ( ~ r1(alabai_skc0,X0_0)
+                    | p1(X0_0) ) )
+          | ! [X0_1] : 
+              ( ~ r1(X0_0,alabai_skc0)
+              | p1(alabai_skc0) ) ) ),
+    inference('NegDisj',[status(thm)],[3])).
+
+fof(5,plain,(
+    ~ ( ~ ! [X0_0] : 
+            ( ~ r1(alabai_skc0,X0_0)
+            | ~ ( ~ ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | ! [X0_0] : 
+                          ( ~ r1(alabai_skc0,X0_0)
+                          | ~ ( ~ p1(X0_0)
+                              & ! [X0_1] : 
+                                  ( ~ r1(X0_0,alabai_skc0)
+                                  | p1(alabai_skc0) ) ) ) )
+                & ! [X0_1] : 
+                    ( ~ r1(X0_0,alabai_skc0)
+                    | p1(alabai_skc0)
+                    | ~ ! [X0_0] : 
+                          ( ~ r1(alabai_skc0,X0_0)
+                          | p1(X0_0) ) ) ) )
+      | ~ ! [X0_0] : 
+            ( ~ r1(alabai_skc0,X0_0)
+            | ~ ( ~ ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | ! [X0_0] : 
+                          ( ~ r1(alabai_skc0,X0_0)
+                          | ~ ( ~ p1(X0_0)
+                              & ~ ! [X0_1] : 
+                                    ( ~ r1(X0_0,alabai_skc0)
+                                    | ~ p1(alabai_skc0) ) ) ) )
+                & ! [X0_1] : 
+                    ( ~ r1(X0_0,alabai_skc0)
+                    | p1(alabai_skc0)
+                    | ! [X0_0] : 
+                        ( ~ r1(alabai_skc0,X0_0)
+                        | ~ p1(X0_0) ) ) ) )
+      | ~ ! [X0_0] : 
+            ( ~ r1(alabai_skc0,X0_0)
+            | ~ ( ! [X0_1] : 
+                    ( ~ r1(X0_0,alabai_skc0)
+                    | ~ p1(alabai_skc0) )
+                & ! [X0_1] : 
+                    ( ~ r1(X0_0,alabai_skc0)
+                    | p1(alabai_skc0) ) ) )
+      | ~ ! [X0_0] : 
+            ( ~ r1(alabai_skc0,X0_0)
+            | ~ ( ~ ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | ! [X0_0] : 
+                          ( ~ r1(alabai_skc0,X0_0)
+                          | ~ ! [X0_1] : 
+                                ( ~ r1(X0_0,alabai_skc0)
+                                | ~ p1(alabai_skc0) ) ) )
+                & ! [X0_1] : 
+                    ( ~ r1(X0_0,alabai_skc0)
+                    | ~ ! [X0_0] : 
+                          ( ~ r1(alabai_skc0,X0_0)
+                          | ~ p1(X0_0) ) ) ) )
+      | ~ ! [X0_0] : 
+            ( ~ r1(alabai_skc0,X0_0)
+            | ~ ( ~ ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | ! [X0_0] : 
+                          ( ~ r1(alabai_skc0,X0_0)
+                          | p1(X0_0) ) )
+                & ! [X0_1] : 
+                    ( ~ r1(X0_0,alabai_skc0)
+                    | p1(alabai_skc0) ) ) )
+      | ~ ! [X0_0] : 
+            ( ~ r1(alabai_skc0,X0_0)
+            | ~ ! [X0_1] : 
+                  ( ~ r1(X0_0,alabai_skc0)
+                  | $false ) ) ) ),
+    inference('ConjElim',[status(thm)],[4])).
+
+fof(6,plain,(
+    ~ ! [X0_0] : 
+        ( ~ r1(alabai_skc0,X0_0)
+        | ! [X0_1] : 
+            ( ~ r1(X0_0,alabai_skc0)
+            | ~ ! [X0_0] : 
+                  ( ~ r1(alabai_skc0,X0_0)
+                  | p1(X0_0) ) )
+        | ! [X0_1] : 
+            ( ~ r1(X0_0,alabai_skc0)
+            | p1(alabai_skc0) ) ) ),
+    inference('ConjElim',[status(thm)],[4])).
+
+fof(7,plain,
+    ( ~ ( ~ ! [X0_0] : 
+              ( ~ r1(alabai_skc0,X0_0)
+              | ~ ( ~ ! [X0_1] : 
+                        ( ~ r1(X0_0,alabai_skc0)
+                        | ! [X0_0] : 
+                            ( ~ r1(alabai_skc0,X0_0)
+                            | ~ ( ~ p1(X0_0)
+                                & ! [X0_1] : 
+                                    ( ~ r1(X0_0,alabai_skc0)
+                                    | p1(alabai_skc0) ) ) ) )
+                  & ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | p1(alabai_skc0)
+                      | ~ ! [X0_0] : 
+                            ( ~ r1(alabai_skc0,X0_0)
+                            | p1(X0_0) ) ) ) )
+        | ~ ! [X0_0] : 
+              ( ~ r1(alabai_skc0,X0_0)
+              | ~ ( ~ ! [X0_1] : 
+                        ( ~ r1(X0_0,alabai_skc0)
+                        | ! [X0_0] : 
+                            ( ~ r1(alabai_skc0,X0_0)
+                            | ~ ( ~ p1(X0_0)
+                                & ~ ! [X0_1] : 
+                                      ( ~ r1(X0_0,alabai_skc0)
+                                      | ~ p1(alabai_skc0) ) ) ) )
+                  & ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | p1(alabai_skc0)
+                      | ! [X0_0] : 
+                          ( ~ r1(alabai_skc0,X0_0)
+                          | ~ p1(X0_0) ) ) ) )
+        | ~ ! [X0_0] : 
+              ( ~ r1(alabai_skc0,X0_0)
+              | ~ ( ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | ~ p1(alabai_skc0) )
+                  & ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | p1(alabai_skc0) ) ) )
+        | ~ ! [X0_0] : 
+              ( ~ r1(alabai_skc0,X0_0)
+              | ~ ( ~ ! [X0_1] : 
+                        ( ~ r1(X0_0,alabai_skc0)
+                        | ! [X0_0] : 
+                            ( ~ r1(alabai_skc0,X0_0)
+                            | ~ ! [X0_1] : 
+                                  ( ~ r1(X0_0,alabai_skc0)
+                                  | ~ p1(alabai_skc0) ) ) )
+                  & ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | ~ ! [X0_0] : 
+                            ( ~ r1(alabai_skc0,X0_0)
+                            | ~ p1(X0_0) ) ) ) )
+        | ~ ! [X0_0] : 
+              ( ~ r1(alabai_skc0,X0_0)
+              | ~ ( ~ ! [X0_1] : 
+                        ( ~ r1(X0_0,alabai_skc0)
+                        | ! [X0_0] : 
+                            ( ~ r1(alabai_skc0,X0_0)
+                            | p1(X0_0) ) )
+                  & ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | p1(alabai_skc0) ) ) ) )
+    & ~ ~ ! [X0_0] : 
+            ( ~ r1(alabai_skc0,X0_0)
+            | ~ ! [X0_1] : 
+                  ( ~ r1(X0_0,alabai_skc0)
+                  | $false ) ) ),
+    inference('NegDisj',[status(thm)],[5])).
+
+fof(8,plain,(
+    ? [X0_0] : ~ ( ~ r1(alabai_skc0,X0_0)
+      | ! [X0_1] : 
+          ( ~ r1(X0_0,alabai_skc0)
+          | ~ ! [X0_0] : 
+                ( ~ r1(alabai_skc0,X0_0)
+                | p1(X0_0) ) )
+      | ! [X0_1] : 
+          ( ~ r1(X0_0,alabai_skc0)
+          | p1(alabai_skc0) ) ) ),
+    inference('NegFAll',[status(thm)],[6])).
+
+fof(9,plain,(
+    ~ ( ~ ! [X0_0] : 
+            ( ~ r1(alabai_skc0,X0_0)
+            | ~ ( ~ ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | ! [X0_0] : 
+                          ( ~ r1(alabai_skc0,X0_0)
+                          | ~ ( ~ p1(X0_0)
+                              & ! [X0_1] : 
+                                  ( ~ r1(X0_0,alabai_skc0)
+                                  | p1(alabai_skc0) ) ) ) )
+                & ! [X0_1] : 
+                    ( ~ r1(X0_0,alabai_skc0)
+                    | p1(alabai_skc0)
+                    | ~ ! [X0_0] : 
+                          ( ~ r1(alabai_skc0,X0_0)
+                          | p1(X0_0) ) ) ) )
+      | ~ ! [X0_0] : 
+            ( ~ r1(alabai_skc0,X0_0)
+            | ~ ( ~ ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | ! [X0_0] : 
+                          ( ~ r1(alabai_skc0,X0_0)
+                          | ~ ( ~ p1(X0_0)
+                              & ~ ! [X0_1] : 
+                                    ( ~ r1(X0_0,alabai_skc0)
+                                    | ~ p1(alabai_skc0) ) ) ) )
+                & ! [X0_1] : 
+                    ( ~ r1(X0_0,alabai_skc0)
+                    | p1(alabai_skc0)
+                    | ! [X0_0] : 
+                        ( ~ r1(alabai_skc0,X0_0)
+                        | ~ p1(X0_0) ) ) ) )
+      | ~ ! [X0_0] : 
+            ( ~ r1(alabai_skc0,X0_0)
+            | ~ ( ! [X0_1] : 
+                    ( ~ r1(X0_0,alabai_skc0)
+                    | ~ p1(alabai_skc0) )
+                & ! [X0_1] : 
+                    ( ~ r1(X0_0,alabai_skc0)
+                    | p1(alabai_skc0) ) ) )
+      | ~ ! [X0_0] : 
+            ( ~ r1(alabai_skc0,X0_0)
+            | ~ ( ~ ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | ! [X0_0] : 
+                          ( ~ r1(alabai_skc0,X0_0)
+                          | ~ ! [X0_1] : 
+                                ( ~ r1(X0_0,alabai_skc0)
+                                | ~ p1(alabai_skc0) ) ) )
+                & ! [X0_1] : 
+                    ( ~ r1(X0_0,alabai_skc0)
+                    | ~ ! [X0_0] : 
+                          ( ~ r1(alabai_skc0,X0_0)
+                          | ~ p1(X0_0) ) ) ) )
+      | ~ ! [X0_0] : 
+            ( ~ r1(alabai_skc0,X0_0)
+            | ~ ( ~ ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | ! [X0_0] : 
+                          ( ~ r1(alabai_skc0,X0_0)
+                          | p1(X0_0) ) )
+                & ! [X0_1] : 
+                    ( ~ r1(X0_0,alabai_skc0)
+                    | p1(alabai_skc0) ) ) ) ) ),
+    inference('ConjElim',[status(thm)],[7])).
+
+fof(10,plain,(
+    ~ ~ ! [X0_0] : 
+          ( ~ r1(alabai_skc0,X0_0)
+          | ~ ! [X0_1] : 
+                ( ~ r1(X0_0,alabai_skc0)
+                | $false ) ) ),
+    inference('ConjElim',[status(thm)],[7])).
+
+fof(11,plain,(
+    ~ ( ~ r1(alabai_skc0,alabai_skc1)
+      | ! [X0_0] : 
+          ( ~ r1(alabai_skc1,alabai_skc0)
+          | ~ ! [X0_1] : 
+                ( ~ r1(alabai_skc0,alabai_skc1)
+                | p1(alabai_skc1) ) )
+      | ! [X0_0] : 
+          ( ~ r1(alabai_skc1,alabai_skc0)
+          | p1(alabai_skc0) ) ) ),
+    inference('ExElim',[status(esa)],[8])).
+
+fof(12,plain,
+    ( ~ ( ~ ! [X0_0] : 
+              ( ~ r1(alabai_skc0,X0_0)
+              | ~ ( ~ ! [X0_1] : 
+                        ( ~ r1(X0_0,alabai_skc0)
+                        | ! [X0_0] : 
+                            ( ~ r1(alabai_skc0,X0_0)
+                            | ~ ( ~ p1(X0_0)
+                                & ! [X0_1] : 
+                                    ( ~ r1(X0_0,alabai_skc0)
+                                    | p1(alabai_skc0) ) ) ) )
+                  & ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | p1(alabai_skc0)
+                      | ~ ! [X0_0] : 
+                            ( ~ r1(alabai_skc0,X0_0)
+                            | p1(X0_0) ) ) ) )
+        | ~ ! [X0_0] : 
+              ( ~ r1(alabai_skc0,X0_0)
+              | ~ ( ~ ! [X0_1] : 
+                        ( ~ r1(X0_0,alabai_skc0)
+                        | ! [X0_0] : 
+                            ( ~ r1(alabai_skc0,X0_0)
+                            | ~ ( ~ p1(X0_0)
+                                & ~ ! [X0_1] : 
+                                      ( ~ r1(X0_0,alabai_skc0)
+                                      | ~ p1(alabai_skc0) ) ) ) )
+                  & ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | p1(alabai_skc0)
+                      | ! [X0_0] : 
+                          ( ~ r1(alabai_skc0,X0_0)
+                          | ~ p1(X0_0) ) ) ) )
+        | ~ ! [X0_0] : 
+              ( ~ r1(alabai_skc0,X0_0)
+              | ~ ( ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | ~ p1(alabai_skc0) )
+                  & ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | p1(alabai_skc0) ) ) )
+        | ~ ! [X0_0] : 
+              ( ~ r1(alabai_skc0,X0_0)
+              | ~ ( ~ ! [X0_1] : 
+                        ( ~ r1(X0_0,alabai_skc0)
+                        | ! [X0_0] : 
+                            ( ~ r1(alabai_skc0,X0_0)
+                            | ~ ! [X0_1] : 
+                                  ( ~ r1(X0_0,alabai_skc0)
+                                  | ~ p1(alabai_skc0) ) ) )
+                  & ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | ~ ! [X0_0] : 
+                            ( ~ r1(alabai_skc0,X0_0)
+                            | ~ p1(X0_0) ) ) ) ) )
+    & ~ ~ ! [X0_0] : 
+            ( ~ r1(alabai_skc0,X0_0)
+            | ~ ( ~ ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | ! [X0_0] : 
+                          ( ~ r1(alabai_skc0,X0_0)
+                          | p1(X0_0) ) )
+                & ! [X0_1] : 
+                    ( ~ r1(X0_0,alabai_skc0)
+                    | p1(alabai_skc0) ) ) ) ),
+    inference('NegDisj',[status(thm)],[9])).
+
+fof(13,plain,(
+    ! [X0_0] : 
+      ( ~ r1(alabai_skc0,X0_0)
+      | ~ ! [X0_1] : 
+            ( ~ r1(X0_0,alabai_skc0)
+            | $false ) ) ),
+    inference('DNegCanc',[status(thm)],[10])).
+
+fof(14,plain,
+    ( ~ ( ~ r1(alabai_skc0,alabai_skc1)
+        | ! [X0_0] : 
+            ( ~ r1(alabai_skc1,alabai_skc0)
+            | ~ ! [X0_1] : 
+                  ( ~ r1(alabai_skc0,alabai_skc1)
+                  | p1(alabai_skc1) ) ) )
+    & ~ ! [X0_0] : 
+          ( ~ r1(alabai_skc1,alabai_skc0)
+          | p1(alabai_skc0) ) ),
+    inference('NegDisj',[status(thm)],[11])).
+
+fof(15,plain,(
+    ~ ( ~ ! [X0_0] : 
+            ( ~ r1(alabai_skc0,X0_0)
+            | ~ ( ~ ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | ! [X0_0] : 
+                          ( ~ r1(alabai_skc0,X0_0)
+                          | ~ ( ~ p1(X0_0)
+                              & ! [X0_1] : 
+                                  ( ~ r1(X0_0,alabai_skc0)
+                                  | p1(alabai_skc0) ) ) ) )
+                & ! [X0_1] : 
+                    ( ~ r1(X0_0,alabai_skc0)
+                    | p1(alabai_skc0)
+                    | ~ ! [X0_0] : 
+                          ( ~ r1(alabai_skc0,X0_0)
+                          | p1(X0_0) ) ) ) )
+      | ~ ! [X0_0] : 
+            ( ~ r1(alabai_skc0,X0_0)
+            | ~ ( ~ ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | ! [X0_0] : 
+                          ( ~ r1(alabai_skc0,X0_0)
+                          | ~ ( ~ p1(X0_0)
+                              & ~ ! [X0_1] : 
+                                    ( ~ r1(X0_0,alabai_skc0)
+                                    | ~ p1(alabai_skc0) ) ) ) )
+                & ! [X0_1] : 
+                    ( ~ r1(X0_0,alabai_skc0)
+                    | p1(alabai_skc0)
+                    | ! [X0_0] : 
+                        ( ~ r1(alabai_skc0,X0_0)
+                        | ~ p1(X0_0) ) ) ) )
+      | ~ ! [X0_0] : 
+            ( ~ r1(alabai_skc0,X0_0)
+            | ~ ( ! [X0_1] : 
+                    ( ~ r1(X0_0,alabai_skc0)
+                    | ~ p1(alabai_skc0) )
+                & ! [X0_1] : 
+                    ( ~ r1(X0_0,alabai_skc0)
+                    | p1(alabai_skc0) ) ) )
+      | ~ ! [X0_0] : 
+            ( ~ r1(alabai_skc0,X0_0)
+            | ~ ( ~ ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | ! [X0_0] : 
+                          ( ~ r1(alabai_skc0,X0_0)
+                          | ~ ! [X0_1] : 
+                                ( ~ r1(X0_0,alabai_skc0)
+                                | ~ p1(alabai_skc0) ) ) )
+                & ! [X0_1] : 
+                    ( ~ r1(X0_0,alabai_skc0)
+                    | ~ ! [X0_0] : 
+                          ( ~ r1(alabai_skc0,X0_0)
+                          | ~ p1(X0_0) ) ) ) ) ) ),
+    inference('ConjElim',[status(thm)],[12])).
+
+fof(17,plain,
+    ( ~ r1(alabai_skc0,X0_0)
+    | ~ ! [X0_1] : 
+          ( ~ r1(X0_0,alabai_skc0)
+          | $false ) ),
+    inference('FAllElim',[status(thm)],[13])).
+
+fof(18,plain,(
+    ~ ( ~ r1(alabai_skc0,alabai_skc1)
+      | ! [X0_0] : 
+          ( ~ r1(alabai_skc1,alabai_skc0)
+          | ~ ! [X0_1] : 
+                ( ~ r1(alabai_skc0,alabai_skc1)
+                | p1(alabai_skc1) ) ) ) ),
+    inference('ConjElim',[status(thm)],[14])).
+
+fof(19,plain,(
+    ~ ! [X0_0] : 
+        ( ~ r1(alabai_skc1,alabai_skc0)
+        | p1(alabai_skc0) ) ),
+    inference('ConjElim',[status(thm)],[14])).
+
+fof(20,plain,
+    ( ~ ( ~ ! [X0_0] : 
+              ( ~ r1(alabai_skc0,X0_0)
+              | ~ ( ~ ! [X0_1] : 
+                        ( ~ r1(X0_0,alabai_skc0)
+                        | ! [X0_0] : 
+                            ( ~ r1(alabai_skc0,X0_0)
+                            | ~ ( ~ p1(X0_0)
+                                & ! [X0_1] : 
+                                    ( ~ r1(X0_0,alabai_skc0)
+                                    | p1(alabai_skc0) ) ) ) )
+                  & ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | p1(alabai_skc0)
+                      | ~ ! [X0_0] : 
+                            ( ~ r1(alabai_skc0,X0_0)
+                            | p1(X0_0) ) ) ) )
+        | ~ ! [X0_0] : 
+              ( ~ r1(alabai_skc0,X0_0)
+              | ~ ( ~ ! [X0_1] : 
+                        ( ~ r1(X0_0,alabai_skc0)
+                        | ! [X0_0] : 
+                            ( ~ r1(alabai_skc0,X0_0)
+                            | ~ ( ~ p1(X0_0)
+                                & ~ ! [X0_1] : 
+                                      ( ~ r1(X0_0,alabai_skc0)
+                                      | ~ p1(alabai_skc0) ) ) ) )
+                  & ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | p1(alabai_skc0)
+                      | ! [X0_0] : 
+                          ( ~ r1(alabai_skc0,X0_0)
+                          | ~ p1(X0_0) ) ) ) )
+        | ~ ! [X0_0] : 
+              ( ~ r1(alabai_skc0,X0_0)
+              | ~ ( ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | ~ p1(alabai_skc0) )
+                  & ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | p1(alabai_skc0) ) ) ) )
+    & ~ ~ ! [X0_0] : 
+            ( ~ r1(alabai_skc0,X0_0)
+            | ~ ( ~ ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | ! [X0_0] : 
+                          ( ~ r1(alabai_skc0,X0_0)
+                          | ~ ! [X0_1] : 
+                                ( ~ r1(X0_0,alabai_skc0)
+                                | ~ p1(alabai_skc0) ) ) )
+                & ! [X0_1] : 
+                    ( ~ r1(X0_0,alabai_skc0)
+                    | ~ ! [X0_0] : 
+                          ( ~ r1(alabai_skc0,X0_0)
+                          | ~ p1(X0_0) ) ) ) ) ),
+    inference('NegDisj',[status(thm)],[15])).
+
+fof(22,plain,
+    ( ~ r1(alabai_skc0,X0_0)
+    | ~ ! [X0_1] : 
+          ( ~ r1(X0_0,alabai_skc0)
+          | $false ) ),
+    inference('DisjElim',[status(thm)],[17])).
+
+fof(23,plain,
+    ( ~ ~ r1(alabai_skc0,alabai_skc1)
+    & ~ ! [X0_0] : 
+          ( ~ r1(alabai_skc1,alabai_skc0)
+          | ~ ! [X0_1] : 
+                ( ~ r1(alabai_skc0,alabai_skc1)
+                | p1(alabai_skc1) ) ) ),
+    inference('NegDisj',[status(thm)],[18])).
+
+fof(24,plain,(
+    ? [X0_0] : ~ ( ~ r1(alabai_skc1,alabai_skc0)
+      | p1(alabai_skc0) ) ),
+    inference('NegFAll',[status(thm)],[19])).
+
+fof(26,plain,(
+    ~ ~ ! [X0_0] : 
+          ( ~ r1(alabai_skc0,X0_0)
+          | ~ ( ~ ! [X0_1] : 
+                    ( ~ r1(X0_0,alabai_skc0)
+                    | ! [X0_0] : 
+                        ( ~ r1(alabai_skc0,X0_0)
+                        | ~ ! [X0_1] : 
+                              ( ~ r1(X0_0,alabai_skc0)
+                              | ~ p1(alabai_skc0) ) ) )
+              & ! [X0_1] : 
+                  ( ~ r1(X0_0,alabai_skc0)
+                  | ~ ! [X0_0] : 
+                        ( ~ r1(alabai_skc0,X0_0)
+                        | ~ p1(X0_0) ) ) ) ) ),
+    inference('ConjElim',[status(thm)],[20])).
+
+fof(28,plain,
+    ( ~ r1(alabai_skc0,X0_0)
+    | ? [X0_1] : ~ ( ~ r1(X0_0,alabai_skc0)
+        | $false ) ),
+    inference('NegFAll',[status(thm)],[22])).
+
+fof(29,plain,(
+    ~ ~ r1(alabai_skc0,alabai_skc1) ),
+    inference('ConjElim',[status(thm)],[23])).
+
+fof(30,plain,(
+    ~ ! [X0_0] : 
+        ( ~ r1(alabai_skc1,alabai_skc0)
+        | ~ ! [X0_1] : 
+              ( ~ r1(alabai_skc0,alabai_skc1)
+              | p1(alabai_skc1) ) ) ),
+    inference('ConjElim',[status(thm)],[23])).
+
+fof(31,plain,(
+    ~ ( ~ r1(alabai_skc1,alabai_skc0)
+      | p1(alabai_skc0) ) ),
+    inference('ExElim',[status(esa)],[24])).
+
+fof(33,plain,(
+    ! [X0_0] : 
+      ( ~ r1(alabai_skc0,X0_0)
+      | ~ ( ~ ! [X0_1] : 
+                ( ~ r1(X0_0,alabai_skc0)
+                | ! [X0_0] : 
+                    ( ~ r1(alabai_skc0,X0_0)
+                    | ~ ! [X0_1] : 
+                          ( ~ r1(X0_0,alabai_skc0)
+                          | ~ p1(alabai_skc0) ) ) )
+          & ! [X0_1] : 
+              ( ~ r1(X0_0,alabai_skc0)
+              | ~ ! [X0_0] : 
+                    ( ~ r1(alabai_skc0,X0_0)
+                    | ~ p1(X0_0) ) ) ) ) ),
+    inference('DNegCanc',[status(thm)],[26])).
+
+fof(35,plain,
+    ( ~ r1(alabai_skc0,X0_0)
+    | ~ ( ~ r1(X0_0,alabai_skc0)
+        | $false ) ),
+    inference('ExElim',[status(esa)],[28])).
+
+cnf(36,plain,
+    ( r1(alabai_skc0,alabai_skc1) ),
+    inference('DNegCanc',[status(thm)],[29])).
+
+fof(37,plain,(
+    ? [X0_0] : ~ ( ~ r1(alabai_skc1,alabai_skc0)
+      | ~ ! [X0_1] : 
+            ( ~ r1(alabai_skc0,alabai_skc1)
+            | p1(alabai_skc1) ) ) ),
+    inference('NegFAll',[status(thm)],[30])).
+
+fof(38,plain,
+    ( ~ ~ r1(alabai_skc1,alabai_skc0)
+    & ~ p1(alabai_skc0) ),
+    inference('NegDisj',[status(thm)],[31])).
+
+fof(41,plain,
+    ( ~ r1(alabai_skc0,X0_0)
+    | ~ ( ~ ! [X0_1] : 
+              ( ~ r1(X0_0,alabai_skc0)
+              | ! [X0_0] : 
+                  ( ~ r1(alabai_skc0,X0_0)
+                  | ~ ! [X0_1] : 
+                        ( ~ r1(X0_0,alabai_skc0)
+                        | ~ p1(alabai_skc0) ) ) )
+        & ! [X0_1] : 
+            ( ~ r1(X0_0,alabai_skc0)
+            | ~ ! [X0_0] : 
+                  ( ~ r1(alabai_skc0,X0_0)
+                  | ~ p1(X0_0) ) ) ) ),
+    inference('FAllElim',[status(thm)],[33])).
+
+fof(43,plain,
+    ( ~ r1(alabai_skc0,X0_0)
+    | ( ~ ~ r1(X0_0,alabai_skc0)
+      & ~ $false ) ),
+    inference('NegDisj',[status(thm)],[35])).
+
+fof(49,plain,(
+    ~ ( ~ r1(alabai_skc1,alabai_skc0)
+      | ~ ! [X0_0] : 
+            ( ~ r1(alabai_skc0,alabai_skc1)
+            | p1(alabai_skc1) ) ) ),
+    inference('ExElim',[status(esa)],[37])).
+
+cnf(51,plain,
+    ( ~ p1(alabai_skc0) ),
+    inference('ConjElim',[status(thm)],[38])).
+
+fof(54,plain,
+    ( ~ r1(alabai_skc0,X0_0)
+    | ~ ( ~ ! [X0_1] : 
+              ( ~ r1(X0_0,alabai_skc0)
+              | ! [X0_0] : 
+                  ( ~ r1(alabai_skc0,X0_0)
+                  | ~ ! [X0_1] : 
+                        ( ~ r1(X0_0,alabai_skc0)
+                        | ~ p1(alabai_skc0) ) ) )
+        & ! [X0_1] : 
+            ( ~ r1(X0_0,alabai_skc0)
+            | ~ ! [X0_0] : 
+                  ( ~ r1(alabai_skc0,X0_0)
+                  | ~ p1(X0_0) ) ) ) ),
+    inference('DisjElim',[status(thm)],[41])).
+
+fof(56,plain,
+    ( ~ r1(alabai_skc0,X0_0)
+    | ~ ~ r1(X0_0,alabai_skc0) ),
+    inference('ConjElim',[status(thm)],[43])).
+
+fof(58,plain,
+    ( ~ ~ r1(alabai_skc1,alabai_skc0)
+    & ~ ~ ! [X0_0] : 
+            ( ~ r1(alabai_skc0,alabai_skc1)
+            | p1(alabai_skc1) ) ),
+    inference('NegDisj',[status(thm)],[49])).
+
+fof(67,plain,
+    ( ~ r1(alabai_skc0,X0_0)
+    | ~ ~ ! [X0_1] : 
+            ( ~ r1(X0_0,alabai_skc0)
+            | ! [X0_0] : 
+                ( ~ r1(alabai_skc0,X0_0)
+                | ~ ! [X0_1] : 
+                      ( ~ r1(X0_0,alabai_skc0)
+                      | ~ p1(alabai_skc0) ) ) )
+    | ~ ! [X0_1] : 
+          ( ~ r1(X0_0,alabai_skc0)
+          | ~ ! [X0_0] : 
+                ( ~ r1(alabai_skc0,X0_0)
+                | ~ p1(X0_0) ) ) ),
+    inference('NegConj',[status(thm)],[54])).
+
+cnf(69,plain,
+    ( ~ r1(alabai_skc0,X0_0)
+    | r1(X0_0,alabai_skc0) ),
+    inference('DNegCanc',[status(thm)],[56])).
+
+fof(74,plain,(
+    ~ ~ ! [X0_0] : 
+          ( ~ r1(alabai_skc0,alabai_skc1)
+          | p1(alabai_skc1) ) ),
+    inference('ConjElim',[status(thm)],[58])).
+
+fof(83,plain,
+    ( ~ r1(alabai_skc0,X0_0)
+    | ~ ! [X0_1] : 
+          ( ~ r1(X0_0,alabai_skc0)
+          | ~ ! [X0_0] : 
+                ( ~ r1(alabai_skc0,X0_0)
+                | ~ p1(X0_0) ) )
+    | ! [X0_1] : 
+        ( ~ r1(X0_0,alabai_skc0)
+        | ! [X0_0] : 
+            ( ~ r1(alabai_skc0,X0_0)
+            | ~ ! [X0_1] : 
+                  ( ~ r1(X0_0,alabai_skc0)
+                  | ~ p1(alabai_skc0) ) ) ) ),
+    inference('DNegCanc',[status(thm)],[67])).
+
+fof(90,plain,(
+    ! [X0_0] : 
+      ( ~ r1(alabai_skc0,alabai_skc1)
+      | p1(alabai_skc1) ) ),
+    inference('DNegCanc',[status(thm)],[74])).
+
+fof(94,plain,
+    ( ~ r1(alabai_skc0,X0_0)
+    | ! [X0_1] : 
+        ( ~ r1(X0_0,alabai_skc0)
+        | ! [X0_0] : 
+            ( ~ r1(alabai_skc0,X0_0)
+            | ~ ! [X0_1] : 
+                  ( ~ r1(X0_0,alabai_skc0)
+                  | ~ p1(alabai_skc0) ) ) )
+    | ? [X0_1] : ~ ( ~ r1(X0_0,alabai_skc0)
+        | ~ ! [X0_0] : 
+              ( ~ r1(alabai_skc0,X0_0)
+              | ~ p1(X0_0) ) ) ),
+    inference('NegFAll',[status(thm)],[83])).
+
+fof(96,plain,
+    ( ~ r1(alabai_skc0,alabai_skc1)
+    | p1(alabai_skc1) ),
+    inference('FAllElim',[status(thm)],[90])).
+
+fof(100,plain,
+    ( ~ r1(alabai_skc0,X0_0)
+    | ? [X0_1] : ~ ( ~ r1(X0_0,alabai_skc0)
+        | ~ ! [X0_0] : 
+              ( ~ r1(alabai_skc0,X0_0)
+              | ~ p1(X0_0) ) )
+    | ~ r1(X0_0,alabai_skc0)
+    | ! [X0_0] : 
+        ( ~ r1(alabai_skc0,X0_0)
+        | ~ ! [X0_1] : 
+              ( ~ r1(X0_0,alabai_skc0)
+              | ~ p1(alabai_skc0) ) ) ),
+    inference('FAllElim',[status(thm)],[94])).
+
+cnf(102,plain,
+    ( p1(alabai_skc1) ),
+    inference('FSubsRes_DisjElim',[status(thm)],[96,36])).
+
+fof(106,plain,
+    ( ~ r1(alabai_skc0,X0_0)
+    | ~ r1(X0_0,alabai_skc0)
+    | ! [X0_0] : 
+        ( ~ r1(alabai_skc0,X0_0)
+        | ~ ! [X0_1] : 
+              ( ~ r1(X0_0,alabai_skc0)
+              | ~ p1(alabai_skc0) ) )
+    | ~ ( ~ r1(X0_0,alabai_skc0)
+        | ~ ! [X0_0] : 
+              ( ~ r1(alabai_skc0,X0_0)
+              | ~ p1(X0_0) ) ) ),
+    inference('ExElim',[status(esa)],[100])).
+
+fof(115,plain,
+    ( ~ r1(alabai_skc0,X0_0)
+    | ~ ( ~ r1(X0_0,alabai_skc0)
+        | ~ ! [X0_0] : 
+              ( ~ r1(alabai_skc0,X0_0)
+              | ~ p1(X0_0) ) )
+    | ! [X0_0] : 
+        ( ~ r1(alabai_skc0,X0_0)
+        | ~ ! [X0_1] : 
+              ( ~ r1(X0_0,alabai_skc0)
+              | ~ p1(alabai_skc0) ) ) ),
+    inference('FSubsRes_DisjElim',[status(thm)],[106,69])).
+
+fof(120,plain,
+    ( ~ r1(alabai_skc0,X0_0)
+    | ! [X0_0] : 
+        ( ~ r1(alabai_skc0,X0_0)
+        | ~ ! [X0_1] : 
+              ( ~ r1(X0_0,alabai_skc0)
+              | ~ p1(alabai_skc0) ) )
+    | ( ~ ~ r1(X0_0,alabai_skc0)
+      & ~ ~ ! [X0_0] : 
+              ( ~ r1(alabai_skc0,X0_0)
+              | ~ p1(X0_0) ) ) ),
+    inference('NegDisj',[status(thm)],[115])).
+
+fof(126,plain,
+    ( ~ r1(alabai_skc0,X0_0)
+    | ( ~ ~ r1(X0_0,alabai_skc0)
+      & ~ ~ ! [X0_0] : 
+              ( ~ r1(alabai_skc0,X0_0)
+              | ~ p1(X0_0) ) )
+    | ~ r1(alabai_skc0,X0_0)
+    | ~ ! [X0_1] : 
+          ( ~ r1(X0_0,alabai_skc0)
+          | ~ p1(alabai_skc0) ) ),
+    inference('FAllElim',[status(thm)],[120])).
+
+fof(132,plain,
+    ( ~ r1(alabai_skc0,X0_0)
+    | ~ r1(alabai_skc0,X0_0)
+    | ~ ! [X0_1] : 
+          ( ~ r1(X0_0,alabai_skc0)
+          | ~ p1(alabai_skc0) )
+    | ~ ~ ! [X0_0] : 
+            ( ~ r1(alabai_skc0,X0_0)
+            | ~ p1(X0_0) ) ),
+    inference('ConjElim',[status(thm)],[126])).
+
+fof(139,plain,
+    ( ~ ~ ! [X0_0] : 
+            ( ~ r1(alabai_skc0,X0_0)
+            | ~ p1(X0_0) )
+    | ~ r1(alabai_skc0,X0_0)
+    | ~ ! [X0_1] : 
+          ( ~ r1(X0_0,alabai_skc0)
+          | ~ p1(alabai_skc0) ) ),
+    inference('DisjElim',[status(thm)],[132])).
+
+fof(146,plain,
+    ( ~ r1(alabai_skc0,X0_0)
+    | ~ ! [X0_1] : 
+          ( ~ r1(X0_0,alabai_skc0)
+          | ~ p1(alabai_skc0) )
+    | ! [X0_0] : 
+        ( ~ r1(alabai_skc0,X0_0)
+        | ~ p1(X0_0) ) ),
+    inference('DNegCanc',[status(thm)],[139])).
+
+fof(151,plain,
+    ( ~ r1(alabai_skc0,X0_0)
+    | ! [X0_0] : 
+        ( ~ r1(alabai_skc0,X0_0)
+        | ~ p1(X0_0) )
+    | ? [X0_1] : ~ ( ~ r1(X0_0,alabai_skc0)
+        | ~ p1(alabai_skc0) ) ),
+    inference('NegFAll',[status(thm)],[146])).
+
+fof(157,plain,
+    ( ~ r1(alabai_skc0,X0_0)
+    | ? [X0_1] : ~ ( ~ r1(X0_0,alabai_skc0)
+        | ~ p1(alabai_skc0) )
+    | ~ r1(alabai_skc0,X0_0)
+    | ~ p1(X0_0) ),
+    inference('FAllElim',[status(thm)],[151])).
+
+fof(162,plain,
+    ( ~ r1(alabai_skc0,X0_0)
+    | ~ r1(alabai_skc0,X0_0)
+    | ~ p1(X0_0)
+    | ~ ( ~ r1(X0_0,alabai_skc0)
+        | ~ p1(alabai_skc0) ) ),
+    inference('ExElim',[status(esa)],[157])).
+
+fof(167,plain,
+    ( ~ ( ~ r1(X0_0,alabai_skc0)
+        | ~ p1(alabai_skc0) )
+    | ~ r1(alabai_skc0,X0_0)
+    | ~ p1(X0_0) ),
+    inference('DisjElim',[status(thm)],[162])).
+
+fof(172,plain,
+    ( ~ r1(alabai_skc0,X0_0)
+    | ~ p1(X0_0)
+    | ( ~ ~ r1(X0_0,alabai_skc0)
+      & ~ ~ p1(alabai_skc0) ) ),
+    inference('NegDisj',[status(thm)],[167])).
+
+fof(180,plain,
+    ( ~ r1(alabai_skc0,X0_0)
+    | ~ p1(X0_0)
+    | ~ ~ p1(alabai_skc0) ),
+    inference('ConjElim',[status(thm)],[172])).
+
+cnf(186,plain,
+    ( ~ r1(alabai_skc0,X0_0)
+    | ~ p1(X0_0) ),
+    inference('FSubsRes_DNegCanc',[status(thm)],[180,51])).
+
+cnf(209,plain,
+    ( $false ),
+    inference('Res_FSubsRes',[status(thm)],[186,102,36])).
+
+% END OF PROOF. 
+
+%%%%%%%%%%%%%%%%%  Statistics: %%%%%%%%%%%%%%%%%%%%%%%
+%  CPU time 0.98 sec
+%  Clausification inferences 178
+%    skolemisation      14
+%    neg. distribution  45
+%    double neg. canc.  33
+%    conj. elimination  46
+%    univ. quant. elim. 18
+%    disj. elimination  22
+%  Deduction inferences 0
+%  Forward simplification inferences 211
+%    ident. lit. fact. 181
+%    subsumption       17
+%    subs. resolution  13
+%  Backward simplification inferences 11
+%    subsumption      11
+%  Generated clauses 182
+%      input                 1
+%      copied                1
+%      by clausification     178
+%      by resolution         2
+%    Redundant discarded 17
+%      subsumed          17
+%  Kept clauses
+%      total   165
+%        selected   162
+%        terminal   1
+%      current 154
+%      redundant discarded 11
+%        subsumed                 11
+%  Selection units 28 = 28 extracted - 0 deleted
+%     resolution 21, deleted 0, promoted 37
+%     redex for paramod.   7, deleted 0, promoted 0
+%%%%%%%%%%%%%%  End of statistics. %%%%%%%%%%%%%%%%%%%
+
+% Saturation aborted, possibly on some limit.
+% 1 terminal clause(s) = 1 contradiction(s) + 0 cond. contr. + 0 answer(s).

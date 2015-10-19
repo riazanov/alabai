@@ -1,0 +1,18 @@
+
+
+include('univ-bench.ontology.cnf.tptp').
+
+include('univ-bench.db-abstraction.tptp').
+
+
+input_clause(query14,conjecture,
+  [
+    --iUndergraduateStudent(X),
+    ++answer(X)
+  ]).
+
+% 1 answer expected.
+
+% 1 answer found:
+
+% | <<answer>>(X0) \/ {{~db_abs_iUndergraduateStudent}}(X0) 

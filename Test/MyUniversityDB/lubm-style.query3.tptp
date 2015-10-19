@@ -1,0 +1,24 @@
+
+include('my_university_semantic_map.fof.tptp').
+
+include('lubm.ontology.cnf.tptp').
+
+
+% The name of the author corresponds to a DB generated with
+% --seed 235 --number-of-departments 25
+
+
+input_clause(query3,conjecture,
+  [
+    --p_Publication(X),
+    --p_name(X,Title),
+    --p_publicationAuthor(X,Author),
+    --p_name(Author,"Jonathan Cooper"),
+    ++answer(Title)
+  ]).
+
+
+% Note that 
+% ipublicationAuthor(X,'http://www.Department0.University0.edu/AssistantProfessor0')
+% implies iPublication(X),
+% therefore checking if X is in iPublication is unnecessary.

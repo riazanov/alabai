@@ -1,0 +1,63 @@
+
+cnf(ax,axiom,
+  p
+).
+
+cnf(ax,axiom,
+  p(a)
+).
+
+cnf(ax,axiom,
+  p(a,b)
+).
+
+
+cnf(ax,axiom,
+  p(a,X)
+).
+
+cnf(ax,axiom,
+  p(f(a),Y)
+).
+
+cnf(ax,axiom,
+  p(f(a,b),Y)
+).
+
+cnf(ax,axiom,
+  p(f(a,X),Y)
+).
+
+
+cnf(ax,axiom,
+  p(f(f(X),Y),Z)
+).
+
+cnf(ax,axiom,
+  p(f(X,X),Y)
+).
+
+
+
+cnf(ax,axiom,
+  p(f(X),Y)
+).
+
+
+cnf(ax,axiom,
+  p(f(X,Y),Z)
+).
+
+cnf(ax,axiom,
+  p(X,X)
+).
+
+cnf(ax,axiom,
+  p(X)
+).
+
+cnf(ax,axiom,
+  p(X,Y)
+).
+
+

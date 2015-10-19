@@ -1,0 +1,1433 @@
+%  Common axioms:
+
+
+  cnf('owl:Thing U dataDomain cover all model elements',axiom,
+      ( p_Thing(X)
+      | dataDomain(X) )).
+
+
+
+  cnf('There is at least one individual',axiom,
+      ( p_Thing(skc0) )).
+
+
+
+  cnf('There is at least one data value',axiom,
+      ( dataDomain(skc1) )).
+
+
+
+  cnf('owl:Thing and dataDomain are disjoint',axiom,
+      ( ~ p_Thing(X)
+      | ~ dataDomain(X) )).
+
+
+
+  cnf('owl:Nothing is empty',axiom,
+      ( ~ p_Nothing(X) )).
+
+
+
+  cnf('integer literals are distinct from string-without-language literals',axiom,
+      ( intLit(X) != stringLitNoLang(Y) )).
+
+
+
+  cnf('integer literals are distinct from string-with-language literals',axiom,
+      ( intLit(X) != stringLitWithLang(Y) )).
+
+
+
+  cnf('integer literals are distinct from general typed literals',axiom,
+      ( intLit(X) != typedLit(Y) )).
+
+
+
+  cnf('string-without-language literals are distinct from string-with-language literals',axiom,
+      ( stringLitNoLang(X) != stringLitWithLang(Y) )).
+
+
+
+  cnf('string-without-language literals are distinct from general typed literals',axiom,
+      ( stringLitNoLang(X) != typedLit(Y) )).
+
+
+
+  cnf('string-with-language literals are distinct from general typed literals',axiom,
+      ( stringLitWithLang(X) != typedLit(Y) )).
+
+
+
+  cnf('intLit is a constructor',axiom,
+      ( intLit(X) != intLit(Y)
+      | X = Y )).
+
+
+
+  cnf('stringLitNoLang is a constructor',axiom,
+      ( stringLitNoLang(X) != stringLitNoLang(Y)
+      | X = Y )).
+
+
+
+  cnf('stringLitWithLang is a constructor',axiom,
+      ( stringLitWithLang(X) != stringLitWithLang(Y)
+      | X = Y )).
+
+
+
+  cnf('typedLit is a constructor',axiom,
+      ( typedLit(X) != typedLit(Y)
+      | X = Y )).
+
+
+
+%  End of common axioms.
+
+
+  cnf('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor must be an individual',axiom,
+      ( ~ p_advisor(X,Y)
+      | p_Thing(X) )).
+
+
+
+  cnf('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor must be an individual',axiom,
+      ( ~ p_advisor(X,Y)
+      | p_Thing(Y) )).
+
+
+
+  cnf('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#tenured must be an individual',axiom,
+      ( ~ p_tenured(X,Y)
+      | p_Thing(X) )).
+
+
+
+  cnf('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#tenured must be an individual',axiom,
+      ( ~ p_tenured(X,Y)
+      | p_Thing(Y) )).
+
+
+
+  cnf('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#officeNumber must be an individual',axiom,
+      ( ~ p_officeNumber(X,Y)
+      | p_Thing(X) )).
+
+
+
+  cnf('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#officeNumber must be a data value',axiom,
+      ( ~ p_officeNumber(X,Y)
+      | dataDomain(Y) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person is a subclass of owl:Thing',axiom,
+      ( ~ p_Person(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#undergraduateDegreeFrom must be an individual',axiom,
+      ( ~ p_undergraduateDegreeFrom(X,Y)
+      | p_Thing(X) )).
+
+
+
+  cnf('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#undergraduateDegreeFrom must be an individual',axiom,
+      ( ~ p_undergraduateDegreeFrom(X,Y)
+      | p_Thing(Y) )).
+
+
+
+  cnf('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#hasAlumnus must be an individual',axiom,
+      ( ~ p_hasAlumnus(X,Y)
+      | p_Thing(X) )).
+
+
+
+  cnf('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#hasAlumnus must be an individual',axiom,
+      ( ~ p_hasAlumnus(X,Y)
+      | p_Thing(Y) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Article is a subclass of owl:Thing',axiom,
+      ( ~ p_Article(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ConferencePaper is a subclass of owl:Thing',axiom,
+      ( ~ p_ConferencePaper(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Specification is a subclass of owl:Thing',axiom,
+      ( ~ p_Specification(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Faculty is a subclass of owl:Thing',axiom,
+      ( ~ p_Faculty(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Book is a subclass of owl:Thing',axiom,
+      ( ~ p_Book(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#TechnicalReport is a subclass of owl:Thing',axiom,
+      ( ~ p_TechnicalReport(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#degreeFrom must be an individual',axiom,
+      ( ~ p_degreeFrom(X,Y)
+      | p_Thing(X) )).
+
+
+
+  cnf('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#degreeFrom must be an individual',axiom,
+      ( ~ p_degreeFrom(X,Y)
+      | p_Thing(Y) )).
+
+
+
+  cnf('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#name must be an individual',axiom,
+      ( ~ p_name(X,Y)
+      | p_Thing(X) )).
+
+
+
+  cnf('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#name must be a data value',axiom,
+      ( ~ p_name(X,Y)
+      | dataDomain(Y) )).
+
+
+
+  cnf('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor must be an individual',axiom,
+      ( ~ p_worksFor(X,Y)
+      | p_Thing(X) )).
+
+
+
+  cnf('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor must be an individual',axiom,
+      ( ~ p_worksFor(X,Y)
+      | p_Thing(Y) )).
+
+
+
+  cnf('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#researchProject must be an individual',axiom,
+      ( ~ p_researchProject(X,Y)
+      | p_Thing(X) )).
+
+
+
+  cnf('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#researchProject must be an individual',axiom,
+      ( ~ p_researchProject(X,Y)
+      | p_Thing(Y) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair is a subclass of owl:Thing',axiom,
+      ( ~ p_Chair(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf must be an individual',axiom,
+      ( ~ p_memberOf(X,Y)
+      | p_Thing(X) )).
+
+
+
+  cnf('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf must be an individual',axiom,
+      ( ~ p_memberOf(X,Y)
+      | p_Thing(Y) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#College is a subclass of owl:Thing',axiom,
+      ( ~ p_College(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Student is a subclass of owl:Thing',axiom,
+      ( ~ p_Student(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#doctoralDegreeFrom must be an individual',axiom,
+      ( ~ p_doctoralDegreeFrom(X,Y)
+      | p_Thing(X) )).
+
+
+
+  cnf('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#doctoralDegreeFrom must be an individual',axiom,
+      ( ~ p_doctoralDegreeFrom(X,Y)
+      | p_Thing(Y) )).
+
+
+
+  cnf('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationResearch must be an individual',axiom,
+      ( ~ p_publicationResearch(X,Y)
+      | p_Thing(X) )).
+
+
+
+  cnf('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationResearch must be an individual',axiom,
+      ( ~ p_publicationResearch(X,Y)
+      | p_Thing(Y) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchAssistant is a subclass of owl:Thing',axiom,
+      ( ~ p_ResearchAssistant(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#listedCourse must be an individual',axiom,
+      ( ~ p_listedCourse(X,Y)
+      | p_Thing(X) )).
+
+
+
+  cnf('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#listedCourse must be an individual',axiom,
+      ( ~ p_listedCourse(X,Y)
+      | p_Thing(Y) )).
+
+
+
+  cnf('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#age must be an individual',axiom,
+      ( ~ p_age(X,Y)
+      | p_Thing(X) )).
+
+
+
+  cnf('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#age must be a data value',axiom,
+      ( ~ p_age(X,Y)
+      | dataDomain(Y) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Software is a subclass of owl:Thing',axiom,
+      ( ~ p_Software(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationDate must be an individual',axiom,
+      ( ~ p_publicationDate(X,Y)
+      | p_Thing(X) )).
+
+
+
+  cnf('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationDate must be an individual',axiom,
+      ( ~ p_publicationDate(X,Y)
+      | p_Thing(Y) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#University is a subclass of owl:Thing',axiom,
+      ( ~ p_University(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Employee is a subclass of owl:Thing',axiom,
+      ( ~ p_Employee(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Institute is a subclass of owl:Thing',axiom,
+      ( ~ p_Institute(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#mastersDegreeFrom must be an individual',axiom,
+      ( ~ p_mastersDegreeFrom(X,Y)
+      | p_Thing(X) )).
+
+
+
+  cnf('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#mastersDegreeFrom must be an individual',axiom,
+      ( ~ p_mastersDegreeFrom(X,Y)
+      | p_Thing(Y) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ClericalStaff is a subclass of owl:Thing',axiom,
+      ( ~ p_ClericalStaff(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup is a subclass of owl:Thing',axiom,
+      ( ~ p_ResearchGroup(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#emailAddress must be an individual',axiom,
+      ( ~ p_emailAddress(X,Y)
+      | p_Thing(X) )).
+
+
+
+  cnf('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#emailAddress must be a data value',axiom,
+      ( ~ p_emailAddress(X,Y)
+      | dataDomain(Y) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#UnofficialPublication is a subclass of owl:Thing',axiom,
+      ( ~ p_UnofficialPublication(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor is a subclass of owl:Thing',axiom,
+      ( ~ p_AssistantProfessor(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member must be an individual',axiom,
+      ( ~ p_member(X,Y)
+      | p_Thing(X) )).
+
+
+
+  cnf('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member must be an individual',axiom,
+      ( ~ p_member(X,Y)
+      | p_Thing(Y) )).
+
+
+
+  cnf('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#softwareVersion must be an individual',axiom,
+      ( ~ p_softwareVersion(X,Y)
+      | p_Thing(X) )).
+
+
+
+  cnf('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#softwareVersion must be an individual',axiom,
+      ( ~ p_softwareVersion(X,Y)
+      | p_Thing(Y) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor is a subclass of owl:Thing',axiom,
+      ( ~ p_FullProfessor(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#PostDoc is a subclass of owl:Thing',axiom,
+      ( ~ p_PostDoc(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#teacherOf must be an individual',axiom,
+      ( ~ p_teacherOf(X,Y)
+      | p_Thing(X) )).
+
+
+
+  cnf('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#teacherOf must be an individual',axiom,
+      ( ~ p_teacherOf(X,Y)
+      | p_Thing(Y) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Manual is a subclass of owl:Thing',axiom,
+      ( ~ p_Manual(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Research is a subclass of owl:Thing',axiom,
+      ( ~ p_Research(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department is a subclass of owl:Thing',axiom,
+      ( ~ p_Department(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#researchInterest must be an individual',axiom,
+      ( ~ p_researchInterest(X,Y)
+      | p_Thing(X) )).
+
+
+
+  cnf('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#researchInterest must be a data value',axiom,
+      ( ~ p_researchInterest(X,Y)
+      | dataDomain(Y) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Dean is a subclass of owl:Thing',axiom,
+      ( ~ p_Dean(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Work is a subclass of owl:Thing',axiom,
+      ( ~ p_Work(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#orgPublication must be an individual',axiom,
+      ( ~ p_orgPublication(X,Y)
+      | p_Thing(X) )).
+
+
+
+  cnf('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#orgPublication must be an individual',axiom,
+      ( ~ p_orgPublication(X,Y)
+      | p_Thing(Y) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#SystemsStaff is a subclass of owl:Thing',axiom,
+      ( ~ p_SystemsStaff(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#GraduateStudent is a subclass of owl:Thing',axiom,
+      ( ~ p_GraduateStudent(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer is a subclass of owl:Thing',axiom,
+      ( ~ p_Lecturer(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor is a subclass of owl:Thing',axiom,
+      ( ~ p_Professor(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#takesCourse must be an individual',axiom,
+      ( ~ p_takesCourse(X,Y)
+      | p_Thing(X) )).
+
+
+
+  cnf('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#takesCourse must be an individual',axiom,
+      ( ~ p_takesCourse(X,Y)
+      | p_Thing(Y) )).
+
+
+
+  cnf('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#softwareDocumentation must be an individual',axiom,
+      ( ~ p_softwareDocumentation(X,Y)
+      | p_Thing(X) )).
+
+
+
+  cnf('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#softwareDocumentation must be an individual',axiom,
+      ( ~ p_softwareDocumentation(X,Y)
+      | p_Thing(Y) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AdministrativeStaff is a subclass of owl:Thing',axiom,
+      ( ~ p_AdministrativeStaff(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#TeachingAssistant is a subclass of owl:Thing',axiom,
+      ( ~ p_TeachingAssistant(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#GraduateCourse is a subclass of owl:Thing',axiom,
+      ( ~ p_GraduateCourse(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Course is a subclass of owl:Thing',axiom,
+      ( ~ p_Course(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf must be an individual',axiom,
+      ( ~ p_subOrganizationOf(X,Y)
+      | p_Thing(X) )).
+
+
+
+  cnf('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf must be an individual',axiom,
+      ( ~ p_subOrganizationOf(X,Y)
+      | p_Thing(Y) )).
+
+
+
+  cnf('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf must be an individual',axiom,
+      ( ~ p_headOf(X,Y)
+      | p_Thing(X) )).
+
+
+
+  cnf('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf must be an individual',axiom,
+      ( ~ p_headOf(X,Y)
+      | p_Thing(Y) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Program is a subclass of owl:Thing',axiom,
+      ( ~ p_Program(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Director is a subclass of owl:Thing',axiom,
+      ( ~ p_Director(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor must be an individual',axiom,
+      ( ~ p_publicationAuthor(X,Y)
+      | p_Thing(X) )).
+
+
+
+  cnf('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor must be an individual',axiom,
+      ( ~ p_publicationAuthor(X,Y)
+      | p_Thing(Y) )).
+
+
+
+  cnf('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#teachingAssistantOf must be an individual',axiom,
+      ( ~ p_teachingAssistantOf(X,Y)
+      | p_Thing(X) )).
+
+
+
+  cnf('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#teachingAssistantOf must be an individual',axiom,
+      ( ~ p_teachingAssistantOf(X,Y)
+      | p_Thing(Y) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Schedule is a subclass of owl:Thing',axiom,
+      ( ~ p_Schedule(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#UndergraduateStudent is a subclass of owl:Thing',axiom,
+      ( ~ p_UndergraduateStudent(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#title must be an individual',axiom,
+      ( ~ p_title(X,Y)
+      | p_Thing(X) )).
+
+
+
+  cnf('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#title must be a data value',axiom,
+      ( ~ p_title(X,Y)
+      | dataDomain(Y) )).
+
+
+
+  cnf('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#affiliateOf must be an individual',axiom,
+      ( ~ p_affiliateOf(X,Y)
+      | p_Thing(X) )).
+
+
+
+  cnf('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#affiliateOf must be an individual',axiom,
+      ( ~ p_affiliateOf(X,Y)
+      | p_Thing(Y) )).
+
+
+
+  cnf('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#telephone must be an individual',axiom,
+      ( ~ p_telephone(X,Y)
+      | p_Thing(X) )).
+
+
+
+  cnf('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#telephone must be a data value',axiom,
+      ( ~ p_telephone(X,Y)
+      | dataDomain(Y) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#JournalArticle is a subclass of owl:Thing',axiom,
+      ( ~ p_JournalArticle(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor is a subclass of owl:Thing',axiom,
+      ( ~ p_AssociateProfessor(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#VisitingProfessor is a subclass of owl:Thing',axiom,
+      ( ~ p_VisitingProfessor(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('Subject of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#affiliatedOrganizationOf must be an individual',axiom,
+      ( ~ p_affiliatedOrganizationOf(X,Y)
+      | p_Thing(X) )).
+
+
+
+  cnf('Object of http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#affiliatedOrganizationOf must be an individual',axiom,
+      ( ~ p_affiliatedOrganizationOf(X,Y)
+      | p_Thing(Y) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization is a subclass of owl:Thing',axiom,
+      ( ~ p_Organization(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication is a subclass of owl:Thing',axiom,
+      ( ~ p_Publication(X)
+      | p_Thing(X) )).
+
+
+
+  cnf('Class axiom #0 CL 1',axiom,
+      ( ~ p_Director(X)
+      | p_Person(X) )).
+
+
+
+  cnf('Class axiom #0 CL 2',axiom,
+      ( ~ p_Director(X)
+      | p_headOf(X,skf2(X)) )).
+
+
+
+  cnf('Class axiom #0 CL 3',axiom,
+      ( ~ p_Director(X)
+      | p_Program(skf2(X)) )).
+
+
+
+  cnf('Class axiom #0 CL 4',axiom,
+      ( ~ p_Person(X)
+      | ~ p_headOf(X,Y0)
+      | ~ p_Program(Y0)
+      | p_Director(X) )).
+
+
+
+  cnf('Class axiom #1',axiom,
+      ( ~ p_AssociateProfessor(X)
+      | p_Professor(X) )).
+
+
+
+  cnf('Class axiom #2',axiom,
+      ( ~ p_AssistantProfessor(X)
+      | p_Professor(X) )).
+
+
+
+  cnf('Property axiom #3',axiom,
+      ( ~ p_emailAddress(X,Y)
+      | p_Person(X) )).
+
+
+
+  cnf('Class axiom #4',axiom,
+      ( ~ p_UnofficialPublication(X)
+      | p_Publication(X) )).
+
+
+
+  cnf('Property axiom #5',axiom,
+      ( ~ p_teacherOf(X,Y)
+      | p_Course(Y) )).
+
+
+
+  cnf('Class axiom #6',axiom,
+      ( ~ p_GraduateStudent(X)
+      | p_Person(X) )).
+
+
+
+  cnf('Property axiom #7',axiom,
+      ( ~ p_telephone(X,Y)
+      | p_Person(X) )).
+
+
+
+  cnf('Class axiom #8',axiom,
+      ( ~ p_Lecturer(X)
+      | p_Faculty(X) )).
+
+
+
+  cnf('Class axiom #9 CL 1',axiom,
+      ( ~ p_Dean(X)
+      | p_Person(X) )).
+
+
+
+  cnf('Class axiom #9 CL 2',axiom,
+      ( ~ p_Dean(X)
+      | p_headOf(X,skf3(X)) )).
+
+
+
+  cnf('Class axiom #9 CL 3',axiom,
+      ( ~ p_Dean(X)
+      | p_College(skf3(X)) )).
+
+
+
+  cnf('Class axiom #9 CL 4',axiom,
+      ( ~ p_Person(X)
+      | ~ p_headOf(X,Y0)
+      | ~ p_College(Y0)
+      | p_Dean(X) )).
+
+
+
+  cnf('Class axiom #10 CL 1',axiom,
+      ( ~ p_ResearchAssistant(X)
+      | p_worksFor(X,skf4(X)) )).
+
+
+
+  cnf('Class axiom #10 CL 2',axiom,
+      ( ~ p_ResearchAssistant(X)
+      | p_ResearchGroup(skf4(X)) )).
+
+
+
+  cnf('Class axiom #11',axiom,
+      ( ~ p_Program(X)
+      | p_Organization(X) )).
+
+
+
+  cnf('Class axiom #12',axiom,
+      ( ~ p_ConferencePaper(X)
+      | p_Article(X) )).
+
+
+
+  cnf('Class axiom #13',axiom,
+      ( ~ p_Institute(X)
+      | p_Organization(X) )).
+
+
+
+  cnf('Class axiom #14',axiom,
+      ( ~ p_PostDoc(X)
+      | p_Faculty(X) )).
+
+
+
+  cnf('Class axiom #15',axiom,
+      ( ~ p_College(X)
+      | p_Organization(X) )).
+
+
+
+  cnf('Property axiom #16',axiom,
+      ( ~ p_advisor(X,Y)
+      | p_Professor(Y) )).
+
+
+
+  cnf('Property axiom #17',axiom,
+      ( ~ p_subOrganizationOf(X,Y)
+      | p_Organization(Y) )).
+
+
+
+  cnf('Class axiom #18',axiom,
+      ( ~ p_Manual(X)
+      | p_Publication(X) )).
+
+
+
+  cnf('Property axiom #19',axiom,
+      ( ~ p_mastersDegreeFrom(X,Y)
+      | p_degreeFrom(X,Y) )).
+
+
+
+  cnf('Property axiom #20',axiom,
+      ( ~ p_headOf(X,Y)
+      | p_worksFor(X,Y) )).
+
+
+
+  cnf('Property axiom #21',axiom,
+      ( ~ p_researchProject(X,Y)
+      | p_ResearchGroup(X) )).
+
+
+
+  cnf('Property axiom #22',axiom,
+      ( ~ p_orgPublication(X,Y)
+      | p_Publication(Y) )).
+
+
+
+  cnf('Class axiom #23',axiom,
+      ( ~ p_Software(X)
+      | p_Publication(X) )).
+
+
+
+  cnf('Property axiom #24',axiom,
+      ( ~ p_worksFor(X,Y)
+      | p_memberOf(X,Y) )).
+
+
+
+  cnf('Class axiom #25',axiom,
+      ( ~ p_Chair(X)
+      | p_Professor(X) )).
+
+
+
+  cnf('Property axiom #26',axiom,
+      ( ~ p_softwareVersion(X,Y)
+      | p_Software(X) )).
+
+
+
+  cnf('Property axiom #27',axiom,
+      ( ~ p_undergraduateDegreeFrom(X,Y)
+      | p_degreeFrom(X,Y) )).
+
+
+
+  cnf('Property axiom #28',axiom,
+      ( ~ p_subOrganizationOf(X,Y)
+      | p_Organization(X) )).
+
+
+
+  cnf('Class axiom #29',axiom,
+      ( ~ p_Article(X)
+      | p_Publication(X) )).
+
+
+
+  cnf('Property axiom #30',axiom,
+      ( ~ p_hasAlumnus(X,Y)
+      | p_Person(Y) )).
+
+
+
+  cnf('Class axiom #31',axiom,
+      ( ~ p_FullProfessor(X)
+      | p_Professor(X) )).
+
+
+
+  cnf('Class axiom #32',axiom,
+      ( ~ p_TechnicalReport(X)
+      | p_Article(X) )).
+
+
+
+  cnf('Class axiom #33',axiom,
+      ( ~ p_Department(X)
+      | p_Organization(X) )).
+
+
+
+  cnf('Property axiom #34',axiom,
+      ( ~ p_member(X,Y)
+      | p_Person(Y) )).
+
+
+
+  cnf('Class axiom #35',axiom,
+      ( ~ p_SystemsStaff(X)
+      | p_AdministrativeStaff(X) )).
+
+
+
+  cnf('Property axiom #36',axiom,
+      ( ~ p_teachingAssistantOf(X,Y)
+      | p_Course(Y) )).
+
+
+
+  cnf('Property axiom #37',axiom,
+      ( ~ p_undergraduateDegreeFrom(X,Y)
+      | p_Person(X) )).
+
+
+
+  cnf('Class axiom #38',axiom,
+      ( ~ p_Professor(X)
+      | p_Faculty(X) )).
+
+
+
+  cnf('Property axiom #39',axiom,
+      ( ~ p_subOrganizationOf(X,Y)
+      | ~ p_subOrganizationOf(Y,Z)
+      | p_subOrganizationOf(X,Z) )).
+
+
+
+  cnf('Property axiom #40',axiom,
+      ( ~ p_softwareDocumentation(X,Y)
+      | p_Publication(Y) )).
+
+
+
+  cnf('Class axiom #41 CL 1',axiom,
+      ( ~ p_Chair(X)
+      | p_Person(X) )).
+
+
+
+  cnf('Class axiom #41 CL 2',axiom,
+      ( ~ p_Chair(X)
+      | p_headOf(X,skf5(X)) )).
+
+
+
+  cnf('Class axiom #41 CL 3',axiom,
+      ( ~ p_Chair(X)
+      | p_Department(skf5(X)) )).
+
+
+
+  cnf('Class axiom #41 CL 4',axiom,
+      ( ~ p_Person(X)
+      | ~ p_headOf(X,Y0)
+      | ~ p_Department(Y0)
+      | p_Chair(X) )).
+
+
+
+  cnf('Property axiom #42',axiom,
+      ( ~ p_degreeFrom(X,Y)
+      | p_Person(X) )).
+
+
+
+  cnf('Class axiom #43 CL 1',axiom,
+      ( ~ p_Student(X)
+      | p_Person(X) )).
+
+
+
+  cnf('Class axiom #43 CL 2',axiom,
+      ( ~ p_Student(X)
+      | p_takesCourse(X,skf6(X)) )).
+
+
+
+  cnf('Class axiom #43 CL 3',axiom,
+      ( ~ p_Student(X)
+      | p_Course(skf6(X)) )).
+
+
+
+  cnf('Class axiom #43 CL 4',axiom,
+      ( ~ p_Person(X)
+      | ~ p_takesCourse(X,Y0)
+      | ~ p_Course(Y0)
+      | p_Student(X) )).
+
+
+
+  cnf('Property axiom #44',axiom,
+      ( ~ p_publicationResearch(X,Y)
+      | p_Research(Y) )).
+
+
+
+  cnf('Class axiom #45 CL 1',axiom,
+      ( ~ p_Employee(X)
+      | p_Person(X) )).
+
+
+
+  cnf('Class axiom #45 CL 2',axiom,
+      ( ~ p_Employee(X)
+      | p_worksFor(X,skf7(X)) )).
+
+
+
+  cnf('Class axiom #45 CL 3',axiom,
+      ( ~ p_Employee(X)
+      | p_Organization(skf7(X)) )).
+
+
+
+  cnf('Class axiom #45 CL 4',axiom,
+      ( ~ p_Person(X)
+      | ~ p_worksFor(X,Y0)
+      | ~ p_Organization(Y0)
+      | p_Employee(X) )).
+
+
+
+  cnf('Property axiom #46',axiom,
+      ( ~ p_member(X,Y)
+      | p_Organization(X) )).
+
+
+
+  cnf('Property axiom #47',axiom,
+      ( ~ p_hasAlumnus(X,Y)
+      | p_University(X) )).
+
+
+
+  cnf('Class axiom #48',axiom,
+      ( ~ p_Dean(X)
+      | p_Professor(X) )).
+
+
+
+  cnf('Property axiom #49',axiom,
+      ( ~ p_teacherOf(X,Y)
+      | p_Faculty(X) )).
+
+
+
+  cnf('Class axiom #50',axiom,
+      ( ~ p_ResearchAssistant(X)
+      | p_Student(X) )).
+
+
+
+  cnf('Class axiom #51',axiom,
+      ( ~ p_VisitingProfessor(X)
+      | p_Professor(X) )).
+
+
+
+  cnf('Class axiom #52',axiom,
+      ( ~ p_ResearchGroup(X)
+      | p_Organization(X) )).
+
+
+
+  cnf('Class axiom #53',axiom,
+      ( ~ p_Specification(X)
+      | p_Publication(X) )).
+
+
+
+  cnf('Class axiom #54',axiom,
+      ( ~ p_Book(X)
+      | p_Publication(X) )).
+
+
+
+  cnf('Property axiom #55',axiom,
+      ( ~ p_teachingAssistantOf(X,Y)
+      | p_TeachingAssistant(X) )).
+
+
+
+  cnf('Class axiom #56 CL 1',axiom,
+      ( ~ p_GraduateStudent(X)
+      | p_takesCourse(X,skf8(X)) )).
+
+
+
+  cnf('Class axiom #56 CL 2',axiom,
+      ( ~ p_GraduateStudent(X)
+      | p_GraduateCourse(skf8(X)) )).
+
+
+
+  cnf('Property axiom #57 CL 1',axiom,
+      ( ~ p_memberOf(X,Y)
+      | p_member(Y,X) )).
+
+
+
+  cnf('Property axiom #57 CL 2',axiom,
+      ( ~ p_member(Y,X)
+      | p_memberOf(X,Y) )).
+
+
+
+  cnf('Property axiom #58',axiom,
+      ( ~ p_doctoralDegreeFrom(X,Y)
+      | p_degreeFrom(X,Y) )).
+
+
+
+  cnf('Class axiom #59',axiom,
+      ( ~ p_Course(X)
+      | p_Work(X) )).
+
+
+
+  cnf('Property axiom #60',axiom,
+      ( ~ p_affiliatedOrganizationOf(X,Y)
+      | p_Organization(X) )).
+
+
+
+  cnf('Class axiom #61',axiom,
+      ( ~ p_ClericalStaff(X)
+      | p_AdministrativeStaff(X) )).
+
+
+
+  cnf('Property axiom #62',axiom,
+      ( ~ p_affiliateOf(X,Y)
+      | p_Organization(X) )).
+
+
+
+  cnf('Class axiom #63 CL 1',axiom,
+      ( ~ p_TeachingAssistant(X)
+      | p_Person(X) )).
+
+
+
+  cnf('Class axiom #63 CL 2',axiom,
+      ( ~ p_TeachingAssistant(X)
+      | p_teachingAssistantOf(X,skf9(X)) )).
+
+
+
+  cnf('Class axiom #63 CL 3',axiom,
+      ( ~ p_TeachingAssistant(X)
+      | p_Course(skf9(X)) )).
+
+
+
+  cnf('Class axiom #63 CL 4',axiom,
+      ( ~ p_Person(X)
+      | ~ p_teachingAssistantOf(X,Y0)
+      | ~ p_Course(Y0)
+      | p_TeachingAssistant(X) )).
+
+
+
+  cnf('Class axiom #64',axiom,
+      ( ~ p_GraduateCourse(X)
+      | p_Course(X) )).
+
+
+
+  cnf('Property axiom #65',axiom,
+      ( ~ p_mastersDegreeFrom(X,Y)
+      | p_Person(X) )).
+
+
+
+  cnf('Property axiom #66 CL 1',axiom,
+      ( ~ p_degreeFrom(X,Y)
+      | p_hasAlumnus(Y,X) )).
+
+
+
+  cnf('Property axiom #66 CL 2',axiom,
+      ( ~ p_hasAlumnus(Y,X)
+      | p_degreeFrom(X,Y) )).
+
+
+
+  cnf('Class axiom #67',axiom,
+      ( ~ p_Faculty(X)
+      | p_Employee(X) )).
+
+
+
+  cnf('Class axiom #68',axiom,
+      ( ~ p_UndergraduateStudent(X)
+      | p_Student(X) )).
+
+
+
+  cnf('Property axiom #69',axiom,
+      ( ~ p_listedCourse(X,Y)
+      | p_Schedule(X) )).
+
+
+
+  cnf('Property axiom #70',axiom,
+      ( ~ p_doctoralDegreeFrom(X,Y)
+      | p_Person(X) )).
+
+
+
+  cnf('Class axiom #71',axiom,
+      ( ~ p_University(X)
+      | p_Organization(X) )).
+
+
+
+  cnf('Property axiom #72',axiom,
+      ( ~ p_advisor(X,Y)
+      | p_Person(X) )).
+
+
+
+  cnf('Property axiom #73',axiom,
+      ( ~ p_softwareDocumentation(X,Y)
+      | p_Software(X) )).
+
+
+
+  cnf('Property axiom #74',axiom,
+      ( ~ p_publicationDate(X,Y)
+      | p_Publication(X) )).
+
+
+
+  cnf('Property axiom #75',axiom,
+      ( ~ p_publicationResearch(X,Y)
+      | p_Publication(X) )).
+
+
+
+  cnf('Property axiom #76',axiom,
+      ( ~ p_doctoralDegreeFrom(X,Y)
+      | p_University(Y) )).
+
+
+
+  cnf('Class axiom #77',axiom,
+      ( ~ p_AdministrativeStaff(X)
+      | p_Employee(X) )).
+
+
+
+  cnf('Property axiom #78',axiom,
+      ( ~ p_researchProject(X,Y)
+      | p_Research(Y) )).
+
+
+
+  cnf('Property axiom #79',axiom,
+      ( ~ p_affiliateOf(X,Y)
+      | p_Person(Y) )).
+
+
+
+  cnf('Property axiom #80',axiom,
+      ( ~ p_publicationAuthor(X,Y)
+      | p_Person(Y) )).
+
+
+
+  cnf('Property axiom #81',axiom,
+      ( ~ p_title(X,Y)
+      | p_Person(X) )).
+
+
+
+  cnf('Property axiom #82',axiom,
+      ( ~ p_listedCourse(X,Y)
+      | p_Course(Y) )).
+
+
+
+  cnf('Property axiom #83',axiom,
+      ( ~ p_degreeFrom(X,Y)
+      | p_University(Y) )).
+
+
+
+  cnf('Property axiom #84',axiom,
+      ( ~ p_publicationAuthor(X,Y)
+      | p_Publication(X) )).
+
+
+
+  cnf('Property axiom #85',axiom,
+      ( ~ p_undergraduateDegreeFrom(X,Y)
+      | p_University(Y) )).
+
+
+
+  cnf('Class axiom #86',axiom,
+      ( ~ p_JournalArticle(X)
+      | p_Article(X) )).
+
+
+
+  cnf('Property axiom #87',axiom,
+      ( ~ p_age(X,Y)
+      | p_Person(X) )).
+
+
+
+  cnf('Class axiom #88',axiom,
+      ( ~ p_Research(X)
+      | p_Work(X) )).
+
+
+
+  cnf('Property axiom #89',axiom,
+      ( ~ p_affiliatedOrganizationOf(X,Y)
+      | p_Organization(Y) )).
+
+
+
+  cnf('Property axiom #90',axiom,
+      ( ~ p_mastersDegreeFrom(X,Y)
+      | p_University(Y) )).
+
+
+
+  cnf('Property axiom #91',axiom,
+      ( ~ p_tenured(X,Y)
+      | p_Professor(X) )).
+
+
+
+  cnf('Property axiom #92',axiom,
+      ( ~ p_orgPublication(X,Y)
+      | p_Organization(X) )).
+
+
+
+

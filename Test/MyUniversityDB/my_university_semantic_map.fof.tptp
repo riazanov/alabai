@@ -1,0 +1,832 @@
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%               AUXILLIARY DEFINITIONS
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+fof(undergraduate_level_degrees,axiom,
+   undergraduateLevelDegree("BSc")
+     &
+   undergraduateLevelDegree("BEng")
+).
+
+fof(masters_level_degrees,axiom,
+   mastersLevelDegree("MSc")
+     &
+   mastersLevelDegree("MEng")
+).
+
+fof(doctoral_level_degrees,axiom,
+   doctoralLevelDegree("PhD")
+     &
+   doctoralLevelDegree("DEng")
+).
+
+
+fof(graduate_level_degrees,axiom,
+  ! [Degree] : 
+    (
+      (mastersLevelDegree(Degree) | doctoralLevelDegree(Degree))
+         =>
+       graduateLevelDegree(Degree)
+    )
+).
+
+
+fof(works_for_suborganisation_implies_works_for_organisation,axiom,
+  ! [Person,Suborg,Org] :
+    (
+      (
+        p_subOrganizationOf(Suborg,Org) 
+          &
+	p_worksFor(Person,Suborg)
+      )
+        =>
+      p_worksFor(Person,Org)      
+    )
+).
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TABLE: universities
+%% TABLE PREDICATE: db_universities
+%% PRIMARY-KEY-TO-ENTITY FUNCTION: universityEntity
+%% INVERSE FOR PRIMARY-KEY-TO-ENTITY FUNCTION: universityEntityToCode
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Mapping the rows of the table universities to entities of the concept lubm:University.
+
+fof(table_universities_represents_instances_of_concept_University,axiom,
+  ! [Code,Name] : (db_universities(Code,Name) => p_University(universityEntity(Code)))
+).
+
+
+
+% Mapping the attribute universities.name to the property lubm:name.
+
+fof(attribute_universities_name_assigns_name,axiom,
+  ! [Code,Name] : (db_universities(Code,Name) => p_name(universityEntity(Code),Name))
+).
+
+
+
+% universityEntityToCode is an inverse function for universityEntity.
+
+fof(inverse_for_universityEntity_1,axiom,
+   ! [Code] : (universityEntityToCode(universityEntity(Code)) = Code)
+).
+
+fof(inverse_for_universityEntity_2,axiom,
+   ! [P] : (universityEntity(universityEntityToCode(P)) = P)
+).
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TABLE: departments
+%% TABLE PREDICATE: db_departments
+%% PRIMARY-KEY-TO-ENTITY FUNCTION: departmentEntity
+%% INVERSE FOR PRIMARY-KEY-TO-ENTITY FUNCTION: departmentEntityToCode
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Mapping the rows of the table departments to entities of the concept lubm:Department.
+
+fof(table_departments_represents_instances_of_concept_Department,axiom,
+  ! [Code,Name] : (db_departments(Code,Name) => p_Department(departmentEntity(Code)))
+).
+
+
+
+% Mapping the attribute departments.name to the property lubm:name.
+
+fof(attribute_departments_name_assigns_name,axiom,
+  ! [Code,Name] : (db_departments(Code,Name) => p_name(departmentEntity(Code),Name))
+).
+
+
+
+% departmentEntityToCode is an inverse function for departmentEntity.
+
+fof(inverse_for_departmentEntity_1,axiom,
+   ! [Code] : (departmentEntityToCode(departmentEntity(Code)) = Code)
+).
+
+fof(inverse_for_departmentEntity_2,axiom,
+   ! [P] : (departmentEntity(departmentEntityToCode(P)) = P)
+).
+
+
+% All departments are suborganisations of the Shadrinsk Academy 
+% of Fine Cuisine (SAFC)
+
+fof(all_departments_are_suborganisations_of_Shadrinsk_Academy_of_Fine_Cuisine,axiom,
+  ! [Code,Name] : 
+      (
+        db_departments(Code,Name) 
+          => 
+        p_subOrganizationOf(departmentEntity(Code),universityEntity("SAFC"))
+      )
+).
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TABLE: people
+%% TABLE PREDICATE: db_people
+%% PRIMARY-KEY-TO-ENTITY FUNCTION: personEntity
+%% INVERSE FOR PRIMARY-KEY-TO-ENTITY FUNCTION: personEntityToId
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Mapping the rows of the table people to entities of the concept lubm:Person.
+
+fof(table_people_represents_instances_of_concept_Person,axiom,
+  ! [Id,Name] : (db_people(Id,Name) => p_Person(personEntity(Id)))
+).
+
+
+
+% Mapping the attribute people.name to the property lubm:name.
+
+fof(attribute_people_name_assigns_name,axiom,
+  ! [Id,Name] : (db_people(Id,Name) => p_name(personEntity(Id),Name))
+).
+
+
+
+% personEntityToId is an inverse function for personEntity.
+
+fof(inverse_for_personEntity_1,axiom,
+   ! [Id] : (personEntityToId(personEntity(Id)) = Id)
+).
+
+fof(inverse_for_personEntity_2,axiom,
+   ! [P] : (personEntity(personEntityToId(P)) = P)
+).
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TABLE: publications
+%% TABLE PREDICATE: db_publications
+%% PRIMARY-KEY-TO-ENTITY FUNCTION: publicationEntity
+%% INVERSE FOR PRIMARY-KEY-TO-ENTITY FUNCTION: publicationEntityToId
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Mapping the rows of the table publications to entities of the concept lubm:Publication.
+
+fof(table_publications_represents_instances_of_concept_Publication,axiom,
+  ! [Id,Title] : (db_publications(Id,Title) => p_Publication(publicationEntity(Id)))
+).
+
+
+
+% Mapping the attribute publications.title to the property lubm:name.
+
+fof(attribute_publications_title_assigns_name,axiom,
+  ! [Id,Title] : (db_publications(Id,Title) => p_name(publicationEntity(Id),Title))
+).
+
+
+
+% publicationEntityToId is an inverse function for publicationEntity.
+
+fof(inverse_for_publicationEntity_1,axiom,
+   ! [Id] : (publicationEntityToId(publicationEntity(Id)) = Id)
+).
+
+fof(inverse_for_publicationEntity_2,axiom,
+   ! [P] : (publicationEntity(publicationEntityToId(P)) = P)
+).
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TABLE: courses
+%% TABLE PREDICATE: db_courses
+%% PRIMARY-KEY-TO-ENTITY FUNCTION: courseEntity
+%% INVERSE FOR PRIMARY-KEY-TO-ENTITY FUNCTION: courseEntityToId
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Mapping the rows of the table courses to entities of the concept lubm:Course.
+
+fof(table_courses_represents_instances_of_concept_Course,axiom,
+  ! [Id,Dept,Name,Grad] : 
+     (
+       db_courses(Id,Dept,Name,Grad) 
+         => 
+       p_Course(courseEntity(Id))
+     )
+).
+
+
+% There is no property in the LUBM ontology to map the attribute
+% courses.departments_code to. In general, there is no way to say
+% in LUBM that some course is offered by some department.
+
+
+
+% Mapping the attribute courses.name to the property lubm:name.
+
+fof(attribute_courses_name_assigns_name,axiom,
+  ! [Id,Dept,Name,Grad] :
+     ( 
+       db_courses(Id,Dept,Name,Grad)  
+        => 
+       p_name(courseEntity(Id),Name)
+     )
+).
+
+
+
+
+% Mapping the attribute courses.graduate to LUBM.
+% Note that 0 represents FALSE in MySQL.
+
+
+%
+% This is better formulation of the axiom, which is, unfortunately,
+% not very efficient because of the positive equality with a variable.
+% As a temporary workaround, the axiom below is used. In that axiom,
+% we assume that a boolean field can only have values 0 or 1.
+% 
+%fof(attribute_courses_graduate_identifies_course_level,axiom,
+%  ! [Id,Dept,Name,Grad] : 
+%      (
+%        (
+%          db_courses(Id,Dept,Name,Grad) 
+%            &
+%          (Grad != 0)
+%        ) 
+%           => 
+%        p_GraduateCourse(courseEntity(Id))
+%      )
+%).
+
+
+fof(attribute_courses_graduate_identifies_course_level,axiom,
+  ! [Id,Dept,Name,Grad] : 
+      (
+        (
+          db_courses(Id,Dept,Name,Grad) 
+            &
+          (Grad = 1)
+        ) 
+           => 
+        p_GraduateCourse(courseEntity(Id))
+      )
+).
+
+
+
+
+
+% courseEntityToId is an inverse function for courseEntity.
+
+fof(inverse_for_courseEntity_1,axiom,
+   ! [Id] : (courseEntityToId(courseEntity(Id)) = Id)
+).
+
+fof(inverse_for_courseEntity_2,axiom,
+   ! [C] : (courseEntity(courseEntityToId(C)) = C)
+).
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TABLE: registered_students
+%% TABLE PREDICATE: db_registered_students
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Mapping some rows of the table registered_students to entities of the concept 
+% lubm:UndergraduateStudent.
+
+fof(undergraduate_student,axiom,
+   ! [PersId,DeptCode,Degree] :
+        (
+          (
+            db_registered_students(PersId,DeptCode,Degree) 
+               &
+            undergraduateLevelDegree(Degree)
+           )
+             =>
+          p_UndergraduateStudent(personEntity(PersId))
+        )
+).
+
+
+% Mapping some rows of the table registered_students to entities of the concept 
+% lubm:GraduateStudent. This is a bit controversial because
+% LUBM makes too strong an assumption that every GraduateStudent
+% must take a GraduateCourse. This need not be the case in our database.
+% Alternatively, we could distinguish "registered" graduate students.
+
+fof(graduate_student,axiom,
+   ! [PersId,DeptCode,Degree] :
+        (
+          (
+            db_registered_students(PersId,DeptCode,Degree) 
+               &
+            graduateLevelDegree(Degree)
+           )
+             =>
+          p_GraduateStudent(personEntity(PersId))
+        )
+).
+
+
+
+
+% Mapping rows of the table registered_students to assertions of the property
+% lubm:memberOf (following the example of
+% http://swat.cse.lehigh.edu/projects/lubm/profile.htm).
+
+fof(student_is_department_member,axiom,
+   ! [PersId,DeptCode,Degree] :
+       (
+         db_registered_students(PersId,DeptCode,Degree) 
+           =>
+         p_memberOf(personEntity(PersId),departmentEntity(DeptCode))
+       )
+).
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TABLE: faculty_members
+%% TABLE PREDICATE: db_faculty_members
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Mapping faculty_members rows with faculty_members.role = "head"
+% to assertions of the property lubm:headOf.
+
+fof(faculty_members_head,axiom,
+   ! [PersId,DeptCode,Role,Salary] :
+        (
+          (
+            db_faculty_members(PersId,DeptCode,Role,Salary) 
+               &
+            (Role = "head")
+           )
+             =>
+          p_headOf(personEntity(PersId),departmentEntity(DeptCode))
+        )
+).
+
+
+% Mapping faculty_members rows with faculty_members.role = "full professor"
+% to the concept lubm:FullProfessor.
+
+
+fof(faculty_members_full_professor,axiom,
+   ! [PersId,DeptCode,Role,Salary] :
+        (
+          (
+            db_faculty_members(PersId,DeptCode,Role,Salary) 
+               &
+            (Role = "full professor")
+           )
+             =>
+          p_FullProfessor(personEntity(PersId))
+        )
+).
+
+
+
+
+% Mapping faculty_members rows with faculty_members.role = "associate professor"
+% to the concept lubm:AssociateProfessor.
+
+
+fof(faculty_members_associate_professor,axiom,
+   ! [PersId,DeptCode,Role,Salary] :
+        (
+          (
+            db_faculty_members(PersId,DeptCode,Role,Salary) 
+               &
+            (Role = "associate professor")
+           )
+             =>
+          p_AssociateProfessor(personEntity(PersId))
+        )
+).
+
+
+
+% Mapping faculty_members rows with faculty_members.role = "assistant professor"
+% to the concept lubm:AssistantProfessor.
+
+
+fof(faculty_members_assistant_professor,axiom,
+   ! [PersId,DeptCode,Role,Salary] :
+        (
+          (
+            db_faculty_members(PersId,DeptCode,Role,Salary) 
+               &
+            (Role = "assistant professor")
+           )
+             =>
+          p_AssistantProfessor(personEntity(PersId))
+        )
+).
+
+
+% A faculty member works for the corresponding department.
+
+fof(faculty_member_works_for_department,axiom,
+   ! [PersId,DeptCode,Role,Salary] :
+        (
+          db_faculty_members(PersId,DeptCode,Role,Salary) 
+             =>
+          p_worksFor(personEntity(PersId),departmentEntity(DeptCode))
+        )
+).
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TABLE: member_degrees
+%% TABLE PREDICATE: db_member_degrees
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Mapping some rows of the table member_degrees to assertions of the property 
+% lubm:undergraduateDegreeFrom
+
+fof(undergraduate_degree_from,axiom,
+   ! [PersId,UnivCode,Degree] :
+        (
+          (
+            db_member_degrees(PersId,UnivCode,Degree) 
+               &
+            undergraduateLevelDegree(Degree)
+           )
+             =>
+          p_undergraduateDegreeFrom(personEntity(PersId),universityEntity(UnivCode))
+        )
+).
+
+
+
+% Mapping some rows of the table member_degrees to assertions of the property 
+% lubm:mastersDegreeFrom
+
+fof(masters_degree_from,axiom,
+   ! [PersId,UnivCode,Degree] :
+        (
+          (
+            db_member_degrees(PersId,UnivCode,Degree) 
+               &
+            mastersLevelDegree(Degree)
+           )
+             =>
+          p_mastersDegreeFrom(personEntity(PersId),universityEntity(UnivCode))
+        )
+).
+
+
+% Mapping some rows of the table member_degrees to assertions of the property 
+% lubm:doctoralDegreeFrom
+
+fof(doctoral_degree_from,axiom,
+   ! [PersId,UnivCode,Degree] :
+        (
+          (
+            db_member_degrees(PersId,UnivCode,Degree) 
+               &
+            doctoralLevelDegree(Degree)
+           )
+             =>
+          p_doctoralDegreeFrom(personEntity(PersId),universityEntity(UnivCode))
+        )
+).
+
+
+% A person who's got a degree from a university, is an alumnus
+% of that university.
+
+fof(member_degree_implies_has_alumnus,axiom,
+   ! [PersId,UnivCode,Degree] :
+        ( 
+          db_member_degrees(PersId,UnivCode,Degree) 
+            =>
+          p_hasAlumnus(universityEntity(UnivCode),personEntity(PersId))
+        )
+).
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TABLE: course_registration
+%% TABLE PREDICATE: db_course_registration
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Mapping the rows of the table to the property lubm:takesCourse.
+
+fof(table_course_registration_represents_takesCourse,axiom,
+   ! [PersId,CourseCode] : 
+      (
+        db_course_registration(PersId,CourseCode) 
+          =>
+        p_takesCourse(personEntity(PersId),courseEntity(CourseCode))
+      )
+).
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TABLE: course_teaching
+%% TABLE PREDICATE: db_course_teaching
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Mapping some rows of the table course_teaching into assertions
+% of the property lubm:teacherOf.
+% May conflict with LUBM because lubm:teacherOf has domain
+% lubm:Faculty.
+
+fof(table_course_teaching_represents_teacherOf,axiom,
+  ! [CourseCode,PersId,Assistant] :      
+      (
+        (
+          db_course_teaching(CourseCode,PersId,Assistant)
+            &
+          (Assistant = 0)
+        )
+           =>
+        p_teacherOf(personEntity(PersId),courseEntity(CourseCode))
+      )
+).
+
+
+% Mapping some rows of the table course_teaching into assertions
+% of the property lubm:teachingAssistantOf.
+% May conflict with LUBM because lubm:teachingAssistantOf has domain
+% lubm:TeachingAssistant.
+
+%
+% This is better formulation of the axiom, which is, unfortunately,
+% not very efficient because of the positive equality with a variable.
+% As a temporary workaround, the axiom below is used. In that axiom,
+% we assume that a boolean field can only have values 0 or 1.
+% 
+%
+%fof(table_course_teaching_represents_teachingAssistantOf,axiom,
+%  ! [CourseCode,PersId,Assistant] :      
+%      (
+%        (
+%          db_course_teaching(CourseCode,PersId,Assistant)
+%            &
+%          (Assistant != 0)
+%        )
+%           =>
+%        p_teachingAssistantOf(personEntity(PersId),courseEntity(CourseCode))
+%      )
+%).
+
+
+fof(table_course_teaching_represents_teachingAssistantOf,axiom,
+  ! [CourseCode,PersId,Assistant] :      
+      (
+        (
+          db_course_teaching(CourseCode,PersId,Assistant)
+            &
+          (Assistant = 1)
+        )
+           =>
+        p_teachingAssistantOf(personEntity(PersId),courseEntity(CourseCode))
+      )
+).
+
+
+
+% A course teacher works for the department providing the course.
+
+fof(course_teacher_works_for_department,axiom,
+   ! [CourseCode,PersId,Assistant,DeptCode,CourseName,Grad] :      
+       (
+        (
+          db_course_teaching(CourseCode,PersId,Assistant)
+            &
+          db_courses(CourseCode,DeptCode,CourseName,Grad) 
+        )
+           =>
+        p_worksFor(personEntity(PersId),departmentEntity(DeptCode))
+      )
+).
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TABLE: student_supervision
+%% TABLE PREDICATE: db_student_supervision
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Mapping rows of the table student_supervision to assertions of the property
+% lubm:advisor.
+
+fof(table_student_supervision_represents_advisor,axiom,
+   ! [Stud,Adv] :
+      (
+        db_student_supervision(Stud,Adv)
+          =>
+        p_advisor(personEntity(Stud),personEntity(Adv))
+      )
+).
+
+
+% Here we have a DB design problem. 
+% There is no way to determine which department the professor supervises for.
+
+
+% A supervisor works for a suborganisation of the Shadrinsk Academy 
+% of Fine Cuisine (SAFC)
+
+fof(supervisor_works_for_a_suborganisation_of_Shadrinsk_Academy_of_Fine_Cuisine,axiom, 
+  ! [Stud,Adv] :
+      (
+        db_student_supervision(Stud,Adv)
+           =>
+        (? [Suborg] :
+           (
+             p_subOrganizationOf(Suborg,universityEntity("SAFC"))
+               &
+             p_worksFor(personEntity(Adv),Suborg)
+           ))
+      )
+).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TABLE: member_publications
+%% TABLE PREDICATE: db_member_publications
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Mapping rows of the table member_publications to assertions of the property
+% lubm:publicationAuthor.
+
+fof(table_member_publications_represents_publicationAuthor,axiom,
+   ! [Auth,Pub] :
+       (
+         db_member_publications(Auth,Pub)
+           =>
+         p_publicationAuthor(publicationEntity(Pub),personEntity(Auth))
+       )
+).
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TABLE: phone_numbers
+%% TABLE PREDICATE: db_phone_numbers
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Mapping rows of the table phone_numbers to assertions of the property
+% lubm:telephone.
+
+fof(table_phone_numbers_represents_telephone,axiom,
+    ! [PersId,NumString] :
+        (
+          db_phone_numbers(PersId,NumString)
+             =>
+          p_telephone(personEntity(PersId),NumString)
+        )
+).
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TABLE: emails
+%% TABLE PREDICATE: db_emails
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Mapping rows of the table emails to assertions of the property
+% lubm:emailAddress.
+
+fof(table_emails_represents_emailAddress,axiom,
+    ! [PersId,Addr] :
+        (
+          db_emails(PersId,Addr)
+             =>
+          p_emailAddress(personEntity(PersId),Addr)
+        )
+).
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TABLE: research_groups
+%% TABLE PREDICATE: db_research_groups
+%% PRIMARY-KEY-TO-ENTITY FUNCTION: researchGroupEntity
+%% INVERSE FOR PRIMARY-KEY-TO-ENTITY FUNCTION: researchGroupEntityToGroupCode
+%% INVERSE FOR PRIMARY-KEY-TO-ENTITY FUNCTION: researchGroupEntityToDepartmentCode
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Mapping the rows of the table departments to entities of the concept lubm:Department.
+
+fof(table_research_groups_represents_instances_of_concept_ResearchGroup,axiom,
+  ! [Code,Name,DeptCode] : 
+     (
+       db_research_groups(Code,DeptCode,Name) 
+         => 
+       p_ResearchGroup(researchGroupEntity(Code,DeptCode))
+     )
+).
+
+
+
+% Mapping the attribute research_groups.name to the property lubm:name.
+
+fof(attribute_research_groups_name_assigns_name,axiom,
+  ! [Code,Name] : 
+      (
+        db_research_groups(Code,DeptCode,Name) 
+          => 
+        p_name(researchGroupEntity(Code,DeptCode),Name)
+      )
+).
+
+
+
+% researchGroupEntityToGroupCode and researchGroupEntityToDepartmentCode
+% are inverse functions for researchGroupEntity.
+
+fof(inverse_for_researchGroupEntity_1,axiom,
+   ! [Code,DeptCode] : 
+       (researchGroupEntityToGroupCode(researchGroupEntity(Code,DeptCode))  
+         = 
+        Code)
+).
+
+
+fof(inverse_for_researchGroupEntity_2,axiom,
+   ! [Code,DeptCode] : 
+       (researchGroupEntityToDepartmentCode(researchGroupEntity(Code,DeptCode))
+          =
+        DeptCode)
+).
+
+
+fof(inverse_for_researchGroupEntity_3,axiom,
+   ! [G] : 
+      (researchGroupEntity(researchGroupEntityToGroupCode(G),
+                                researchGroupEntityToDepartmentCode(G))
+         =
+       G)
+).
+
+
+
+% A research group is a suborganisation of the corresponding department.
+
+
+fof(research_group_is_suborganisation_of_department,axiom,
+  ! [Code,Name,DeptCode] : 
+     (
+       db_research_groups(Code,DeptCode,Name) 
+         => 
+       p_subOrganizationOf(researchGroupEntity(Code,DeptCode),departmentEntity(DeptCode))
+     )
+).
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TABLE: research_group_affiliation
+%% TABLE PREDICATE: db_research_group_affiliation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Mapping the rows of the table to the property lubm:worksFor.
+
+fof(table_research_group_affiliation_represents_worksFor,axiom,
+   ! [PersId,ResearchGroupCode,DeptCode] : 
+      (
+        db_research_group_affiliation(PersId,ResearchGroupCode,DeptCode) 
+          =>
+        p_worksFor(personEntity(PersId),
+                   researchGroupEntity(ResearchGroupCode,DeptCode))
+      )
+).

@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+ <xs:schema  
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns="alabai_config"
+  targetNamespace="alabai_config"
+  elementFormDefault="qualified">
+  
+  <xs:annotation>
+    <xs:documentation> 
+    This is the XML schema for configuration files for Alabai.
+    </xs:documentation>
+  </xs:annotation>
+
+  <xs:element name="alabaiConfig">
+    <xs:complexType>
+      <xs:sequence>
+	<xs:group ref="TopLevelOption" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+    
+
+  <xs:group name="TopLevelOption">
+    <xs:choice>
+      <xs:element name="maximalSelectionUnitActiveness" type="PositiveInteger"/>
+      <xs:element name="maximalSelectionUnitPenalty" type="PositiveInteger"/>
+      <xs:element ref="reductionOrdering"/>
+      <xs:element ref="literalSelection"/>
+      <xs:element ref="resolution"/>
+      <xs:element ref="paramodulation"/>
+      <xs:element ref="forwardSubsumption"/>
+      <xs:element ref="forwardSubsumptionResolution"/>
+      <xs:element ref="backwardSubsumption"/>
+      <xs:element ref="forwardDemodulation"/>
+      <xs:element ref="backwardDemodulation"/>
+      <xs:element ref="simplifyingEqualityResolution"/>
+      <xs:element name="propositionalTautologyTest" type="xs:boolean"/>
+      <xs:element name="equationalTautologyTest" type="xs:boolean"/>
+      <xs:element name="clauseSelectionDelay" type="NonnegativeInteger"/>
+      <xs:element ref="unifiabilityEstimation"/>
+      <xs:element ref="selectionUnitPenalty"/>
+      <xs:element ref="queryRewriting"/>
+      <xs:element name="printInput" type="xs:boolean"/>
+      <xs:element name="printNew" type="xs:boolean"/>
+      <xs:element name="printKept" type="xs:boolean"/>
+      <xs:element name="printDiscarded" type="xs:boolean"/>
+      <xs:element name="printAssembled" type="xs:boolean"/>
+      <xs:element name="printSelectedClauses" type="xs:boolean"/>
+      <xs:element name="printActivatedClauses" type="xs:boolean"/>
+      <xs:element name="markUnselectedLiterals" type="xs:boolean"/>
+      <xs:element name="printPromoted" type="xs:boolean"/>
+      <xs:element name="selUnitPromotionWatchList" type="NonnegativeIntegerList"/>
+      <xs:element name="printSelectionUnits" type="xs:boolean"/>
+      <xs:element name="printUnifiability" type="xs:boolean"/>
+      <xs:element name="printPenaltyComputation" type="xs:boolean"/>
+    
+      <xs:element name="mainEqualitySymbol">
+	<xs:complexType>
+	  <xs:attribute name="positive" type="xs:string" use="required"/>
+	  <xs:attribute name="negative" type="xs:string"/>
+          <xs:attribute name="infix" type="xs:boolean" use="required"/>
+	</xs:complexType>
+      </xs:element>
+
+      <xs:element name="otherEqualitySymbols">
+	<xs:simpleType>
+	  <xs:list itemType="xs:string"/>
+	</xs:simpleType>
+      </xs:element>
+
+
+      <xs:element name="answerPredicate">
+	<xs:complexType>
+	  <xs:attribute name="name" type="xs:string" use="required"/>
+	  <xs:attribute name="arity" type="NonnegativeInteger" use="required"/>
+	</xs:complexType>
+      </xs:element>
+      <xs:element name="constraintPredicate">
+	<xs:complexType>
+	  <xs:attribute name="name" type="xs:string" use="required"/>
+	  <xs:attribute name="arity" type="NonnegativeInteger" use="required"/>
+	</xs:complexType>
+      </xs:element>
+
+
+      <xs:element name="preserveInput" type="xs:boolean"/>
+
+    </xs:choice>
+  </xs:group>
+
+
+  <!-- Calculus: -->
+
+  <xs:element name="reductionOrdering">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+	<xs:enumeration value="SubtermRelation"/>
+	<xs:enumeration value="NonrecursiveKBO"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+
+  <xs:element name="literalSelection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:group ref="LiteralSelectionFunctionAssignment" maxOccurs="unbounded">
+	</xs:group>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+
+  <!-- Deduction rules: -->
+
+
+  <xs:element name="resolution">
+    <xs:complexType>
+      <xs:attribute name="checkUnifierDirections" type="xs:boolean" default="false"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="paramodulation">
+    <xs:complexType>
+      <xs:attribute name="on" type="xs:boolean" default="true"/>
+      <xs:attribute name="checkUnifierDirections" type="xs:boolean" default="false"/>
+    </xs:complexType>
+  </xs:element>
+
+
+
+  <!-- Forward simplification: -->
+
+  <xs:element name="forwardSubsumption">
+    <xs:complexType>
+      <xs:sequence>
+
+	<xs:element name="featureFunctionVector" type="ClauseFeatureFunctionVector"/>
+
+      </xs:sequence>
+      <xs:attribute name="on" type="xs:boolean" default="true"/>
+      <xs:attribute name="equalityPretest" type="xs:boolean" default="false"/>
+    </xs:complexType>
+  </xs:element>
+
+
+  <xs:element name="forwardSubsumptionResolution">
+    <xs:complexType>
+      <xs:attribute name="on" type="xs:boolean" default="true"/>
+    </xs:complexType>
+  </xs:element>
+
+
+  <xs:element name="forwardDemodulation">
+    <xs:complexType>
+      <xs:sequence>
+
+	<xs:element name="featureFunctionVector" type="TermFeatureFunctionVector"/>
+	
+      </xs:sequence>
+      <xs:attribute name="on" type="xs:boolean" default="true"/>
+    </xs:complexType>
+  </xs:element>
+
+
+
+
+
+  <xs:element name="simplifyingEqualityResolution">
+    <xs:complexType>
+      <xs:attribute name="on" type="xs:boolean" default="true"/>
+    </xs:complexType>
+  </xs:element>
+
+
+
+
+  <!-- Backward simplification: -->
+
+  <xs:element name="backwardSubsumption">
+    <xs:complexType>
+      <xs:sequence>
+
+	<xs:element name="featureFunctionVector" type="ClauseFeatureFunctionVector"/>
+
+	
+      </xs:sequence>
+      <xs:attribute name="on" type="xs:boolean" default="true"/>
+    </xs:complexType>
+  </xs:element>
+
+
+  <xs:element name="backwardDemodulation">
+    <xs:complexType>
+      <xs:sequence>
+
+	<xs:element name="featureFunctionVector" type="TermFeatureFunctionVector"/>
+	
+      </xs:sequence>
+      <xs:attribute name="on" type="xs:boolean" default="true"/>
+    </xs:complexType>
+  </xs:element>
+
+
+
+  <!-- Inference selection: -->
+  
+  
+  <xs:element name="unifiabilityEstimation">
+    <xs:complexType>
+      <xs:attribute name="maxDepth" type="NonnegativeInteger"/>
+      <xs:attribute name="deepeningCoeff" type="PositiveFloat"/>
+      <xs:attribute name="duplicateVarUnifiability" type="PositiveFloat"/>
+      <xs:attribute name="constUnifiability" type="PositiveFloat"/>
+      <xs:attribute name="funcUnifiability" type="PositiveFloat"/>
+      <xs:attribute name="propConstUnifiability" type="PositiveFloat"/>
+      <xs:attribute name="predUnifiability" type="PositiveFloat"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="selectionUnitPenalty">
+    <xs:complexType>
+
+      <xs:sequence>
+	<xs:element name="resolutionB" type="ResolutionSelectionUnitPenalty" minOccurs="0" maxOccurs="1"/>
+	<xs:element name="resolutionG" type="ResolutionSelectionUnitPenalty" minOccurs="0" maxOccurs="1"/>
+	<xs:element name="resolutionI" type="ResolutionSelectionUnitPenalty" minOccurs="0" maxOccurs="1"/>
+	<xs:element name="eqLHSForParamodB" type="EqLHSForParamodSelectionUnitPenalty" minOccurs="0" maxOccurs="1"/>
+	<xs:element name="eqLHSForParamodG" type="EqLHSForParamodSelectionUnitPenalty" minOccurs="0" maxOccurs="1"/>
+	<xs:element name="eqLHSForParamodI" type="EqLHSForParamodSelectionUnitPenalty" minOccurs="0" maxOccurs="1"/>
+	<xs:element name="redexForParamod" type="RedexForParamodSelectionUnitPenalty" minOccurs="0" maxOccurs="1"/>    
+	<xs:element name="equalityFactoring" type="EqualityFactoringSelectionUnitPenalty" minOccurs="0" maxOccurs="1"/>   
+	<xs:element name="equalityResolution" type="EqualityResolutionSelectionUnitPenalty" minOccurs="0" maxOccurs="1"/>        
+      </xs:sequence>
+
+      <xs:attribute name="for" type="InputFormulaRole" use="required"/>
+      <xs:attribute name="baseValue" type="PositiveInteger" use="required"/>
+      
+    </xs:complexType>
+  </xs:element>
+
+
+
+    
+  <xs:complexType name="ResolutionSelectionUnitPenalty">
+
+    <xs:sequence>
+      <xs:element name="litUnifiabilityCoeff" type="FloatFloatFunc"/>
+      <xs:element name="residualLitCoeff" type="IntFloatFunc"/>
+      <xs:element name="residualSizeCoeff" type="IntFloatFunc"/>
+      <xs:element name="litSizeCoeff" type="IntFloatFunc"/>
+      <xs:element name="litDepthCoeff" type="IntFloatFunc"/>
+    </xs:sequence>
+    
+    <xs:attribute name="generalCoeff" type="PositiveFloat" use="required"/>
+    
+  </xs:complexType>
+
+
+  <xs:complexType name="EqLHSForParamodSelectionUnitPenalty">
+
+    <xs:sequence>
+      <xs:element name="lhsUnifiabilityCoeff" type="FloatFloatFunc"/>
+      <xs:element name="residualLitCoeff" type="IntFloatFunc"/>
+      <xs:element name="residualSizeCoeff" type="IntFloatFunc"/>
+    </xs:sequence>
+    
+    <xs:attribute name="generalCoeff" type="PositiveFloat" use="required"/>
+    
+  </xs:complexType>
+
+
+
+    
+  <xs:complexType name="RedexForParamodSelectionUnitPenalty">
+
+    <xs:sequence>
+      <xs:element name="redexUnifiabilityCoeff" type="FloatFloatFunc"/>
+      <xs:element name="residualLitCoeff" type="IntFloatFunc"/>
+      <xs:element name="residualSizeCoeff" type="IntFloatFunc"/>
+      <xs:element name="redexDepthCoeff" type="IntFloatFunc"/>
+    </xs:sequence>
+    
+    <xs:attribute name="generalCoeff" type="PositiveFloat" use="required"/>
+    <xs:attribute name="positiveEqCoeff" type="PositiveFloat" default="1"/>
+    <xs:attribute name="positiveNonEqCoeff" type="PositiveFloat" default="1"/>
+    <xs:attribute name="negativeEqCoeff" type="PositiveFloat" default="1"/>
+    <xs:attribute name="negativeNonEqCoeff" type="PositiveFloat" default="1"/>
+    
+  </xs:complexType>
+
+
+  <xs:complexType name="EqualityFactoringSelectionUnitPenalty">
+
+    <xs:sequence>
+      <xs:element name="litNumCoeff" type="IntFloatFunc"/>
+      <xs:element name="clauseSizeCoeff" type="IntFloatFunc"/>
+    </xs:sequence>
+    
+    <xs:attribute name="generalCoeff" type="PositiveFloat" use="required"/>
+    
+  </xs:complexType>
+
+
+  <xs:complexType name="EqualityResolutionSelectionUnitPenalty">
+
+    <xs:sequence>
+      <xs:element name="litNumCoeff" type="IntFloatFunc"/>
+      <xs:element name="clauseSizeCoeff" type="IntFloatFunc"/>
+    </xs:sequence>
+    
+    <xs:attribute name="generalCoeff" type="PositiveFloat" use="required"/>
+    
+  </xs:complexType>
+
+  <!-- Incremental query rewriting support: -->
+  
+  <xs:element name="queryRewriting">
+    <xs:complexType>
+
+      <xs:sequence>
+	<xs:element name="allowFunctionsInConstraints" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+	<xs:element name="inconsistenciesAsAnswers" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+	<xs:element name="limitedTransitivePredicateChainingInConstraints" type="LimitedTransitivePredicateChainingInConstraints" minOccurs="0" maxOccurs="1"/>
+	
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+
+
+  <xs:complexType name="LimitedTransitivePredicateChainingInConstraints">
+
+    <xs:sequence>
+      <xs:element name="predicateChainLimit" minOccurs="0" maxOccurs="unbounded">
+	<xs:complexType>
+	  <xs:attribute name="name" type="xs:string" use="required"/>
+	  <xs:attribute name="arity" type="NonnegativeInteger" use="required"/>
+	  <xs:attribute name="limit" type="NonnegativeInteger" use="required"/>
+	</xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    
+    <xs:attribute name="on" type="xs:boolean" default="true"/>
+    
+  </xs:complexType>
+
+
+
+  <!-- Clause and term features for feature vector indexing: -->
+  
+  <xs:complexType name="ClauseFeatureFunctionVector">
+    <xs:sequence>
+      <xs:group ref="ClauseFeature" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>    
+  </xs:complexType>
+
+
+  <xs:complexType name="TermFeatureFunctionVector">
+    <xs:sequence>
+      <xs:group ref="TermFeature" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>    
+  </xs:complexType>
+
+  <xs:group name="ClauseFeature">
+    <xs:choice>
+      <xs:element ref="numberOfLiterals"/>
+      <xs:element ref="numberOfNegativeLiterals"/>
+      <xs:element ref="numberOfPositiveLiterals"/>
+      <xs:element ref="numberOfSymbols"/>
+      <xs:element ref="numberOfSymbolsFromCategories"/>
+      <xs:element ref="plugInClauseFeature"/>
+    </xs:choice>
+  </xs:group>
+  
+  <xs:group name="TermFeature">
+    <xs:choice>
+      <xs:element ref="numberOfSymbols"/>
+      <xs:element ref="numberOfSymbolsFromCategories"/>
+      <xs:element ref="plugInTermFeature"/>
+    </xs:choice>
+  </xs:group>
+  
+  
+  <xs:element name="numberOfLiterals" type="Empty"/>
+  
+  <xs:element name="numberOfNegativeLiterals" type="Empty"/>
+  
+  <xs:element name="numberOfPositiveLiterals" type="Empty"/>
+  
+  <xs:element name="numberOfSymbols" type="Empty"/>
+
+  <xs:element name="numberOfSymbolsFromCategories">
+    <xs:complexType>
+      <xs:attribute name="mod" type="xs:integer" use="required"/>
+    </xs:complexType>
+  </xs:element> 
+
+
+  <!-- Clause feature functions provided in plug-ins: -->
+
+  <xs:element name="plugInClauseFeature">
+    <xs:complexType>
+      <xs:attribute name="name" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element> 
+
+
+  <!-- Term feature functions provided in plug-ins: -->
+
+  <xs:element name="plugInTermFeature">
+    <xs:complexType>
+      <xs:attribute name="name" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element> 
+
+
+  <!-- Literal selection functions:  -->
+
+
+  <xs:group name="LiteralSelectionFunctionAssignment">
+    <xs:choice>
+
+      <xs:element name="forAxioms">
+	<xs:complexType>
+	  <xs:group ref="LiteralSelectionFunction"/>
+	</xs:complexType>
+      </xs:element>
+
+      <xs:element name="forHypotheses">
+	<xs:complexType>
+	  <xs:group ref="LiteralSelectionFunction"/>
+	</xs:complexType>
+      </xs:element>
+
+      <xs:element name="forNegatedConjectures">
+	<xs:complexType>
+	  <xs:group ref="LiteralSelectionFunction"/>
+	</xs:complexType>
+      </xs:element>
+
+    </xs:choice>
+  </xs:group>
+
+  
+  <xs:group name="LiteralSelectionFunction">
+    <xs:choice>
+      <xs:element name="total" type="Empty"/>
+      <xs:element name="allMaximal" type="Empty"/>
+
+      <xs:element name="allMaximalWRT">
+	<xs:complexType>
+	  <xs:group ref="LiteralOrdering"/>
+	</xs:complexType>	
+      </xs:element>
+
+
+      <xs:element name="posHyper">
+	<xs:complexType>
+	  <xs:sequence>
+	    
+	    <xs:element name="filterForNegative">
+	      <xs:complexType>
+		<xs:group ref="LiteralSelectionFunction"/>
+	      </xs:complexType>
+	    </xs:element>
+	    
+	    <xs:element name="filterForPositive">
+	      <xs:complexType>
+		<xs:group ref="LiteralSelectionFunction"/>
+	      </xs:complexType>
+	    </xs:element>
+	    
+	  </xs:sequence>
+	</xs:complexType>	
+      </xs:element>
+    </xs:choice>
+  </xs:group>
+
+  
+
+  <xs:group name="LiteralOrdering">
+    <xs:choice>
+      <xs:element name="admissible" type="Empty"/>
+      <xs:element name="byShallowWeight">
+	<xs:complexType>
+	  <xs:attribute name="maxDepth" type="NonnegativeInteger" use="required"/>
+	</xs:complexType>	
+      </xs:element>
+    </xs:choice>
+  </xs:group>
+
+
+  <!--                Auxilliary definitions:              -->
+
+
+  <xs:simpleType name="InputFormulaRole">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="axioms"/>
+      <xs:enumeration value="hypotheses"/>
+      <xs:enumeration value="negatedConjectures"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="NonnegativeIntegerList">
+    <xs:list itemType="NonnegativeInteger"/>
+  </xs:simpleType>
+
+  <xs:simpleType name="NonnegativeInteger">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="PositiveInteger">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="PositiveFloat">
+    <xs:restriction base="xs:float">
+      <xs:minExclusive value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="Empty">
+    <!-- Type for absolutely empty elements. -->
+  </xs:complexType>
+
+  <xs:complexType name="IntFloatFunc">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="map">
+	<xs:complexType>
+	  <xs:attribute name="x" type="xs:integer" use="required"/>
+	  <xs:attribute name="y" type="xs:float" use="required"/>
+	</xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <xs:complexType name="FloatFloatFunc">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="map">
+	<xs:complexType>
+	  <xs:attribute name="x" type="xs:float" use="required"/>
+	  <xs:attribute name="y" type="xs:float" use="required"/>
+	</xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+
+ </xs:schema>

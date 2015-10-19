@@ -1,0 +1,24 @@
+
+include('univ-bench.ontology.cnf.tptp').
+
+include('univ-bench.db-abstraction.tptp').
+
+
+input_clause(query3,conjecture,
+  [
+    --iPublication(X),
+    --ipublicationAuthor(X,'http://www.Department0.University0.edu/AssistantProfessor0'),
+    ++answer(X)
+  ]).
+
+
+% 1 answer expected
+
+% 1 answer found:
+
+% | {{~db_abs_ipublicationAuthor}}(X0,'http://www.Department0.University0.edu/AssistantProfessor0') \/ <<answer>>(X0)
+
+% Note that 
+% ipublicationAuthor(X,'http://www.Department0.University0.edu/AssistantProfessor0')
+% implies iPublication(X),
+% therefore checking if X is in iPublication is unnecessary.

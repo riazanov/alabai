@@ -1,0 +1,30 @@
+
+
+include('univ-bench.ontology.cnf.tptp').
+
+include('univ-bench.db-abstraction.tptp').
+
+
+input_clause(query1,conjecture,
+  [
+    --iGraduateStudent(X),
+    --itakesCourse(X,'http://www.Department0.University0.edu/GraduateCourse0'),
+    ++answer(X)
+  ]).
+
+% 1 answer expected.
+
+% 1 answer found:
+
+% | {{~db_abs_itakesCourse}}(X0,'http://www.Department0.University0.edu/GraduateCourse0') \/ <<answer>>(X0) \/ {{~db_abs_iGraduateStudent}}(X0) 
+
+
+
+
+
+
+
+
+
+
+

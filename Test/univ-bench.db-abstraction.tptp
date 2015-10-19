@@ -1,0 +1,132 @@
+
+
+
+% Limited transitivity chaining is not implemented yet.
+
+% abs_lit_chain_limit(db_abs_isubOrganizationOf,2,2).
+
+
+
+%------------------------------------------------------------------------
+
+
+
+input_clause(db_abs,hypothesis,
+   [ ++iUniversity(INSTANCE), --db_abs_iUniversity(INSTANCE) ]).
+
+input_clause(db_abs,hypothesis,
+   [ ++iUndergraduateStudent(INSTANCE), --db_abs_iUndergraduateStudent(INSTANCE) ]).
+
+input_clause(db_abs,hypothesis,
+   [ ++iResearchAssistant(INSTANCE), --db_abs_iResearchAssistant(INSTANCE) ]).
+
+
+input_clause(db_abs,hypothesis,
+   [ ++iAssistantProfessor(INSTANCE), --db_abs_iAssistantProfessor(INSTANCE) ]).
+
+
+input_clause(db_abs,hypothesis,
+   [ ++iAssociateProfessor(INSTANCE), --db_abs_iAssociateProfessor(INSTANCE) ]).
+
+
+input_clause(db_abs,hypothesis,
+   [ ++iFullProfessor(INSTANCE), --db_abs_iFullProfessor(INSTANCE) ]).
+
+
+input_clause(db_abs,hypothesis,
+   [ ++iDepartment(INSTANCE), --db_abs_iDepartment(INSTANCE) ]).
+
+
+input_clause(db_abs,hypothesis,
+   [ ++iLecturer(INSTANCE), --db_abs_iLecturer(INSTANCE) ]).
+
+
+input_clause(db_abs,hypothesis,
+   [ ++iTeachingAssistant(INSTANCE), --db_abs_iTeachingAssistant(INSTANCE) ]).
+
+
+input_clause(db_abs,hypothesis,
+   [ ++iGraduateCourse(INSTANCE), --db_abs_iGraduateCourse(INSTANCE) ]).
+
+
+input_clause(db_abs,hypothesis,
+   [ ++iCourse(INSTANCE), --db_abs_iCourse(INSTANCE) ]).
+
+
+input_clause(db_abs,hypothesis,
+   [ ++iPublication(INSTANCE), --db_abs_iPublication(INSTANCE) ]).
+
+
+input_clause(db_abs,hypothesis,
+   [ ++iResearchGroup(INSTANCE), --db_abs_iResearchGroup(INSTANCE) ]).
+
+
+input_clause(db_abs,hypothesis,
+   [ ++iGraduateStudent(INSTANCE), --db_abs_iGraduateStudent(INSTANCE) ]).
+
+
+%------------------------------------------------------------------------
+
+
+
+input_clause(db_abs,hypothesis,
+   [ ++itakesCourse(PERSON,COURSE), --db_abs_itakesCourse(PERSON,COURSE) ]).
+
+input_clause(db_abs,hypothesis,
+   [ ++ipublicationAuthor(PUBLICATION,PERSON), --db_abs_ipublicationAuthor(PUBLICATION,PERSON) ]).
+
+
+input_clause(db_abs,hypothesis,
+   [ ++iname(PERSON,STRING), --db_abs_iname(PERSON,STRING) ]).
+
+
+input_clause(db_abs,hypothesis,
+   [ ++imemberOf(PERSON,ORGANISATION), --db_abs_imemberOf(PERSON,ORGANISATION) ]).
+
+
+input_clause(db_abs,hypothesis,
+   [ ++iemailAddress(PERSON,STRING), --db_abs_iemailAddress(PERSON,STRING) ]).
+
+
+input_clause(db_abs,hypothesis,
+   [ ++itelephone(PERSON,PHONE_NUMBER), --db_abs_itelephone(PERSON,PHONE_NUMBER) ]).
+
+input_clause(db_abs,hypothesis,
+   [ ++iadvisor(STUDENT,PROFESSOR), --db_abs_iadvisor(STUDENT,PROFESSOR) ]).
+
+
+input_clause(db_abs,hypothesis,
+   [ ++iteacherOf(PROFESSOR,COURSE), --db_abs_iteacherOf(PROFESSOR,COURSE) ]).
+
+
+input_clause(db_abs,hypothesis,
+   [ ++iundergraduateDegreeFrom(PERSON,ORGANISATION), --db_abs_iundergraduateDegreeFrom(PERSON,ORGANISATION) ]).
+
+
+input_clause(db_abs,hypothesis,
+   [ ++iteachingAssistantOf(PERSON,COURSE), --db_abs_iteachingAssistantOf(PERSON,COURSE) ]).
+
+
+input_clause(db_abs,hypothesis,
+   [ ++isubOrganizationOf(SUB,SUPER), --db_abs_isubOrganizationOf(SUB,SUPER) ]).
+
+
+input_clause(db_abs,hypothesis,
+   [ ++imastersDegreeFrom(PERSON,ORGANISATION), --db_abs_imastersDegreeFrom(PERSON,ORGANISATION) ]).
+
+
+input_clause(db_abs,hypothesis,
+   [ ++idoctoralDegreeFrom(PERSON,ORGANISATION), --db_abs_idoctoralDegreeFrom(PERSON,ORGANISATION) ]).
+
+
+input_clause(db_abs,hypothesis,
+   [ ++iworksFor(PERSON,ORGANISATION), --db_abs_iworksFor(PERSON,ORGANISATION) ]).
+
+input_clause(db_abs,hypothesis,
+   [ ++iheadOf(PERSON,ORGANISATION), --db_abs_iheadOf(PERSON,ORGANISATION) ]).
+
+
+input_clause(db_abs,hypothesis,
+   [ ++iresearchInterest(PERSON,STRING), --db_abs_iresearchInterest(PERSON,STRING) ]).
+
+%============================================================================

@@ -1,0 +1,226 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<!--
+   
+   Copyright © 2007 Andrei Tchaltsev.
+   All rights reserved.
+
+-->
+</head>
+<body bgcolor="white">
+
+<br><br>
+
+<center> 
+<font size=5> 
+<b>Glossary of terms for the Alabai (JE) project</b>
+</center>
+</font>
+
+<br><br><br>
+
+
+<center><font size=5><b>A</b></font></center> <br>
+
+<li> <a name="active_literal"> <b>Active literal</b> in a rule premise.
+If we consider some clause as a (potential) premise in some deduction
+rule, it is convinient to distinguish the literal of the clause, which 
+is actually intended for generating inferences. We call the literal
+<em>the active literal</em> of the premise. All other literals in 
+the premise are called <em>passive</em>. For example, in a resolution
+premise <code>C \/ L</code>, where we intend to resolve <code>L</code>, 
+the literal <code>L</code> is active,
+and all the literals in <code>C</code> are passive. Note that passive literals
+can potentially participate in the intended inference as auxilliary
+literals. For example, if <code>L</code> is resolved in <code>C \/ L</code>, 
+we can also <em>factor</em> some of the literals in <code>C</code> with 
+<code>L</code>.
+ 
+
+ <li> <a name="answer_clause"><b>Answer clause</b> is a clause
+with no ordinary literals, but containing an answer literal and,
+possibly, some other recording literals and constraints.
+
+
+<center><font size=5><b>B</b></font></center> <br>
+
+  <li> <a name="backward_paramodulation"><b>Backward paramodulation</b>.
+  We consider two modes in which paramodulation is applied.
+  In the backward mode, the <a href="#candidate_redex">candidate redexes</a>
+  are in a database (index)
+  and the positive equality to 
+  <a href="#paramodulation_from_into">paramodulate from</a>
+  acts as a query.
+  In <a href="#forward_paramodulation">forward paramodulation</a>,
+  the positive equalities to paramodulate from are in a databse,
+  and the candidate redex term acts as a query.
+  <em>The distinction is purely technical</em>,
+  the semantics of paramodulation is not affected. 
+
+  <li> <a name="bidirectional_unifier"><b>Bidirectional unifier</b>.
+  We say that a unifier &theta of two terms <code>s</code> and <code>t</code>
+  is <em>bidirectional</em> (wrt both <code>s</code> and <code>t</code>), 
+  if neither <code>s&theta = t</code>, nor <code>s = t&theta</code>.
+  See also <a href="#unifier_orientation">unifier orientation</a>, 
+  <a href="#instantiating_unifier">instantiating unifier</a> and
+  <a href="#generalising_unifier">generalising unifier</a>.
+
+
+
+<center><font size=5><b>C</b></font></center> <br>
+
+  <li> <a name="candidate_redex"><b>Candidate redex</b> is a term that
+  is identified as a potential <a href="#redex">redex</a> in paramodulation
+  or demodulation inferences.
+
+  <li> <a name="selection_unit_cluster"><b>Cluster of selection units</b>.
+  For the purpose of efficient indexing, most of the fine selection units 
+  in the Alabai kernel are split into a finite number of clusters
+  corresponding to <em>pairs of kind tags and activeness degrees</em>
+  of the units. <em>Cluster identifiers</em> are represented 
+  with boolean vectors of fixed length.
+     
+  <li> <a name="complex_literal"><b>Complex literals</b> are those literals
+  whose atoms are not atomic formulas, ie, they are applications
+  of quantifiers or conjunctions. In Alabai, all complex literals
+  are considered positive even if the corresponding atoms are applications
+  of negation. See also <a href="#ordinary_literal">ordinary literal</a>.
+
+  <li> <a name="conditional_contradiction_clause"><b>Conditional contradiction clause</b> is a clause
+ with no ordinary literals or answer literals, but 
+ some recording literals or constraints.
+
+
+  <li> <a name="contradiction_clause"><b>Contradiction clause</b>
+  is an ordinary empty clause. Unlike, an 
+  <a href="#answer_clause">answer</a> or 
+  <a href="#conditional_contradiction_clause">codnitional contradiction</a>, 
+  it does not have any associated constraints or recording literals.
+
+
+<center><font size=5><b>F</b></font></center> <br>
+
+
+  <li> <a name="forward_paramodulation"><b>Forward paramodulation</b>.
+  We consider two modes in which paramodulation is applied.
+  In the forward mode, the positive equality to 
+  <a href="#paramodulation_from_into">paramodulate from</a>
+  is taken from the database (index) and 
+  the <a href="#candidate_redex">candidate redex</a> term
+  acts as a query. 
+  In <a href="#backward_paramodulation">backward paramodulation</a>,
+  the positive equality acts a query, and the candidate redexes are
+  in a database (index). <em>The distinction is purely technical</em>,
+  the semantics of paramodulation is not affected. 
+
+   
+<center><font size=5><b>G</b></font></center> <br>
+
+  <li> <a name="gamma_substitution"><b>Gamma-substitution</b> is 
+  any substitution &theta, such that for every variable x, 
+  x&theta is a constant or a variable, and if x and y are distinct
+  variables and x&theta and y&theta are variables, then 
+  x&theta and y&theta are distinct.
+ 
+  <li> <a name="generalising_unifier"><b>Generalising unifier</b>. 
+  We say that a unifier &theta between terms <code>s</code> and <code>t</code>
+  is <em>generalising</em> wrt <code>s</code>, if <code>s = t&theta</code>.
+  See also <a href="#unifier_orientation">unifier orientation</a>, 
+  <a href="#bidirectional_unifier">bidirectional unifier</a> and
+  <a href="#instantiating_unifier">instantiating unifier</a>.
+
+   
+<center><font size=5><b>I</b></font></center> <br>
+
+  <li> <a name="instantiating_unifier"> <b>Instantiating unifier</b>. 
+  We say that a unifier &theta between terms <code>s</code> and <code>t</code>
+  is <em>instantiating</em> wrt <code>s</code>, if <code>s&theta = t</code>.
+  See also <a href="#unifier_orientation">unifier orientation</a>, 
+  <a href="#bidirectional_unifier">bidirectional unifier</a> and
+  <a href="#generalising_unifier"generalising unifier</a>.
+
+
+<center><font size=5><b>K</b></font></center> <br>
+
+  <li> <a name="kept_clauses"> <b>Kept clauses</b> are those clauses that 
+  have passed forward processing without being discarded. Of course, 
+  later they may be discarded, for example, by backward simplification.
+
+
+<center><font size=5><b>M</b></font></center> <br>
+
+  <li> <a name="main_premise"> <b>Main premise</b> and <b>side premise</b>. 
+   The most important two-premise
+  deduction rules are applied in the following mode: one premise is 
+  fixed and the other one is varied, eg, by extracting appropriate 
+  candidates from an index. The former premise is called the 
+  <b>main premise</b>, and the latter one is called the <b>side premise</b>.
+
+<center><font size=5><b>O</b></font></center> <br>
+ 
+  <li> <a name="ordinary_literal"> <b>Ordinary literals</b> are those literals
+  whose atoms are <em>really atomic formulas</em>. 
+  See also <a href="#complex_literal">complex literal</a>.
+	
+<center><font size=5><b>P</b></font></center> <br>
+
+  <li> <a name="paramodulation_from_into"> 
+  <b>Paramodulation from ... into ...</b>
+  Given an application of paramodulation between the clauses 
+  <code>C \/ s = t and D[s]</code>, resulting in <code>C \/ D[t]</code>, 
+  we say that we <em>paramodulate from</em> the positive equality s = t 
+  <em>into</em> the clause <code>D[s]</code>.
+
+ 
+  <li> <a name="passive_literals"> <b>Passive literals</b> in a premise: see
+  <a href="#active_literal">active literal</a>.
+
+<center><font size=5><b>R</b></font></center> <br>
+
+  <li> <a name="redex"> <b>Redex</b>.
+  Given an application of paramodulation between the clauses 
+  <code>C \/ s = t</code> and <code>D[s]</code>, resulting in 
+  <code>C \/ D[t]</code>, we say that the term 
+  <code>s</code> acts as a <em>redex</em> in this inference. 
+  Similarly, in the demodulation
+  between <code>s = t</code> and <code>D[s]</code>, <code>s</code> 
+  is the redex.
+
+  <li> <a name="residual_literals"> <b>Residual literals</b> in a rule premise
+  are those <a href="#passive_literals">passive literals</a> that have not 
+  participated in an inference even as additional literals.
+  Note that this concept only makes sense wrt some inference that have
+  been made. Usually we assume that the residual literals incorporate 
+  the corresponding unifier.
+  
+
+<center><font size=5><b>S</b></font></center> <br>
+
+  <li> <a name="side_premise"> <b>Side premise</b>: see 
+  <a href="#main_premise">main premise</a>.  
+
+
+<center><font size=5><b>T</b></font></center> <br>
+
+  <li> <a name="terminal_clause"><b>Terminal clause</b> is a
+  <a href="#contradiction_clause">contradiction</a>,
+  <a href="#conditional_contradiction_clause">conditional_contradiction</a>
+  or
+  <a href="#answer_clause">answer clause</a>.
+
+
+
+<center><font size=5><b>U</b></font></center> <br>
+
+  <li> <a name="unifier_orientation"> <b>Unifier orientation</b>.
+  A unifier between two terms <code>s</code> and <code>t</code> can be 
+  <a href="#instantiating_unifier">instantiating</a> wrt <code>s</code>, 
+  <a href="#generalising_unifier">generalising</a> wrt <code>s</code>, or
+  <a href="#bidirectional_unifier">bidirectional</a>.
+
+
+
+ 
+</body>
+</html>
